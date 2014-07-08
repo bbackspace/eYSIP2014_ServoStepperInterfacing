@@ -1,0 +1,422 @@
+\documentclass[a4paper,twoside,10pt]{report}
+%% Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[USenglish]{babel} %francais, polish, spanish, ...
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{lmodern} %Type1-font for non-english texts and characters
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%For loading graphic files
+%\usepackage{subfig} %%Subfigures inside a figure
+%\usepackage{tikz} %%Generate vector graphics from within LaTeX
+\usepackage{titlepic} % title page pic
+% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{verbatim,moreverb} % Required for including code snippet.
+\usepackage{colortbl}
+\usepackage{multirow}	% Required for creating multiple row tables
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{fixltx2e} % to include subscript
+\usepackage{hyperref}	% Required for including hyperlink in document
+\usepackage{float}
+%% Line Spacing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\singlespacing        %% 1-spacing (default)
+%\onehalfspacing       %% 1,5-spacing
+%\doublespacing        %% 2-spacing
+
+%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{a4wide} %%Smaller margins = more text per page.
+%\usepackage{fancyhdr} %%Fancy headings
+%\usepackage{longtable} %%For tables, that exceed one page
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Write your text here or include other files.
+
+%% The simple version:
+\title{Stepper Motor Interfacing with ATmega2560 and ARM7 LPC2148 (Firebird V)}
+\author{Joel Manish Pinto and Vishal Rajai \vspace{20pt} \\
+Under the mentorship of\\
+Bhavin Upadhyay}
+%\date{} %%If commented, the current date is used.
+\titlepic{\includegraphics[width=0.2\textwidth]{iitblogo.pdf} \\ \vspace{20pt}
+e-Yantra Summer Internship – 2014 \\
+ERTS Lab \\
+IIT Bombay
+}
+
+\maketitle
+
+\tableofcontents %Table of contents
+\cleardoublepage %The first chapter should start on an odd page.
+\pagestyle{plain} %Now display headings: headings / fancy / ...
+
+\begin{abstract}
+\emph{This document is an introduction to Stepper Motors and describes how to interface them using the Firebird V platform. It also serves as a report for the work done on stepper motors by the authors during the Internship period.}
+
+\emph{A Stepper Motor is a BLDC Motor used in scenarios where high precision and moderate torque output at low speeds is required. Stepper motors can be controlled in various stepping modes, each having a different behavior, using a simple transistor array for each of its coils. The stepping sequences can be generated using a microcontroller. In this document, we control a unipolar stepper motor using ATmega2560 and LPC2148 based Firebird V robots.
+}
+\end{abstract}
+
+\chapter{Introduction}\label{introduction}
+
+A Stepper Motor is a kind of Brushless DC Motor that divides a full rotation into a discrete number of steps. It can be controlled to move and hold at those steps. It gives a fairly precise control over the position without the need of a feedback system, i.e., it is an open-loop control system. It is mainly used when moderately high torque is required with precise position control at a low expense and a high RPM is not required.
+
+Stepper motors are usually used when precise positioning is required such as in printers, plotters, floppy-disk drive heads, fax machines, etc. They have excellent repeatability of movement since good stepper motors have an accuracy of within 3–5\% of a step and this error is non-cumulative from one step to the next.
+
+\chapter{Internal Construction}\label{internalconstruction}
+Commonly found stepper motors are classified into these categories based on the differences in their construction:
+\section{Variable Reluctance Stepper Motor}\label{vrstepper}
+A variable reluctance stepper motor is one in which the central rotor is non-magnetised (or soft magnetised).  It is generally a piece of iron with an irregular shape and is based on the principle that the flux lines in a magnetic circuit seek the lowest reluctance path which tend to align the rotor’s teeth with that of the coils to reduce the high reluctance air gap.
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{"Variable Reluctance"}
+		\caption{A 4-phase Variable Reluctance Motor}
+		\label{fig:fig_vrstepper}
+\end{figure}
+Variable reluctance types do not show the effect of detent torque as the rotor can rotate freely when no coil is energised. 
+\section{Permanent Magnet Stepper Motors}\label{pmstepper}
+A Permanent Magnet Stepper Motor have a cylindrical permanent magnet as its rotor. The 2 opposite coils when energized, become North and South poles which align with the poles of the magnetic rotor. Each of the two coils are center-tapped in unipolar steppers. Since permanent magnet steppers have a magnetic rotor, it exhibits detent torque as the permanent magnet ‘snaps’ to the nearest pole even when no coil is energised.
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{"PM"}
+		\caption{A Simplified Permanent Magnet Stepper}
+		\label{fig:fig_pmstepper}
+\end{figure}
+In practice, the permanent magnet has multiple poles to allow for a small step angle.
+\section{Hybrid Stepper Motors}\label{hstepper}
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{"hstepper"}
+		\caption{Inside a hybrid stepper motor}
+		\label{fig:fig_hstepper}
+\end{figure}
+Hybrid Steppers are those which combine the construction techniques found in variable reluctance types and permanent magnet types. Due to the gear shaped rotor, a variable reluctance type characteristic, they have a small step angle. They also have some detent torque as the rotor is also magnetised. Combining these techniques improves the overall torque and power in a small package.
+
+\chapter{Operating Principle and Working}\label{operatingprincipleandworking}
+In a hybrid stepper motor, when one of the electromagnet coils is excited, the teeth on them align with the teeth on the rotor. The adjacent coil’s teeth are slightly offset with the ones on the rotor. When this coil is excited and the first turned off, the rotor rotates through a small fixed angle. This process is continued to obtain continuous rotation.
+\section{Stepping Modes}\label{steppingmodes}
+The control of a stepper motor involves energising the coils in a sequence. Different sequences are used based on the behavior needed. These sequences are also known as stepping modes. Below are described the different stepping modes used to control stepper motor, usually with the help of a microcontroller or stepper motor driver circuitry.
+\subsection{Wave Stepping}
+In this mode, the four individual coils are energised singly in a wave fashion as shown in the table below
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c | c |}
+		\toprule
+		\textbf{Step} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+		\midrule
+		1 & 1 & 0 & 0 & 0 \\
+		2 & 0 & 1 & 0 & 0 \\
+		3 & 0 & 0 & 1 & 0 \\
+		4 & 0 & 0 & 0 & 1 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Wave Stepping}
+	\label{tab:tab_wave}
+\end{table}
+1 in the table denotes that coil is excited, while 0 denotes it’s not.
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{"wave"}
+		\caption{Wave Stepping}
+		\label{fig:fig_wavestepping}
+\end{figure}
+Albeit simple, the wave stepping mode offers torque lesser than the maximum rated torque and uses less current. As a result this mode is not often used.
+\subsection{Full Stepping}
+In this stepping mode, 2 adjacent coils are energised at an instant, thus increasing the current as well as the torque. The rotors attain an angle midway between the two coils as shown.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c | c |}
+		\toprule
+		\textbf{Step} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+		\midrule
+		1 & 1 & 1 & 0 & 0 \\
+		2 & 0 & 1 & 1 & 0 \\
+		3 & 0 & 0 & 1 & 1 \\
+		4 & 1 & 0 & 0 & 1 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Full Stepping}
+	\label{tab:tab_full}
+\end{table}
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{"full"}
+		\caption{Full Stepping}
+		\label{fig:fig_fullstepping}
+\end{figure}
+\subsection{Half Stepping}
+This mode is a combination of the above mentioned two modes. This mode effectively doubles the steps per revolution of the stepper motor as it also attains positions between two actual steps. This decreases the step angle and provides better resolution. It also makes continuous rotation appear smoother. The stepping sequence has 8 steps as shown in the following table and diagram:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c | c |}
+		\toprule
+		\textbf{Step} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+		\midrule
+		1 & 1 & 0 & 0 & 0 \\
+		2 & 1 & 1 & 0 & 0 \\
+		3 & 0 & 1 & 0 & 0 \\
+		4 & 0 & 1 & 1 & 0 \\
+		5 & 0 & 0 & 1 & 0 \\
+		6 & 0 & 0 & 1 & 1 \\
+		7 & 0 & 0 & 0 & 1 \\
+		8 & 1 & 0 & 0 & 1 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Half Stepping}
+	\label{tab:tab_half}
+\end{table}
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{"half"}
+		\caption{Half Stepping}
+		\label{fig:fig_halfstepping}
+\end{figure}
+
+\section{Torque vs. Angular Displacement Characteristics}\label{torquevsangulardisplacement}
+The stepper motor is good at holding things. The torque vs. angular displacement characteristics give the relation between the angular displacement of the rotor and the torque, which is applied to the rotor shaft when the stepper motor is energised at its rated voltage. The ideal stepper motor has a sinusoidal graph for this relation.
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{"TorqueVsAngDisp"}
+		\caption{Torque vs Angular Displacement (C. Ham\cite{ham} - 2003)}
+		\label{fig:fig_torquevsangdisp}
+\end{figure}
+
+Figure \ref{fig:fig_torquevsangdisp} shows the sinusoidal relation. The point A is the equilibrium position – the position the stepper is holding at no load. C is another equilibrium point which is the next step position. While the stepper is energised and a load torque $T_{a}$ applied, a small deviation $\theta_{a}$ is seen. This deviation increases with the torque till it reaches a maximum known as holding torque. On further increase, the motor enters the unstable region after which it jumps to the next step point C.
+
+Figure \ref{fig:fig_torquevsangdispdiffht} shows how the same amount of load when applied to a stepper motor energised at different values of current to achieve different holding torque affects the angular displacement of the rotor.
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{"TorqueVsAngDispDiffHT"}
+		\caption{Torque vs. Angular Displacement at different holding torque (C. Ham - 2003)}
+		\label{fig:fig_torquevsangdispdiffht}
+\end{figure}
+
+Suppose at a low current value, the holding torque is $T_{H1}$. The resulting displacement is $\theta_{2}$ for the constant load torque $T_{Load}$. On increasing the current, the holding torque increases in proportion to $T_{H2}$, for which the resulting displacement is $\theta_{1}$. Since with a higher holding torque, the motor will try to resist deflection, it is easy to understand why $\theta_{1}$ < $\theta_{2}$.
+
+\section{Torque vs. Speed Characteristics}
+To understand the torque vs. speed characteristics of a stepper motor we need to have a better view of the mechanical parameters of the system. One of them is Load. Load is basically what a motor drives. It is either frictional, inertial or a combination of the two.
+
+Friction is the resistance to motion due to rubbing over surfaces of contact. It is constant with velocity. A minimum amount of torque is required to overcome friction which equals the value of the frictional torque. When a frictional load is increased, the top speed and acceleration decrease and the positional error increases and vice versa.
+
+Inertial Load on the other hand is not much destructive. It is the resistance to changes in the speed of the rotor and thus has a smoothening effect and tries to maintain a constant speed. If the inertial load on a stepper is increased, it increases the speed stability, increases the time to reach the desired speed and decreases the maximum starting speed.
+
+The Torque vs. Speed graph gives a lot of useful information. Thus it is helpful in selecting an appropriate stepper motor and associated drivers. Their relation is highly dependent on the stepper motor itself, the type of driver and the stepping mode.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{"TorqueVsSpeed"}
+		\caption{Torque vs. Speed characteristics}
+		\label{fig:fig_torquevsspeed}
+\end{figure}
+The different labelled terms in the graph are defined as follows:
+
+\textbf{Holding Torque}: The maximum torque the motor can produce at zero speed.
+
+\textbf{Pull-in Torque Curve}: The maximum values of torque with which the motor can start, stop or reverse without skipping steps or losing synchronism at each step rate.
+
+The area under this curve is called the Start/Stop region subsequently.
+
+\textbf{Pull-out Torque Curve}: The maximum values of torque at which the motor can run without skipping steps or losing synchronism at each step rate.
+The area under this curve is called the Slew region. Since this region is outside the start/stop region, the motor’s speed needs to be ramped up to enter this region.
+
+\textbf{Maximum Start Speed}: The maximum step rate at which the motor can start measured with no load.
+
+\textbf{Maximum Running Speed or Maximum Slew Rate}: The maximum step rate at which the motor can run measured with no load.
+
+The decreasing trend in the graph has a simple explanation. The stepper coils are in fact inductances which on increasing frequency, exhibit increased inductive reactance which decreases the effective current reaching the coil during each excitation. Since the current has a direct proportionality with torque, the torque decreases with increasing step rate. Using a constant current source significantly improves the torque as a result. This is a commonly used drive and is known as \textbf{chopper drive}.
+
+\section{Voltage and Current vs. Step rate Characteristics}
+A hybrid unipolar stepper motor was used to practically obtain voltage and current data and was plotted on the graphs depicted in Figures \ref{fig:fig_fullstepVI}, \ref{fig:fig_wavestepVI} and \ref{fig:fig_comparisonstepmodes}. The motor used was 42STH60-1206A which is capable of providing 6.5Kgf.cm holding torque at the rated voltage of 7.2V and maximum 1.2A per phase. The current is proportional to the torque and thus has a downward trend similar to the graph in the previous section. The power supply used was a DC power supply with automatic switching between Constant Voltage (CV) and Constant Current (CC) modes. The maximum voltage and current were set to 7.2V and 1.2A respectively. The circuit was run for short durations to avoid overheating of the ULN2003 driver IC.
+
+The maximum starting speed at which the unloaded stepper motor was able to run from a standstill was around 400Hz after which it skips some steps due to lack of synchronisation and low torque. The stepper’s maximum slew rate was 440Hz which was found by ramping up the speed from 4 Hz to different target frequencies with a constant acceleration of 200Hz per second. With a binary search on the target speed we found that the max slew rate was greater than 438Hz and less than 442Hz. With a simple wheel of weight less than 100g and radius 10cm and mass mostly concentrated at the rims, the motor stalled before 438Hz.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{"fullstepVI"}
+		\caption{Voltage and Current vs Step rate for full stepping}
+		\label{fig:fig_fullstepVI}
+\end{figure}
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{"wavestepVI"}
+		\caption{Voltage and Current vs. Step rate for wave stepping}
+		\label{fig:fig_wavestepVI}
+\end{figure}
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{"fullvswave"}
+		\caption{Comparison of currents in the 2 step modes}
+		\label{fig:fig_comparisonstepmodes}
+\end{figure}
+
+Although the maximum speed at which the stepper motor runs ranges to 400Hz, it gives very less torque and thus isn’t generally preferred when driving loads. The ideal use of stepper motors is towards the left part of the graph, i.e., at low speeds. For higher speeds, a BLDC motor should be considered that is technically also a stepper motor but is able to achieve higher speeds due to large step angles, smoother operation and less number of coil windings. A BLDC motor is optimised for speed whereas a stepper for torque. BLDCs find their way into CD/DVD drives and quadrotor RC helicopters.
+
+Identifying the wires of the unipolar stepper motor
+The unipolar stepper motor will have 5 or 6 wires coming out. Four of them are connected to the four coils in the stepper and the 5th and 6th (if present) are the Common wires. Most of the time, the stepper will come without any documentation on which wire is which, but fortunately there is a simple way to figure them out.
+Look at the internal wiring diagram of the stepper shown below:
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{"Stepper internal"}
+		\caption{Unipolar Stepper Motor Coils\cite{wiki} (Wikipedia, 2008)}
+		\label{fig:fig_unipolarsteppercoils}
+\end{figure}
+For the 6 pin version, the two pairs of coils each will have a separate common wire.
+\begin{enumerate}
+
+\item Using the multimeter in ohmmeter mode, connect one lead of the multimeter to any one of the wires on the extreme ends. Let’s denote that wire as A.
+\item Connect the other lead to each of the other wires, and keep recording the resistances.
+\item 3 of the wires will have infinite resistance while the other two values may come out to be either equal or one will be exactly half of the other value. Let’s denote the wires by B and C.
+\item The following table tells us which is the first common wire:
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c}
+\toprule
+$R_{AB}$ & $R_{AC}$ & Common wire \\
+\midrule
+x ohms & x ohms & A \\
+x ohms & 2x ohms & B \\ 
+2x ohms & x ohms & C \\
+\bottomrule
+\end{tabular}
+\end{table}
+\item Repeat steps 1 through 4 for the other 3 wires, D, E and F to identify the other common wire.
+\end{enumerate}
+
+For the 5 pin version, only one of the wires is the common wire.
+\begin{enumerate}
+
+\item Using the multimeter in ohmmeter mode, connect one lead of the multimeter to any one of the wires on the extreme ends. Let’s denote that wire as A.
+\item Connect the other lead to each of the other wires, and keep recording the resistances.
+\item Denoting the other wires as B, C, D and E, refer the following table to identify the common wire:
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c c c}
+\toprule
+$R_{AB}$ & $R_{AC}$ & $R_{AD}$ & $R_{AE}$ &Common wire \\
+\midrule
+x ohms & x ohms & x ohms & x ohms & A \\
+x ohms & 2x ohms & 2x ohms & 2x ohms & B \\ 
+2x ohms & x ohms & 2x ohms & 2x ohms & C \\
+2x ohms & 2x ohms & x ohms & 2x ohms & D \\ 
+2x ohms & 2x ohms & 2x ohms & x ohms & E \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{enumerate}
+
+\chapter{Interfacing with ATmega2560-based Firebird V}
+
+A unipolar stepper motor can be driven in any of the different step modes using a microcontroller by using the General Purpose I/O pins as outputs to the stepper. Since the microcontroller cannot provide enough current and it would be dangerous to allow back EMFs on the microcontroller pins, we will be using a transistor driver stage for switching the coils and a separate power supply for the stepper motor.
+
+Looking at the Firebird V ATmega2560 Hardware Manual\cite{hwman1}, Table 4.3 at Page 83, it can be seen that we have 23 GPIO pins, out of which we need 4 pins for a single unipolar stepper. We select the expansion slot pins 17, 18, 19 and 20, i.e., PL7, PL6, PD1 and PD0 respectively (Refer Figure \ref{fig:fig_expansionslotpins}).
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.52]{"expansion slot pins"}
+		\caption{Pin description for the expansion slot}
+		\label{fig:fig_expansionslotpins}
+\end{figure}
+
+Figure \ref{fig:fig_pinnumberingexpansionslot} shows the where you will find the pins on the expansion slot. Take note of the unusual numbering pattern.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{"pinnumbering"}
+		\caption{Pin numbering of the expansion slot}
+		\label{fig:fig_pinnumberingexpansionslot}
+\end{figure}
+
+\subsection{Driver Circuit}
+
+Figure \ref{fig:fig_drivercircuit} shows the driver circuit that will be required to drive the stepper motor.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.65]{"Stepper circuit"}
+		\caption{Unipolar Stepper Motor Driver using ULN2003 with ATmega2560}
+		\label{fig:fig_drivercircuit}
+\end{figure}
+
+The ULN2003 IC is basically an array of 7 Darlington pair transistors with each channel having a capacity of 500mA current. This IC is particularly suited to driving stepper motors with virtually no additional components. The inputs of the transistors are on pins 1 through 7 while the corresponding outputs on the pins 16 through 10 respectively. The stepper is given an external power supply of 6V. A higher voltage can be given depending on the rated voltage for the stepper. The torque is seen to be higher if the supply is replaced by a constant current source of the stepper’s rated current value. While running the circuit at higher levels, make sure the current per coil does not exceed the maximum rated current for the driver, i.e., 500mA per coil. Make sure the IC is properly heatsinked to avoid overheating when running at currents approaching 500mA per coil. A quick trick to increasing the capacity of the driver is to physically stack another ULN2003 over the existing one so that they are connected in parallel. This effectively doubles the current capacity of the stepper driver circuit.
+
+Note: The stepper coils are numbered in an arbitrarily. It is only the order that matters. The correct ordering can be inferred by actually running the stepper with arbitrary ordering of the wires. If the stepper just wiggles, swap the last two wires, i.e., coils 3 and 4. This should make the motor rotate correctly.
+
+\chapter{Interfacing with LPC2148-based Firebird V}
+
+The same driver circuit as mentioned in the previous section can be used with the LPC2148-based Firebird V. The LPC2148 is a 32-bit microcontroller of the ARM7 family with a fewer number of GPIO pins available than the versatile ATmega2560. Nevertheless, it is possible to control a stepper motor with the available pins. There are in all 7 GPIO pins available for our use on the Firebird V. Since we need only 4 for our stepper, we choose P1.26, P1.27, P1.28 and P1.29. They can be found at pin numbers 11, 13, 5 and 9 respectively. Table \ref{tab:lpcgpiopins} compiles the GPIO pin descriptions from the Firebird V LPC2148 Hardware Manual\cite{hwman2}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| c | c | c | c |}
+		\toprule
+		\textbf{Pin} & \textbf{Alternate function} & \textbf{Connector} & \textbf{Connector Pin} \\
+		\midrule
+		P0.2 & SCL0 & Left expansion slot & 15 \\
+		P0.3 & SDA0 & Left expansion slot & 16 \\
+		P1.26 & RTCK & JTAG connector & 11 \\
+		P1.27 & TDO & JTAG connector & 13 \\
+		P1.28 & TDI & JTAG connector & 5 \\
+		P1.29 & TCK & JTAG connector & 9 \\
+		P1.30 & TMS & JTAG connector & 7 \\
+		3.3V Supply & & JTAG connector & 1, 2 \\
+		3.3V Supply & & Left expansion slot & 18 \\
+		Ground & & JTAG connector & 4, 6, 8, ..., 20 \\
+		Ground & & Left expansion slot & 17 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Available GPIO and supply pins on the expansion slots}
+	\label{tab:lpcgpiopins}
+\end{table}
+
+The connections needed to be made are shown in the circuit diagram in Figure \ref{fig:fig_lpcdrivercircuit}.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.65]{"ARM Stepper circuit"}
+		\caption{Unipolar Stepper Motor Driver using ULN2003 with LPC2148}
+		\label{fig:fig_lpcdrivercircuit}
+\end{figure}
+
+\begin{thebibliography}{99}
+\bibitem{ham}
+C. Ham, \emph{Stepper Motor and Its Driver} – Spring 2003 \\
+\url{http://pegasus.cc.ucf.edu/~cham/eas5407/project/Intro_stepper.pdf}
+
+\bibitem{wiki}
+Image: \emph{Unipolar Stepper Motor Windings} (Wikipedia) – April 2008 \\
+\url{http://en.wikipedia.org/wiki/File:Unipolar-stepper-motor-windings.png}
+
+\bibitem{hwman1}
+\emph{Firebird V ATmega2560 Hardware Manual} – Aug 2012 \\
+\url{http://e-yantra.org/home/index.php/eyantra/tutorial}
+
+\bibitem{hwman2}
+\emph{Firebird V LPC2148 Hardware Manual} – Dec 2012 \\
+\url{http://e-yantra.org/home/index.php/eyantra/tutorial}
+
+\bibitem{animation}
+\emph{Stepper Motor Working Animation showing different step modes} \\
+\url{http://en.nanotec.com/support/tutorials/stepper-motor-and-bldc-motors-animation/}
+
+\end{thebibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%% ==> Write your text here or include other files.
+
+%\input{FileName} %You need a file 'FileName.tex' for this.
+
+
+\end{document}
+
