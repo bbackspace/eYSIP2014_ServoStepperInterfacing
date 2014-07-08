@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Introduction}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{What is a stepper motor?}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Types of Stepper Motors}{7}{0}{1}
+\beamer@sectionintoc {2}{Controlling a Stepper Motor}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{Stepping sequences}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Wave Stepping}{15}{0}{2}
+\beamer@subsectionintoc {2}{3}{Full Stepping}{18}{0}{2}
+\beamer@subsectionintoc {2}{4}{Half Stepping}{21}{0}{2}
+\beamer@subsectionintoc {2}{5}{Comparison of stepping modes}{24}{0}{2}
+\beamer@sectionintoc {3}{Identifying the wires of a stepper motor}{26}{0}{3}
+\beamer@sectionintoc {4}{Stepper Motor Driver}{27}{0}{4}
+\beamer@sectionintoc {5}{Interfacing with ATmega2560}{28}{0}{5}
+\beamer@subsectionintoc {5}{1}{GPIO pins}{28}{0}{5}
+\beamer@subsectionintoc {5}{2}{Timer Configuration}{31}{0}{5}
+\beamer@subsectionintoc {5}{3}{Code}{37}{0}{5}
