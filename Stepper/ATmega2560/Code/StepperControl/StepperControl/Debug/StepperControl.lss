@@ -1,0 +1,729 @@
+
+StepperControl.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000008  00800200  000004a4  00000538  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004a4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800208  00800208  00000540  2**0
+                  ALLOC
+  3 .stab         000006e4  00000000  00000000  00000540  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000085  00000000  00000000  00000c24  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 000000c0  00000000  00000000  00000cb0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000604  00000000  00000000  00000d70  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000138  00000000  00000000  00001374  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000439  00000000  00000000  000014ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000bc  00000000  00000000  000018e8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000118  00000000  00000000  000019a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000113  00000000  00000000  00001abc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+   4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  10:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  14:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  18:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  1c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  20:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  24:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  28:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  2c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  30:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  34:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  38:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  3c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  40:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  44:	0c 94 c6 01 	jmp	0x38c	; 0x38c <__vector_17>
+  48:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  4c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  50:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  54:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  58:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  5c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  60:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  64:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  68:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  6c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  70:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  74:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  78:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  7c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  80:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  84:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  88:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  8c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  90:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  94:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  98:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  9c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  ac:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  bc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  cc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  dc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  e0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	e4 ea       	ldi	r30, 0xA4	; 164
+  fc:	f4 e0       	ldi	r31, 0x04	; 4
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	a8 30       	cpi	r26, 0x08	; 8
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+ 10e:	12 e0       	ldi	r17, 0x02	; 2
+ 110:	a8 e0       	ldi	r26, 0x08	; 8
+ 112:	b2 e0       	ldi	r27, 0x02	; 2
+ 114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+ 116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+ 118:	aa 30       	cpi	r26, 0x0A	; 10
+ 11a:	b1 07       	cpc	r27, r17
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+ 11e:	0e 94 11 02 	call	0x422	; 0x422 <main>
+ 122:	0c 94 50 02 	jmp	0x4a0	; 0x4a0 <_exit>
+
+00000126 <__bad_interrupt>:
+ 126:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000012a <stepper_port_init>:
+#define COILCPIN 1
+#define COILDPIN 0
+
+void stepper_port_init()
+{
+	DDRL |= (3<<6);
+ 12a:	ea e0       	ldi	r30, 0x0A	; 10
+ 12c:	f1 e0       	ldi	r31, 0x01	; 1
+ 12e:	80 81       	ld	r24, Z
+ 130:	80 6c       	ori	r24, 0xC0	; 192
+ 132:	80 83       	st	Z, r24
+	DDRD |= 3;
+ 134:	8a b1       	in	r24, 0x0a	; 10
+ 136:	83 60       	ori	r24, 0x03	; 3
+ 138:	8a b9       	out	0x0a, r24	; 10
+}
+ 13a:	08 95       	ret
+
+0000013c <wave_step>:
+
+//direction = 1 for forward, -1 for backward.
+void wave_step(int direction)
+{
+	static int stepindex = -1;
+	stepindex = (stepindex + direction + 4) % 4;
+ 13c:	20 91 02 02 	lds	r18, 0x0202
+ 140:	30 91 03 02 	lds	r19, 0x0203
+ 144:	28 0f       	add	r18, r24
+ 146:	39 1f       	adc	r19, r25
+ 148:	c9 01       	movw	r24, r18
+ 14a:	04 96       	adiw	r24, 0x04	; 4
+ 14c:	64 e0       	ldi	r22, 0x04	; 4
+ 14e:	70 e0       	ldi	r23, 0x00	; 0
+ 150:	0e 94 29 02 	call	0x452	; 0x452 <__divmodhi4>
+ 154:	28 2f       	mov	r18, r24
+ 156:	39 2f       	mov	r19, r25
+ 158:	80 93 02 02 	sts	0x0202, r24
+ 15c:	90 93 03 02 	sts	0x0203, r25
+	switch(stepindex)
+ 160:	21 30       	cpi	r18, 0x01	; 1
+ 162:	31 05       	cpc	r19, r1
+ 164:	c9 f0       	breq	.+50     	; 0x198 <wave_step+0x5c>
+ 166:	22 30       	cpi	r18, 0x02	; 2
+ 168:	31 05       	cpc	r19, r1
+ 16a:	24 f4       	brge	.+8      	; 0x174 <wave_step+0x38>
+ 16c:	21 15       	cp	r18, r1
+ 16e:	31 05       	cpc	r19, r1
+ 170:	41 f0       	breq	.+16     	; 0x182 <wave_step+0x46>
+ 172:	08 95       	ret
+ 174:	22 30       	cpi	r18, 0x02	; 2
+ 176:	31 05       	cpc	r19, r1
+ 178:	d1 f0       	breq	.+52     	; 0x1ae <wave_step+0x72>
+ 17a:	23 30       	cpi	r18, 0x03	; 3
+ 17c:	31 05       	cpc	r19, r1
+ 17e:	61 f5       	brne	.+88     	; 0x1d8 <wave_step+0x9c>
+ 180:	21 c0       	rjmp	.+66     	; 0x1c4 <wave_step+0x88>
+	{
+	case 0:
+		COILAPORT |= (1<<COILAPIN);
+ 182:	eb e0       	ldi	r30, 0x0B	; 11
+ 184:	f1 e0       	ldi	r31, 0x01	; 1
+ 186:	80 81       	ld	r24, Z
+ 188:	80 68       	ori	r24, 0x80	; 128
+ 18a:	80 83       	st	Z, r24
+		COILBPORT &= ~(1<<COILBPIN);
+ 18c:	80 81       	ld	r24, Z
+ 18e:	8f 7b       	andi	r24, 0xBF	; 191
+ 190:	80 83       	st	Z, r24
+		COILCPORT &= ~(1<<COILCPIN);
+ 192:	59 98       	cbi	0x0b, 1	; 11
+		COILDPORT &= ~(1<<COILDPIN);
+ 194:	58 98       	cbi	0x0b, 0	; 11
+		break;
+ 196:	08 95       	ret
+	case 1:
+		COILAPORT &= ~(1<<COILAPIN);
+ 198:	eb e0       	ldi	r30, 0x0B	; 11
+ 19a:	f1 e0       	ldi	r31, 0x01	; 1
+ 19c:	80 81       	ld	r24, Z
+ 19e:	8f 77       	andi	r24, 0x7F	; 127
+ 1a0:	80 83       	st	Z, r24
+		COILBPORT |= (1<<COILBPIN);
+ 1a2:	80 81       	ld	r24, Z
+ 1a4:	80 64       	ori	r24, 0x40	; 64
+ 1a6:	80 83       	st	Z, r24
+		COILCPORT &= ~(1<<COILCPIN);
+ 1a8:	59 98       	cbi	0x0b, 1	; 11
+		COILDPORT &= ~(1<<COILDPIN);
+ 1aa:	58 98       	cbi	0x0b, 0	; 11
+		break;
+ 1ac:	08 95       	ret
+	case 2:
+		COILAPORT &= ~(1<<COILAPIN);
+ 1ae:	eb e0       	ldi	r30, 0x0B	; 11
+ 1b0:	f1 e0       	ldi	r31, 0x01	; 1
+ 1b2:	80 81       	ld	r24, Z
+ 1b4:	8f 77       	andi	r24, 0x7F	; 127
+ 1b6:	80 83       	st	Z, r24
+		COILBPORT &= ~(1<<COILBPIN);
+ 1b8:	80 81       	ld	r24, Z
+ 1ba:	8f 7b       	andi	r24, 0xBF	; 191
+ 1bc:	80 83       	st	Z, r24
+		COILCPORT |= (1<<COILCPIN);
+ 1be:	59 9a       	sbi	0x0b, 1	; 11
+		COILDPORT &= ~(1<<COILDPIN);
+ 1c0:	58 98       	cbi	0x0b, 0	; 11
+		break;
+ 1c2:	08 95       	ret
+	case 3:
+		COILAPORT &= ~(1<<COILAPIN);
+ 1c4:	eb e0       	ldi	r30, 0x0B	; 11
+ 1c6:	f1 e0       	ldi	r31, 0x01	; 1
+ 1c8:	80 81       	ld	r24, Z
+ 1ca:	8f 77       	andi	r24, 0x7F	; 127
+ 1cc:	80 83       	st	Z, r24
+		COILBPORT &= ~(1<<COILBPIN);
+ 1ce:	80 81       	ld	r24, Z
+ 1d0:	8f 7b       	andi	r24, 0xBF	; 191
+ 1d2:	80 83       	st	Z, r24
+		COILCPORT &= ~(1<<COILCPIN);
+ 1d4:	59 98       	cbi	0x0b, 1	; 11
+		COILDPORT |= (1<<COILDPIN);
+ 1d6:	58 9a       	sbi	0x0b, 0	; 11
+ 1d8:	08 95       	ret
+
+000001da <full_step>:
+}
+
+void full_step(int direction)
+{
+	static int stepindex = -1;
+	stepindex = (stepindex + direction + 4) % 4;
+ 1da:	20 91 04 02 	lds	r18, 0x0204
+ 1de:	30 91 05 02 	lds	r19, 0x0205
+ 1e2:	28 0f       	add	r18, r24
+ 1e4:	39 1f       	adc	r19, r25
+ 1e6:	c9 01       	movw	r24, r18
+ 1e8:	04 96       	adiw	r24, 0x04	; 4
+ 1ea:	64 e0       	ldi	r22, 0x04	; 4
+ 1ec:	70 e0       	ldi	r23, 0x00	; 0
+ 1ee:	0e 94 29 02 	call	0x452	; 0x452 <__divmodhi4>
+ 1f2:	28 2f       	mov	r18, r24
+ 1f4:	39 2f       	mov	r19, r25
+ 1f6:	80 93 04 02 	sts	0x0204, r24
+ 1fa:	90 93 05 02 	sts	0x0205, r25
+	switch(stepindex)
+ 1fe:	21 30       	cpi	r18, 0x01	; 1
+ 200:	31 05       	cpc	r19, r1
+ 202:	c9 f0       	breq	.+50     	; 0x236 <full_step+0x5c>
+ 204:	22 30       	cpi	r18, 0x02	; 2
+ 206:	31 05       	cpc	r19, r1
+ 208:	24 f4       	brge	.+8      	; 0x212 <full_step+0x38>
+ 20a:	21 15       	cp	r18, r1
+ 20c:	31 05       	cpc	r19, r1
+ 20e:	41 f0       	breq	.+16     	; 0x220 <full_step+0x46>
+ 210:	08 95       	ret
+ 212:	22 30       	cpi	r18, 0x02	; 2
+ 214:	31 05       	cpc	r19, r1
+ 216:	d1 f0       	breq	.+52     	; 0x24c <full_step+0x72>
+ 218:	23 30       	cpi	r18, 0x03	; 3
+ 21a:	31 05       	cpc	r19, r1
+ 21c:	61 f5       	brne	.+88     	; 0x276 <full_step+0x9c>
+ 21e:	21 c0       	rjmp	.+66     	; 0x262 <full_step+0x88>
+	{
+	case 0:
+		COILAPORT |= (1<<COILAPIN);
+ 220:	eb e0       	ldi	r30, 0x0B	; 11
+ 222:	f1 e0       	ldi	r31, 0x01	; 1
+ 224:	80 81       	ld	r24, Z
+ 226:	80 68       	ori	r24, 0x80	; 128
+ 228:	80 83       	st	Z, r24
+		COILBPORT |= (1<<COILBPIN);
+ 22a:	80 81       	ld	r24, Z
+ 22c:	80 64       	ori	r24, 0x40	; 64
+ 22e:	80 83       	st	Z, r24
+		COILCPORT &= ~(1<<COILCPIN);
+ 230:	59 98       	cbi	0x0b, 1	; 11
+		COILDPORT &= ~(1<<COILDPIN);
+ 232:	58 98       	cbi	0x0b, 0	; 11
+		break;
+ 234:	08 95       	ret
+	case 1:
+		COILAPORT &= ~(1<<COILAPIN);
+ 236:	eb e0       	ldi	r30, 0x0B	; 11
+ 238:	f1 e0       	ldi	r31, 0x01	; 1
+ 23a:	80 81       	ld	r24, Z
+ 23c:	8f 77       	andi	r24, 0x7F	; 127
+ 23e:	80 83       	st	Z, r24
+		COILBPORT |= (1<<COILBPIN);
+ 240:	80 81       	ld	r24, Z
+ 242:	80 64       	ori	r24, 0x40	; 64
+ 244:	80 83       	st	Z, r24
+		COILCPORT |= (1<<COILCPIN);
+ 246:	59 9a       	sbi	0x0b, 1	; 11
+		COILDPORT &= ~(1<<COILDPIN);
+ 248:	58 98       	cbi	0x0b, 0	; 11
+		break;
+ 24a:	08 95       	ret
+	case 2:
+		COILAPORT &= ~(1<<COILAPIN);
+ 24c:	eb e0       	ldi	r30, 0x0B	; 11
+ 24e:	f1 e0       	ldi	r31, 0x01	; 1
+ 250:	80 81       	ld	r24, Z
+ 252:	8f 77       	andi	r24, 0x7F	; 127
+ 254:	80 83       	st	Z, r24
+		COILBPORT &= ~(1<<COILBPIN);
+ 256:	80 81       	ld	r24, Z
+ 258:	8f 7b       	andi	r24, 0xBF	; 191
+ 25a:	80 83       	st	Z, r24
+		COILCPORT |= (1<<COILCPIN);
+ 25c:	59 9a       	sbi	0x0b, 1	; 11
+		COILDPORT |= (1<<COILDPIN);
+ 25e:	58 9a       	sbi	0x0b, 0	; 11
+		break;
+ 260:	08 95       	ret
+	case 3:
+		COILAPORT |= (1<<COILAPIN);
+ 262:	eb e0       	ldi	r30, 0x0B	; 11
+ 264:	f1 e0       	ldi	r31, 0x01	; 1
+ 266:	80 81       	ld	r24, Z
+ 268:	80 68       	ori	r24, 0x80	; 128
+ 26a:	80 83       	st	Z, r24
+		COILBPORT &= ~(1<<COILBPIN);
+ 26c:	80 81       	ld	r24, Z
+ 26e:	8f 7b       	andi	r24, 0xBF	; 191
+ 270:	80 83       	st	Z, r24
+		COILCPORT &= ~(1<<COILCPIN);
+ 272:	59 98       	cbi	0x0b, 1	; 11
+		COILDPORT |= (1<<COILDPIN);
+ 274:	58 9a       	sbi	0x0b, 0	; 11
+ 276:	08 95       	ret
+
+00000278 <half_step>:
+}
+
+void half_step(int direction)
+{
+	static int stepindex = -1;
+	stepindex = (stepindex + direction + 8) % 8;
+ 278:	20 91 06 02 	lds	r18, 0x0206
+ 27c:	30 91 07 02 	lds	r19, 0x0207
+ 280:	28 0f       	add	r18, r24
+ 282:	39 1f       	adc	r19, r25
+ 284:	c9 01       	movw	r24, r18
+ 286:	08 96       	adiw	r24, 0x08	; 8
+ 288:	68 e0       	ldi	r22, 0x08	; 8
+ 28a:	70 e0       	ldi	r23, 0x00	; 0
+ 28c:	0e 94 29 02 	call	0x452	; 0x452 <__divmodhi4>
+ 290:	28 2f       	mov	r18, r24
+ 292:	39 2f       	mov	r19, r25
+ 294:	80 93 06 02 	sts	0x0206, r24
+ 298:	90 93 07 02 	sts	0x0207, r25
+	switch(stepindex)
+ 29c:	23 30       	cpi	r18, 0x03	; 3
+ 29e:	31 05       	cpc	r19, r1
+ 2a0:	f1 f1       	breq	.+124    	; 0x31e <half_step+0xa6>
+ 2a2:	24 30       	cpi	r18, 0x04	; 4
+ 2a4:	31 05       	cpc	r19, r1
+ 2a6:	54 f4       	brge	.+20     	; 0x2bc <half_step+0x44>
+ 2a8:	21 30       	cpi	r18, 0x01	; 1
+ 2aa:	31 05       	cpc	r19, r1
+ 2ac:	11 f1       	breq	.+68     	; 0x2f2 <half_step+0x7a>
+ 2ae:	22 30       	cpi	r18, 0x02	; 2
+ 2b0:	31 05       	cpc	r19, r1
+ 2b2:	54 f5       	brge	.+84     	; 0x308 <half_step+0x90>
+ 2b4:	21 15       	cp	r18, r1
+ 2b6:	31 05       	cpc	r19, r1
+ 2b8:	89 f0       	breq	.+34     	; 0x2dc <half_step+0x64>
+ 2ba:	08 95       	ret
+ 2bc:	25 30       	cpi	r18, 0x05	; 5
+ 2be:	31 05       	cpc	r19, r1
+ 2c0:	09 f4       	brne	.+2      	; 0x2c4 <half_step+0x4c>
+ 2c2:	43 c0       	rjmp	.+134    	; 0x34a <half_step+0xd2>
+ 2c4:	25 30       	cpi	r18, 0x05	; 5
+ 2c6:	31 05       	cpc	r19, r1
+ 2c8:	ac f1       	brlt	.+106    	; 0x334 <half_step+0xbc>
+ 2ca:	26 30       	cpi	r18, 0x06	; 6
+ 2cc:	31 05       	cpc	r19, r1
+ 2ce:	09 f4       	brne	.+2      	; 0x2d2 <half_step+0x5a>
+ 2d0:	47 c0       	rjmp	.+142    	; 0x360 <half_step+0xe8>
+ 2d2:	27 30       	cpi	r18, 0x07	; 7
+ 2d4:	31 05       	cpc	r19, r1
+ 2d6:	09 f0       	breq	.+2      	; 0x2da <half_step+0x62>
+ 2d8:	58 c0       	rjmp	.+176    	; 0x38a <half_step+0x112>
+ 2da:	4d c0       	rjmp	.+154    	; 0x376 <half_step+0xfe>
+	{
+		case 0:
+			COILAPORT |= (1<<COILAPIN);
+ 2dc:	eb e0       	ldi	r30, 0x0B	; 11
+ 2de:	f1 e0       	ldi	r31, 0x01	; 1
+ 2e0:	80 81       	ld	r24, Z
+ 2e2:	80 68       	ori	r24, 0x80	; 128
+ 2e4:	80 83       	st	Z, r24
+			COILBPORT &= ~(1<<COILBPIN);
+ 2e6:	80 81       	ld	r24, Z
+ 2e8:	8f 7b       	andi	r24, 0xBF	; 191
+ 2ea:	80 83       	st	Z, r24
+			COILCPORT &= ~(1<<COILCPIN);
+ 2ec:	59 98       	cbi	0x0b, 1	; 11
+			COILDPORT &= ~(1<<COILDPIN);
+ 2ee:	58 98       	cbi	0x0b, 0	; 11
+			break;
+ 2f0:	08 95       	ret
+		case 1:
+			COILAPORT |= (1<<COILAPIN);
+ 2f2:	eb e0       	ldi	r30, 0x0B	; 11
+ 2f4:	f1 e0       	ldi	r31, 0x01	; 1
+ 2f6:	80 81       	ld	r24, Z
+ 2f8:	80 68       	ori	r24, 0x80	; 128
+ 2fa:	80 83       	st	Z, r24
+			COILBPORT |= (1<<COILBPIN);
+ 2fc:	80 81       	ld	r24, Z
+ 2fe:	80 64       	ori	r24, 0x40	; 64
+ 300:	80 83       	st	Z, r24
+			COILCPORT &= ~(1<<COILCPIN);
+ 302:	59 98       	cbi	0x0b, 1	; 11
+			COILDPORT &= ~(1<<COILDPIN);
+ 304:	58 98       	cbi	0x0b, 0	; 11
+			break;
+ 306:	08 95       	ret
+		case 2:
+			COILAPORT &= ~(1<<COILAPIN);
+ 308:	eb e0       	ldi	r30, 0x0B	; 11
+ 30a:	f1 e0       	ldi	r31, 0x01	; 1
+ 30c:	80 81       	ld	r24, Z
+ 30e:	8f 77       	andi	r24, 0x7F	; 127
+ 310:	80 83       	st	Z, r24
+			COILBPORT |= (1<<COILBPIN);
+ 312:	80 81       	ld	r24, Z
+ 314:	80 64       	ori	r24, 0x40	; 64
+ 316:	80 83       	st	Z, r24
+			COILCPORT &= ~(1<<COILCPIN);
+ 318:	59 98       	cbi	0x0b, 1	; 11
+			COILDPORT &= ~(1<<COILDPIN);
+ 31a:	58 98       	cbi	0x0b, 0	; 11
+			break;
+ 31c:	08 95       	ret
+		case 3:
+			COILAPORT &= ~(1<<COILAPIN);
+ 31e:	eb e0       	ldi	r30, 0x0B	; 11
+ 320:	f1 e0       	ldi	r31, 0x01	; 1
+ 322:	80 81       	ld	r24, Z
+ 324:	8f 77       	andi	r24, 0x7F	; 127
+ 326:	80 83       	st	Z, r24
+			COILBPORT |= (1<<COILBPIN);
+ 328:	80 81       	ld	r24, Z
+ 32a:	80 64       	ori	r24, 0x40	; 64
+ 32c:	80 83       	st	Z, r24
+			COILCPORT |= (1<<COILCPIN);
+ 32e:	59 9a       	sbi	0x0b, 1	; 11
+			COILDPORT &= ~(1<<COILDPIN);
+ 330:	58 98       	cbi	0x0b, 0	; 11
+			break;
+ 332:	08 95       	ret
+		case 4:
+			COILAPORT &= ~(1<<COILAPIN);
+ 334:	eb e0       	ldi	r30, 0x0B	; 11
+ 336:	f1 e0       	ldi	r31, 0x01	; 1
+ 338:	80 81       	ld	r24, Z
+ 33a:	8f 77       	andi	r24, 0x7F	; 127
+ 33c:	80 83       	st	Z, r24
+			COILBPORT &= ~(1<<COILBPIN);
+ 33e:	80 81       	ld	r24, Z
+ 340:	8f 7b       	andi	r24, 0xBF	; 191
+ 342:	80 83       	st	Z, r24
+			COILCPORT |= (1<<COILCPIN);
+ 344:	59 9a       	sbi	0x0b, 1	; 11
+			COILDPORT &= ~(1<<COILDPIN);
+ 346:	58 98       	cbi	0x0b, 0	; 11
+			break;
+ 348:	08 95       	ret
+		case 5:
+			COILAPORT &= ~(1<<COILAPIN);
+ 34a:	eb e0       	ldi	r30, 0x0B	; 11
+ 34c:	f1 e0       	ldi	r31, 0x01	; 1
+ 34e:	80 81       	ld	r24, Z
+ 350:	8f 77       	andi	r24, 0x7F	; 127
+ 352:	80 83       	st	Z, r24
+			COILBPORT &= ~(1<<COILBPIN);
+ 354:	80 81       	ld	r24, Z
+ 356:	8f 7b       	andi	r24, 0xBF	; 191
+ 358:	80 83       	st	Z, r24
+			COILCPORT |= (1<<COILCPIN);
+ 35a:	59 9a       	sbi	0x0b, 1	; 11
+			COILDPORT |= (1<<COILDPIN);
+ 35c:	58 9a       	sbi	0x0b, 0	; 11
+			break;
+ 35e:	08 95       	ret
+		case 6:
+			COILAPORT &= ~(1<<COILAPIN);
+ 360:	eb e0       	ldi	r30, 0x0B	; 11
+ 362:	f1 e0       	ldi	r31, 0x01	; 1
+ 364:	80 81       	ld	r24, Z
+ 366:	8f 77       	andi	r24, 0x7F	; 127
+ 368:	80 83       	st	Z, r24
+			COILBPORT &= ~(1<<COILBPIN);
+ 36a:	80 81       	ld	r24, Z
+ 36c:	8f 7b       	andi	r24, 0xBF	; 191
+ 36e:	80 83       	st	Z, r24
+			COILCPORT &= ~(1<<COILCPIN);
+ 370:	59 98       	cbi	0x0b, 1	; 11
+			COILDPORT |= (1<<COILDPIN);
+ 372:	58 9a       	sbi	0x0b, 0	; 11
+			break;
+ 374:	08 95       	ret
+		case 7:
+			COILAPORT |= (1<<COILAPIN);
+ 376:	eb e0       	ldi	r30, 0x0B	; 11
+ 378:	f1 e0       	ldi	r31, 0x01	; 1
+ 37a:	80 81       	ld	r24, Z
+ 37c:	80 68       	ori	r24, 0x80	; 128
+ 37e:	80 83       	st	Z, r24
+			COILBPORT &= ~(1<<COILBPIN);
+ 380:	80 81       	ld	r24, Z
+ 382:	8f 7b       	andi	r24, 0xBF	; 191
+ 384:	80 83       	st	Z, r24
+			COILCPORT &= ~(1<<COILCPIN);
+ 386:	59 98       	cbi	0x0b, 1	; 11
+			COILDPORT |= (1<<COILDPIN);
+ 388:	58 9a       	sbi	0x0b, 0	; 11
+ 38a:	08 95       	ret
+
+0000038c <__vector_17>:
+#include "stepper.h"
+
+volatile int stepcount = 0;
+volatile short direction = 1;
+ISR (TIMER1_COMPA_vect)
+{
+ 38c:	1f 92       	push	r1
+ 38e:	0f 92       	push	r0
+ 390:	0f b6       	in	r0, 0x3f	; 63
+ 392:	0f 92       	push	r0
+ 394:	0b b6       	in	r0, 0x3b	; 59
+ 396:	0f 92       	push	r0
+ 398:	11 24       	eor	r1, r1
+ 39a:	2f 93       	push	r18
+ 39c:	3f 93       	push	r19
+ 39e:	4f 93       	push	r20
+ 3a0:	5f 93       	push	r21
+ 3a2:	6f 93       	push	r22
+ 3a4:	7f 93       	push	r23
+ 3a6:	8f 93       	push	r24
+ 3a8:	9f 93       	push	r25
+ 3aa:	af 93       	push	r26
+ 3ac:	bf 93       	push	r27
+ 3ae:	ef 93       	push	r30
+ 3b0:	ff 93       	push	r31
+	wave_step(direction);
+ 3b2:	80 91 00 02 	lds	r24, 0x0200
+ 3b6:	90 91 01 02 	lds	r25, 0x0201
+ 3ba:	0e 94 9e 00 	call	0x13c	; 0x13c <wave_step>
+	stepcount++;
+ 3be:	80 91 08 02 	lds	r24, 0x0208
+ 3c2:	90 91 09 02 	lds	r25, 0x0209
+ 3c6:	01 96       	adiw	r24, 0x01	; 1
+ 3c8:	90 93 09 02 	sts	0x0209, r25
+ 3cc:	80 93 08 02 	sts	0x0208, r24
+	if(stepcount > 200)
+ 3d0:	80 91 08 02 	lds	r24, 0x0208
+ 3d4:	90 91 09 02 	lds	r25, 0x0209
+ 3d8:	89 3c       	cpi	r24, 0xC9	; 201
+ 3da:	91 05       	cpc	r25, r1
+ 3dc:	7c f0       	brlt	.+30     	; 0x3fc <__vector_17+0x70>
+	{
+		direction *= -1;
+ 3de:	80 91 00 02 	lds	r24, 0x0200
+ 3e2:	90 91 01 02 	lds	r25, 0x0201
+ 3e6:	90 95       	com	r25
+ 3e8:	81 95       	neg	r24
+ 3ea:	9f 4f       	sbci	r25, 0xFF	; 255
+ 3ec:	90 93 01 02 	sts	0x0201, r25
+ 3f0:	80 93 00 02 	sts	0x0200, r24
+		stepcount = 0;
+ 3f4:	10 92 09 02 	sts	0x0209, r1
+ 3f8:	10 92 08 02 	sts	0x0208, r1
+	}
+}
+ 3fc:	ff 91       	pop	r31
+ 3fe:	ef 91       	pop	r30
+ 400:	bf 91       	pop	r27
+ 402:	af 91       	pop	r26
+ 404:	9f 91       	pop	r25
+ 406:	8f 91       	pop	r24
+ 408:	7f 91       	pop	r23
+ 40a:	6f 91       	pop	r22
+ 40c:	5f 91       	pop	r21
+ 40e:	4f 91       	pop	r20
+ 410:	3f 91       	pop	r19
+ 412:	2f 91       	pop	r18
+ 414:	0f 90       	pop	r0
+ 416:	0b be       	out	0x3b, r0	; 59
+ 418:	0f 90       	pop	r0
+ 41a:	0f be       	out	0x3f, r0	; 63
+ 41c:	0f 90       	pop	r0
+ 41e:	1f 90       	pop	r1
+ 420:	18 95       	reti
+
+00000422 <main>:
+
+int main(void)
+{
+	stepper_port_init();
+ 422:	0e 94 95 00 	call	0x12a	; 0x12a <stepper_port_init>
+	
+	cli(); //Clear global interrupts
+ 426:	f8 94       	cli
+	TCCR1B |= (1 << WGM12); //CTC mode (WGM13:0 = 0100)
+ 428:	e1 e8       	ldi	r30, 0x81	; 129
+ 42a:	f0 e0       	ldi	r31, 0x00	; 0
+ 42c:	80 81       	ld	r24, Z
+ 42e:	88 60       	ori	r24, 0x08	; 8
+ 430:	80 83       	st	Z, r24
+	TIMSK1 |= (1 << OCIE1A); //Enable CTC interrupt
+ 432:	af e6       	ldi	r26, 0x6F	; 111
+ 434:	b0 e0       	ldi	r27, 0x00	; 0
+ 436:	8c 91       	ld	r24, X
+ 438:	82 60       	ori	r24, 0x02	; 2
+ 43a:	8c 93       	st	X, r24
+	sei(); //Enable global interrupts
+ 43c:	78 94       	sei
+
+	OCR1A = (F_CPU / SPEED) - 1; //Set TOP
+ 43e:	8f ef       	ldi	r24, 0xFF	; 255
+ 440:	9f eb       	ldi	r25, 0xBF	; 191
+ 442:	90 93 89 00 	sts	0x0089, r25
+ 446:	80 93 88 00 	sts	0x0088, r24
+	
+	//Prescalar = 1
+    TCCR1B |= ((0 << CS12) | (0 << CS11) | (1 << CS10));
+ 44a:	80 81       	ld	r24, Z
+ 44c:	81 60       	ori	r24, 0x01	; 1
+ 44e:	80 83       	st	Z, r24
+ 450:	ff cf       	rjmp	.-2      	; 0x450 <main+0x2e>
+
+00000452 <__divmodhi4>:
+ 452:	97 fb       	bst	r25, 7
+ 454:	09 2e       	mov	r0, r25
+ 456:	07 26       	eor	r0, r23
+ 458:	0a d0       	rcall	.+20     	; 0x46e <__divmodhi4_neg1>
+ 45a:	77 fd       	sbrc	r23, 7
+ 45c:	04 d0       	rcall	.+8      	; 0x466 <__divmodhi4_neg2>
+ 45e:	0c d0       	rcall	.+24     	; 0x478 <__udivmodhi4>
+ 460:	06 d0       	rcall	.+12     	; 0x46e <__divmodhi4_neg1>
+ 462:	00 20       	and	r0, r0
+ 464:	1a f4       	brpl	.+6      	; 0x46c <__divmodhi4_exit>
+
+00000466 <__divmodhi4_neg2>:
+ 466:	70 95       	com	r23
+ 468:	61 95       	neg	r22
+ 46a:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000046c <__divmodhi4_exit>:
+ 46c:	08 95       	ret
+
+0000046e <__divmodhi4_neg1>:
+ 46e:	f6 f7       	brtc	.-4      	; 0x46c <__divmodhi4_exit>
+ 470:	90 95       	com	r25
+ 472:	81 95       	neg	r24
+ 474:	9f 4f       	sbci	r25, 0xFF	; 255
+ 476:	08 95       	ret
+
+00000478 <__udivmodhi4>:
+ 478:	aa 1b       	sub	r26, r26
+ 47a:	bb 1b       	sub	r27, r27
+ 47c:	51 e1       	ldi	r21, 0x11	; 17
+ 47e:	07 c0       	rjmp	.+14     	; 0x48e <__udivmodhi4_ep>
+
+00000480 <__udivmodhi4_loop>:
+ 480:	aa 1f       	adc	r26, r26
+ 482:	bb 1f       	adc	r27, r27
+ 484:	a6 17       	cp	r26, r22
+ 486:	b7 07       	cpc	r27, r23
+ 488:	10 f0       	brcs	.+4      	; 0x48e <__udivmodhi4_ep>
+ 48a:	a6 1b       	sub	r26, r22
+ 48c:	b7 0b       	sbc	r27, r23
+
+0000048e <__udivmodhi4_ep>:
+ 48e:	88 1f       	adc	r24, r24
+ 490:	99 1f       	adc	r25, r25
+ 492:	5a 95       	dec	r21
+ 494:	a9 f7       	brne	.-22     	; 0x480 <__udivmodhi4_loop>
+ 496:	80 95       	com	r24
+ 498:	90 95       	com	r25
+ 49a:	bc 01       	movw	r22, r24
+ 49c:	cd 01       	movw	r24, r26
+ 49e:	08 95       	ret
+
+000004a0 <_exit>:
+ 4a0:	f8 94       	cli
+
+000004a2 <__stop_program>:
+ 4a2:	ff cf       	rjmp	.-2      	; 0x4a2 <__stop_program>

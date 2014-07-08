@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "StepperControl", "StepperControl\StepperControl.cproj", "{0F006EEC-1E50-47F3-B8EC-69A02D067F93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F006EEC-1E50-47F3-B8EC-69A02D067F93}.Debug|AVR.ActiveCfg = Debug|AVR
+		{0F006EEC-1E50-47F3-B8EC-69A02D067F93}.Debug|AVR.Build.0 = Debug|AVR
+		{0F006EEC-1E50-47F3-B8EC-69A02D067F93}.Release|AVR.ActiveCfg = Release|AVR
+		{0F006EEC-1E50-47F3-B8EC-69A02D067F93}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ServoControl", "ServoControl\ServoControl.cproj", "{B2C20D3B-B08A-42D8-8DB5-DDF559D934FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2C20D3B-B08A-42D8-8DB5-DDF559D934FA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B2C20D3B-B08A-42D8-8DB5-DDF559D934FA}.Debug|AVR.Build.0 = Debug|AVR
+		{B2C20D3B-B08A-42D8-8DB5-DDF559D934FA}.Release|AVR.ActiveCfg = Release|AVR
+		{B2C20D3B-B08A-42D8-8DB5-DDF559D934FA}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

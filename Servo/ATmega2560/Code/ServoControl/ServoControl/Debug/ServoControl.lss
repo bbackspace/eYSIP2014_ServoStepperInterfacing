@@ -1,0 +1,699 @@
+
+ServoControl.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000452  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000010  00800200  00800200  000004c6  2**0
+                  ALLOC
+  2 .stab         000006e4  00000000  00000000  000004c8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000bac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000c38  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000878  00000000  00000000  00000cb8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001b0  00000000  00000000  00001530  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000040c  00000000  00000000  000016e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000218  00000000  00000000  00001aec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000032c  00000000  00000000  00001d04  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000310  00000000  00000000  00002030  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+   4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  10:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  14:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  18:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  1c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  20:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  24:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  28:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  2c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  30:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  34:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  38:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  3c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  40:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  44:	0c 94 c9 00 	jmp	0x192	; 0x192 <__vector_17>
+  48:	0c 94 fb 00 	jmp	0x1f6	; 0x1f6 <__vector_18>
+  4c:	0c 94 27 01 	jmp	0x24e	; 0x24e <__vector_19>
+  50:	0c 94 31 01 	jmp	0x262	; 0x262 <__vector_20>
+  54:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  58:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  5c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  60:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  64:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  68:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  6c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  70:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  74:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  78:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  7c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  80:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  84:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  88:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  8c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  90:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  94:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  98:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  9c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  ac:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  bc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  cc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  dc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  e0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	e2 e5       	ldi	r30, 0x52	; 82
+  fc:	f4 e0       	ldi	r31, 0x04	; 4
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	a0 30       	cpi	r26, 0x00	; 0
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+ 10e:	12 e0       	ldi	r17, 0x02	; 2
+ 110:	a0 e0       	ldi	r26, 0x00	; 0
+ 112:	b2 e0       	ldi	r27, 0x02	; 2
+ 114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+ 116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+ 118:	a0 31       	cpi	r26, 0x10	; 16
+ 11a:	b1 07       	cpc	r27, r17
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+ 11e:	0e 94 d6 01 	call	0x3ac	; 0x3ac <main>
+ 122:	0c 94 27 02 	jmp	0x44e	; 0x44e <_exit>
+
+00000126 <__bad_interrupt>:
+ 126:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000012a <servo_pin_config>:
+//--------------------------------------------------------------------------------
+//port initialisation for Servos i/p's
+//--------------------------------------------------------------------------------
+void servo_pin_config (void)
+{
+	DDRB = DDRB | 0x20; //making PORTB 5 pin output
+ 12a:	25 9a       	sbi	0x04, 5	; 4
+	PORTB = PORTB | 0x20; //setting PORTB 5 pin to logic 1
+ 12c:	2d 9a       	sbi	0x05, 5	; 5
+	DDRB = DDRB | 0x40; //making PORTB 6 pin output
+ 12e:	26 9a       	sbi	0x04, 6	; 4
+	PORTB = PORTB | 0x40; //setting PORTB 6 pin to logic 1
+ 130:	2e 9a       	sbi	0x05, 6	; 5
+	DDRB = DDRB | 0x80; //making PORTB 7 pin output
+ 132:	27 9a       	sbi	0x04, 7	; 4
+	PORTB = PORTB | 0x80; //setting PORTB 7 pin to logic 1
+ 134:	2f 9a       	sbi	0x05, 7	; 5
+}
+ 136:	08 95       	ret
+
+00000138 <reset_servo1>:
+
+void reset_servo1 (void)
+{ PORTB = PORTB & 0xDF; }
+ 138:	2d 98       	cbi	0x05, 5	; 5
+ 13a:	08 95       	ret
+
+0000013c <set_servo1>:
+
+void set_servo1 (void)
+{ PORTB = PORTB | 0x20; }
+ 13c:	2d 9a       	sbi	0x05, 5	; 5
+ 13e:	08 95       	ret
+
+00000140 <reset_servo2>:
+
+void reset_servo2 (void)
+{ PORTB = PORTB & 0xBF; }
+ 140:	2e 98       	cbi	0x05, 6	; 5
+ 142:	08 95       	ret
+
+00000144 <set_servo2>:
+
+void set_servo2 (void)
+{ PORTB = PORTB | 0x40; }
+ 144:	2e 9a       	sbi	0x05, 6	; 5
+ 146:	08 95       	ret
+
+00000148 <reset_servo3>:
+
+void reset_servo3 (void)
+{ PORTB = PORTB & 0x7F; }
+ 148:	2f 98       	cbi	0x05, 7	; 5
+ 14a:	08 95       	ret
+
+0000014c <set_servo3>:
+
+void set_servo3 (void)
+{ PORTB = PORTB | 0x80; }
+ 14c:	2f 9a       	sbi	0x05, 7	; 5
+ 14e:	08 95       	ret
+
+00000150 <timer1_init>:
+// desired value: 400Hz
+// actual value: 400.007Hz (0.0%)
+//--------------------------------------------------------------------------------
+void timer1_init(void)
+{
+ TCCR1B = 0x00; //stop
+ 150:	e1 e8       	ldi	r30, 0x81	; 129
+ 152:	f0 e0       	ldi	r31, 0x00	; 0
+ 154:	10 82       	st	Z, r1
+ TCNT1H = 0x70; //setup
+ 156:	80 e7       	ldi	r24, 0x70	; 112
+ 158:	80 93 85 00 	sts	0x0085, r24
+ TCNT1L = 0x01;
+ 15c:	21 e0       	ldi	r18, 0x01	; 1
+ 15e:	20 93 84 00 	sts	0x0084, r18
+ OCR1AH = 0x8F;
+ 162:	9f e8       	ldi	r25, 0x8F	; 143
+ 164:	90 93 89 00 	sts	0x0089, r25
+ OCR1AL = 0xFF;
+ 168:	8f ef       	ldi	r24, 0xFF	; 255
+ 16a:	80 93 88 00 	sts	0x0088, r24
+ OCR1BH = 0x8F;
+ 16e:	90 93 8b 00 	sts	0x008B, r25
+ OCR1BL = 0xFF;
+ 172:	80 93 8a 00 	sts	0x008A, r24
+ OCR1CH = 0x00;
+ 176:	10 92 8d 00 	sts	0x008D, r1
+ OCR1CL = 0x00;
+ 17a:	10 92 8c 00 	sts	0x008C, r1
+ ICR1H  = 0x8F;
+ 17e:	90 93 87 00 	sts	0x0087, r25
+ ICR1L  = 0xFF;
+ 182:	80 93 86 00 	sts	0x0086, r24
+ TCCR1A = 0x00;
+ 186:	10 92 80 00 	sts	0x0080, r1
+ TCCR1C = 0x00;
+ 18a:	10 92 82 00 	sts	0x0082, r1
+ TCCR1B = 0x01; //start Timer
+ 18e:	20 83       	st	Z, r18
+}
+ 190:	08 95       	ret
+
+00000192 <__vector_17>:
+//--------------------------------------------------------------------------------
+// timer1 comparatorA match with timer register ISR,
+// This ISR used for reset servo on set number 
+//--------------------------------------------------------------------------------
+ISR(TIMER1_COMPA_vect)
+{
+ 192:	1f 92       	push	r1
+ 194:	0f 92       	push	r0
+ 196:	0f b6       	in	r0, 0x3f	; 63
+ 198:	0f 92       	push	r0
+ 19a:	0b b6       	in	r0, 0x3b	; 59
+ 19c:	0f 92       	push	r0
+ 19e:	11 24       	eor	r1, r1
+ 1a0:	2f 93       	push	r18
+ 1a2:	3f 93       	push	r19
+ 1a4:	4f 93       	push	r20
+ 1a6:	5f 93       	push	r21
+ 1a8:	6f 93       	push	r22
+ 1aa:	7f 93       	push	r23
+ 1ac:	8f 93       	push	r24
+ 1ae:	9f 93       	push	r25
+ 1b0:	af 93       	push	r26
+ 1b2:	bf 93       	push	r27
+ 1b4:	ef 93       	push	r30
+ 1b6:	ff 93       	push	r31
+ //compare occured TCNT1=OCR1A
+ if (set_number == 0) { reset_servo1(); }
+ 1b8:	80 91 03 02 	lds	r24, 0x0203
+ 1bc:	88 23       	and	r24, r24
+ 1be:	11 f4       	brne	.+4      	; 0x1c4 <__vector_17+0x32>
+ 1c0:	0e 94 9c 00 	call	0x138	; 0x138 <reset_servo1>
+ if (set_number == 1) { reset_servo2(); }
+ 1c4:	80 91 03 02 	lds	r24, 0x0203
+ 1c8:	81 30       	cpi	r24, 0x01	; 1
+ 1ca:	11 f4       	brne	.+4      	; 0x1d0 <__vector_17+0x3e>
+ 1cc:	0e 94 a0 00 	call	0x140	; 0x140 <reset_servo2>
+}
+ 1d0:	ff 91       	pop	r31
+ 1d2:	ef 91       	pop	r30
+ 1d4:	bf 91       	pop	r27
+ 1d6:	af 91       	pop	r26
+ 1d8:	9f 91       	pop	r25
+ 1da:	8f 91       	pop	r24
+ 1dc:	7f 91       	pop	r23
+ 1de:	6f 91       	pop	r22
+ 1e0:	5f 91       	pop	r21
+ 1e2:	4f 91       	pop	r20
+ 1e4:	3f 91       	pop	r19
+ 1e6:	2f 91       	pop	r18
+ 1e8:	0f 90       	pop	r0
+ 1ea:	0b be       	out	0x3b, r0	; 59
+ 1ec:	0f 90       	pop	r0
+ 1ee:	0f be       	out	0x3f, r0	; 63
+ 1f0:	0f 90       	pop	r0
+ 1f2:	1f 90       	pop	r1
+ 1f4:	18 95       	reti
+
+000001f6 <__vector_18>:
+//--------------------------------------------------------------------------------
+// timer1 comparatorB match with timer register ISR,
+// This ISR used for reset servo set number
+//--------------------------------------------------------------------------------
+ISR(TIMER1_COMPB_vect)
+{
+ 1f6:	1f 92       	push	r1
+ 1f8:	0f 92       	push	r0
+ 1fa:	0f b6       	in	r0, 0x3f	; 63
+ 1fc:	0f 92       	push	r0
+ 1fe:	0b b6       	in	r0, 0x3b	; 59
+ 200:	0f 92       	push	r0
+ 202:	11 24       	eor	r1, r1
+ 204:	2f 93       	push	r18
+ 206:	3f 93       	push	r19
+ 208:	4f 93       	push	r20
+ 20a:	5f 93       	push	r21
+ 20c:	6f 93       	push	r22
+ 20e:	7f 93       	push	r23
+ 210:	8f 93       	push	r24
+ 212:	9f 93       	push	r25
+ 214:	af 93       	push	r26
+ 216:	bf 93       	push	r27
+ 218:	ef 93       	push	r30
+ 21a:	ff 93       	push	r31
+ //compare occured TCNT1=OCR1B
+ if (set_number == 0) { reset_servo3(); }
+ 21c:	80 91 03 02 	lds	r24, 0x0203
+ 220:	88 23       	and	r24, r24
+ 222:	11 f4       	brne	.+4      	; 0x228 <__vector_18+0x32>
+ 224:	0e 94 a4 00 	call	0x148	; 0x148 <reset_servo3>
+}
+ 228:	ff 91       	pop	r31
+ 22a:	ef 91       	pop	r30
+ 22c:	bf 91       	pop	r27
+ 22e:	af 91       	pop	r26
+ 230:	9f 91       	pop	r25
+ 232:	8f 91       	pop	r24
+ 234:	7f 91       	pop	r23
+ 236:	6f 91       	pop	r22
+ 238:	5f 91       	pop	r21
+ 23a:	4f 91       	pop	r20
+ 23c:	3f 91       	pop	r19
+ 23e:	2f 91       	pop	r18
+ 240:	0f 90       	pop	r0
+ 242:	0b be       	out	0x3b, r0	; 59
+ 244:	0f 90       	pop	r0
+ 246:	0f be       	out	0x3f, r0	; 63
+ 248:	0f 90       	pop	r0
+ 24a:	1f 90       	pop	r1
+ 24c:	18 95       	reti
+
+0000024e <__vector_19>:
+//--------------------------------------------------------------------------------
+// timer1 comparatorC match with timer register ISR,
+// This ISR used for reset servo set number
+//--------------------------------------------------------------------------------
+ISR(TIMER1_COMPC_vect)
+{
+ 24e:	1f 92       	push	r1
+ 250:	0f 92       	push	r0
+ 252:	0f b6       	in	r0, 0x3f	; 63
+ 254:	0f 92       	push	r0
+ 256:	11 24       	eor	r1, r1
+}
+ 258:	0f 90       	pop	r0
+ 25a:	0f be       	out	0x3f, r0	; 63
+ 25c:	0f 90       	pop	r0
+ 25e:	1f 90       	pop	r1
+ 260:	18 95       	reti
+
+00000262 <__vector_20>:
+// This ISR can be used to load the PWM value. Here each Servo motor is
+// move between 0 to 180 degrees proportional to the pulse ON time between 
+// 0.5 to 2.2 ms with the frequency between 40 to 60 Hz. ie. 400Hz/8 = 50Hz
+//--------------------------------------------------------------------------------
+ISR(TIMER1_OVF_vect)
+{
+ 262:	1f 92       	push	r1
+ 264:	0f 92       	push	r0
+ 266:	0f b6       	in	r0, 0x3f	; 63
+ 268:	0f 92       	push	r0
+ 26a:	0b b6       	in	r0, 0x3b	; 59
+ 26c:	0f 92       	push	r0
+ 26e:	11 24       	eor	r1, r1
+ 270:	2f 93       	push	r18
+ 272:	3f 93       	push	r19
+ 274:	4f 93       	push	r20
+ 276:	5f 93       	push	r21
+ 278:	6f 93       	push	r22
+ 27a:	7f 93       	push	r23
+ 27c:	8f 93       	push	r24
+ 27e:	9f 93       	push	r25
+ 280:	af 93       	push	r26
+ 282:	bf 93       	push	r27
+ 284:	ef 93       	push	r30
+ 286:	ff 93       	push	r31
+ //TIMER1 has overflowed
+ TCNT1H = 0x70; //reload counter high value	for 400Hz	
+ 288:	80 e7       	ldi	r24, 0x70	; 112
+ 28a:	80 93 85 00 	sts	0x0085, r24
+ TCNT1L = 0x01; //reload counter low value for 400Hz
+ 28e:	81 e0       	ldi	r24, 0x01	; 1
+ 290:	80 93 84 00 	sts	0x0084, r24
+
+ set_number ++;
+ 294:	80 91 03 02 	lds	r24, 0x0203
+ 298:	8f 5f       	subi	r24, 0xFF	; 255
+ 29a:	80 93 03 02 	sts	0x0203, r24
+
+ if (set_number>7)     				// 400Hz/8 = 50Hz
+ 29e:	88 30       	cpi	r24, 0x08	; 8
+ 2a0:	18 f0       	brcs	.+6      	; 0x2a8 <__vector_20+0x46>
+ {
+  	set_number = 0;
+ 2a2:	10 92 03 02 	sts	0x0203, r1
+ 2a6:	02 c0       	rjmp	.+4      	; 0x2ac <__vector_20+0x4a>
+ }
+
+ if (set_number == 0)               // 1st set of servo motor
+ 2a8:	88 23       	and	r24, r24
+ 2aa:	a1 f4       	brne	.+40     	; 0x2d4 <__vector_20+0x72>
+ {
+  set_servo1(); 
+ 2ac:	0e 94 9e 00 	call	0x13c	; 0x13c <set_servo1>
+  set_servo3(); 
+ 2b0:	0e 94 a6 00 	call	0x14c	; 0x14c <set_servo3>
+  OCR1AH = angle_upper_byte_servo2;
+ 2b4:	80 91 0d 02 	lds	r24, 0x020D
+ 2b8:	80 93 89 00 	sts	0x0089, r24
+  OCR1AL = angle_lower_byte_servo2;
+ 2bc:	80 91 0c 02 	lds	r24, 0x020C
+ 2c0:	80 93 88 00 	sts	0x0088, r24
+  OCR1BH = angle_upper_byte_servo4;
+ 2c4:	80 91 04 02 	lds	r24, 0x0204
+ 2c8:	80 93 8b 00 	sts	0x008B, r24
+  OCR1BL = angle_lower_byte_servo4;
+ 2cc:	80 91 06 02 	lds	r24, 0x0206
+ 2d0:	80 93 8a 00 	sts	0x008A, r24
+ }
+ 
+ if (set_number == 1)               // 2nd set of servo motor   
+ 2d4:	80 91 03 02 	lds	r24, 0x0203
+ 2d8:	81 30       	cpi	r24, 0x01	; 1
+ 2da:	51 f4       	brne	.+20     	; 0x2f0 <__vector_20+0x8e>
+ {
+  set_servo2(); 
+ 2dc:	0e 94 a2 00 	call	0x144	; 0x144 <set_servo2>
+  OCR1AH = angle_upper_byte_servo3;
+ 2e0:	80 91 05 02 	lds	r24, 0x0205
+ 2e4:	80 93 89 00 	sts	0x0089, r24
+  OCR1AL = angle_lower_byte_servo3;
+ 2e8:	80 91 0e 02 	lds	r24, 0x020E
+ 2ec:	80 93 88 00 	sts	0x0088, r24
+ }
+
+}
+ 2f0:	ff 91       	pop	r31
+ 2f2:	ef 91       	pop	r30
+ 2f4:	bf 91       	pop	r27
+ 2f6:	af 91       	pop	r26
+ 2f8:	9f 91       	pop	r25
+ 2fa:	8f 91       	pop	r24
+ 2fc:	7f 91       	pop	r23
+ 2fe:	6f 91       	pop	r22
+ 300:	5f 91       	pop	r21
+ 302:	4f 91       	pop	r20
+ 304:	3f 91       	pop	r19
+ 306:	2f 91       	pop	r18
+ 308:	0f 90       	pop	r0
+ 30a:	0b be       	out	0x3b, r0	; 59
+ 30c:	0f 90       	pop	r0
+ 30e:	0f be       	out	0x3f, r0	; 63
+ 310:	0f 90       	pop	r0
+ 312:	1f 90       	pop	r1
+ 314:	18 95       	reti
+
+00000316 <angle_value_calculation>:
+//--------------------------------------------------------------------------------
+void angle_value_calculation (void)
+{
+ unsigned int angle_value = 0;
+ unsigned int temp = 0;
+ if (degree > 180)
+ 316:	80 91 00 02 	lds	r24, 0x0200
+ 31a:	85 3b       	cpi	r24, 0xB5	; 181
+ 31c:	18 f0       	brcs	.+6      	; 0x324 <angle_value_calculation+0xe>
+ degree = 180; // limiting the scope of the servo rotation
+ 31e:	84 eb       	ldi	r24, 0xB4	; 180
+ 320:	80 93 00 02 	sts	0x0200, r24
+ 
+ angle_value = 0x8FAE + (139 * (unsigned char) degree); //actual constant is 139.4
+ 324:	40 91 00 02 	lds	r20, 0x0200
+ 328:	50 e0       	ldi	r21, 0x00	; 0
+ 32a:	2b e8       	ldi	r18, 0x8B	; 139
+ 32c:	30 e0       	ldi	r19, 0x00	; 0
+ 32e:	42 9f       	mul	r20, r18
+ 330:	c0 01       	movw	r24, r0
+ 332:	43 9f       	mul	r20, r19
+ 334:	90 0d       	add	r25, r0
+ 336:	52 9f       	mul	r21, r18
+ 338:	90 0d       	add	r25, r0
+ 33a:	11 24       	eor	r1, r1
+ 33c:	82 55       	subi	r24, 0x52	; 82
+ 33e:	90 47       	sbci	r25, 0x70	; 112
+ angle_lower_byte = (unsigned char) angle_value;        //separating the lower byte
+ 340:	80 93 01 02 	sts	0x0201, r24
+ 
+ temp = angle_value >> 8;
+ angle_upper_byte = (unsigned char) temp;               //separating the upper byte
+ 344:	90 93 02 02 	sts	0x0202, r25
+}
+ 348:	08 95       	ret
+
+0000034a <angle_servo1>:
+// store into respective variables. 
+//--------------------------------------------------------------------------------
+
+void angle_servo1 (unsigned char angle)                // for servo2 
+{
+ degree = angle;
+ 34a:	80 93 00 02 	sts	0x0200, r24
+ angle_value_calculation();
+ 34e:	0e 94 8b 01 	call	0x316	; 0x316 <angle_value_calculation>
+ angle_upper_byte_servo2 = angle_upper_byte;
+ 352:	80 91 02 02 	lds	r24, 0x0202
+ 356:	80 93 0d 02 	sts	0x020D, r24
+ angle_lower_byte_servo2 = angle_lower_byte;
+ 35a:	80 91 01 02 	lds	r24, 0x0201
+ 35e:	80 93 0c 02 	sts	0x020C, r24
+}
+ 362:	08 95       	ret
+
+00000364 <angle_servo2>:
+
+void angle_servo2 (unsigned char angle)                // for servo3 
+{
+ degree = angle;
+ 364:	80 93 00 02 	sts	0x0200, r24
+ angle_value_calculation();
+ 368:	0e 94 8b 01 	call	0x316	; 0x316 <angle_value_calculation>
+ angle_upper_byte_servo3 = angle_upper_byte;
+ 36c:	80 91 02 02 	lds	r24, 0x0202
+ 370:	80 93 05 02 	sts	0x0205, r24
+ angle_lower_byte_servo3 = angle_lower_byte;
+ 374:	80 91 01 02 	lds	r24, 0x0201
+ 378:	80 93 0e 02 	sts	0x020E, r24
+}
+ 37c:	08 95       	ret
+
+0000037e <angle_servo3>:
+
+void angle_servo3 (unsigned char angle)                // for servo4 
+{
+ degree = angle;
+ 37e:	80 93 00 02 	sts	0x0200, r24
+ angle_value_calculation();
+ 382:	0e 94 8b 01 	call	0x316	; 0x316 <angle_value_calculation>
+ angle_upper_byte_servo4 = angle_upper_byte;
+ 386:	80 91 02 02 	lds	r24, 0x0202
+ 38a:	80 93 04 02 	sts	0x0204, r24
+ angle_lower_byte_servo4 = angle_lower_byte;
+ 38e:	80 91 01 02 	lds	r24, 0x0201
+ 392:	80 93 06 02 	sts	0x0206, r24
+}
+ 396:	08 95       	ret
+
+00000398 <init_devices>:
+//call this routine to initialize all peripherals
+//--------------------------------------------------------------------------------
+void init_devices(void)
+{
+ //stop errant interrupts until set up
+ cli();                                // disable all interrupts
+ 398:	f8 94       	cli
+
+ servo_pin_config();                   // servo configuration 
+ 39a:	0e 94 95 00 	call	0x12a	; 0x12a <servo_pin_config>
+ timer1_init();                        // initilize timer1
+ 39e:	0e 94 a8 00 	call	0x150	; 0x150 <timer1_init>
+
+ TIMSK1 = 0x0F;                        // timer1 interrupt sources
+ 3a2:	8f e0       	ldi	r24, 0x0F	; 15
+ 3a4:	80 93 6f 00 	sts	0x006F, r24
+ 
+ sei(); //re-enable interrupts
+ 3a8:	78 94       	sei
+ //all peripherals are now initialized
+}
+ 3aa:	08 95       	ret
+
+000003ac <main>:
+//--------------------------------------------------------------------------------
+//main fuction starts here
+//--------------------------------------------------------------------------------
+int main(void) 
+{
+ init_devices();
+ 3ac:	0e 94 cc 01 	call	0x398	; 0x398 <init_devices>
+
+//initilise all servo with zero degree calibration
+ angle_servo1(0);
+ 3b0:	80 e0       	ldi	r24, 0x00	; 0
+ 3b2:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ angle_servo2(0);
+ 3b6:	80 e0       	ldi	r24, 0x00	; 0
+ 3b8:	0e 94 b2 01 	call	0x364	; 0x364 <angle_servo2>
+ angle_servo3(0);
+ 3bc:	80 e0       	ldi	r24, 0x00	; 0
+ 3be:	0e 94 bf 01 	call	0x37e	; 0x37e <angle_servo3>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3c2:	8f ef       	ldi	r24, 0xFF	; 255
+ 3c4:	9f ef       	ldi	r25, 0xFF	; 255
+ 3c6:	a9 e5       	ldi	r26, 0x59	; 89
+ 3c8:	81 50       	subi	r24, 0x01	; 1
+ 3ca:	90 40       	sbci	r25, 0x00	; 0
+ 3cc:	a0 40       	sbci	r26, 0x00	; 0
+ 3ce:	e1 f7       	brne	.-8      	; 0x3c8 <main+0x1c>
+ 3d0:	00 c0       	rjmp	.+0      	; 0x3d2 <main+0x26>
+ 3d2:	00 00       	nop
+ _delay_ms(2000);       // delay of 6sec
+ 
+ while(1)
+ {
+ // demo calls for testing
+ angle_servo1(0);
+ 3d4:	80 e0       	ldi	r24, 0x00	; 0
+ 3d6:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ 3da:	8f ef       	ldi	r24, 0xFF	; 255
+ 3dc:	9f ef       	ldi	r25, 0xFF	; 255
+ 3de:	ac e2       	ldi	r26, 0x2C	; 44
+ 3e0:	81 50       	subi	r24, 0x01	; 1
+ 3e2:	90 40       	sbci	r25, 0x00	; 0
+ 3e4:	a0 40       	sbci	r26, 0x00	; 0
+ 3e6:	e1 f7       	brne	.-8      	; 0x3e0 <main+0x34>
+ 3e8:	00 c0       	rjmp	.+0      	; 0x3ea <main+0x3e>
+ 3ea:	00 00       	nop
+ _delay_ms(1000);
+ angle_servo1(45);
+ 3ec:	8d e2       	ldi	r24, 0x2D	; 45
+ 3ee:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ 3f2:	8f ef       	ldi	r24, 0xFF	; 255
+ 3f4:	9f ef       	ldi	r25, 0xFF	; 255
+ 3f6:	ac e2       	ldi	r26, 0x2C	; 44
+ 3f8:	81 50       	subi	r24, 0x01	; 1
+ 3fa:	90 40       	sbci	r25, 0x00	; 0
+ 3fc:	a0 40       	sbci	r26, 0x00	; 0
+ 3fe:	e1 f7       	brne	.-8      	; 0x3f8 <main+0x4c>
+ 400:	00 c0       	rjmp	.+0      	; 0x402 <main+0x56>
+ 402:	00 00       	nop
+ _delay_ms(1000);
+ angle_servo1(90);
+ 404:	8a e5       	ldi	r24, 0x5A	; 90
+ 406:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ 40a:	8f ef       	ldi	r24, 0xFF	; 255
+ 40c:	9f ef       	ldi	r25, 0xFF	; 255
+ 40e:	ac e2       	ldi	r26, 0x2C	; 44
+ 410:	81 50       	subi	r24, 0x01	; 1
+ 412:	90 40       	sbci	r25, 0x00	; 0
+ 414:	a0 40       	sbci	r26, 0x00	; 0
+ 416:	e1 f7       	brne	.-8      	; 0x410 <main+0x64>
+ 418:	00 c0       	rjmp	.+0      	; 0x41a <main+0x6e>
+ 41a:	00 00       	nop
+ _delay_ms(1000);
+ angle_servo1(135);
+ 41c:	87 e8       	ldi	r24, 0x87	; 135
+ 41e:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ 422:	8f ef       	ldi	r24, 0xFF	; 255
+ 424:	9f ef       	ldi	r25, 0xFF	; 255
+ 426:	ac e2       	ldi	r26, 0x2C	; 44
+ 428:	81 50       	subi	r24, 0x01	; 1
+ 42a:	90 40       	sbci	r25, 0x00	; 0
+ 42c:	a0 40       	sbci	r26, 0x00	; 0
+ 42e:	e1 f7       	brne	.-8      	; 0x428 <main+0x7c>
+ 430:	00 c0       	rjmp	.+0      	; 0x432 <main+0x86>
+ 432:	00 00       	nop
+ _delay_ms(1000);
+ angle_servo1(180);
+ 434:	84 eb       	ldi	r24, 0xB4	; 180
+ 436:	0e 94 a5 01 	call	0x34a	; 0x34a <angle_servo1>
+ 43a:	8f ef       	ldi	r24, 0xFF	; 255
+ 43c:	9f ef       	ldi	r25, 0xFF	; 255
+ 43e:	ac e2       	ldi	r26, 0x2C	; 44
+ 440:	81 50       	subi	r24, 0x01	; 1
+ 442:	90 40       	sbci	r25, 0x00	; 0
+ 444:	a0 40       	sbci	r26, 0x00	; 0
+ 446:	e1 f7       	brne	.-8      	; 0x440 <main+0x94>
+ 448:	00 c0       	rjmp	.+0      	; 0x44a <main+0x9e>
+ 44a:	00 00       	nop
+ 44c:	c3 cf       	rjmp	.-122    	; 0x3d4 <main+0x28>
+
+0000044e <_exit>:
+ 44e:	f8 94       	cli
+
+00000450 <__stop_program>:
+ 450:	ff cf       	rjmp	.-2      	; 0x450 <__stop_program>
