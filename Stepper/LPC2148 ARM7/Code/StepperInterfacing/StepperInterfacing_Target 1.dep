@@ -1,0 +1,6 @@
+Dependencies for Project 'StepperInterfacing', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x532C14EA)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I "E:\Program Files\Keil\ARM\RV31\INC"-I "E:\Program Files\Keil\ARM\CMSIS\Include"-I "E:\Program Files\Keil\ARM\Inc\Philips"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\main.c)(0x53BABD87)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I "E:\Program Files\Keil\ARM\RV31\INC"-I "E:\Program Files\Keil\ARM\CMSIS\Include"-I "E:\Program Files\Keil\ARM\Inc\Philips"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (E:\Program Files\Keil\ARM\Inc\Philips\lpc214x.h)(0x532C1500)
+I (stepper.h)(0x53BA878D)
+F (.\stepper.h)(0x53BA878D)()
