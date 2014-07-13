@@ -1,0 +1,35 @@
+Video Tutorials
+---------------
+
+Stepper Motor Interfacing with Firebird V ATmega2560
+http://youtu.be/WLLNnNlKZlU
+
+Stepper Motor Interfacing with Firebird V LPC2148
+http://youtu.be/8iwkmTE15i4
+
+Servo Motor Interfacing with Firebird V ATmega2560
+http://youtu.be/2hvqfzxHq-c
+
+Servo Motor Interfacing with Firebird V LPC2148
+http://youtu.be/Fdfkefu4rLU
+
+Videos of code runs
+-------------------
+
+Interfacing Servo Motor with Firebird V ATmega2560
+https://www.dropbox.com/s/y11lgf9p51oy2hf/Servo%20Control%20ATmega.mp4
+
+Interfacing Stepper Motor with Firebird V ATmega2560
+https://www.dropbox.com/s/0ecw4v71lbk45b8/Stepper%20Control%20ATmega.mp4
+
+Servo Speed Control API example (ATmega2560)
+https://www.dropbox.com/s/evfzl662u1521bv/Servo%20Speed%20Control%20ATmega.mp4
+
+Stepper Speed Control API example (ATmega2560)
+https://www.dropbox.com/s/ev2o7rxok1qff8l/Stepper%20Speed%20Control%20ATmega.mp4
+
+Interfacing Servo Motor with Firebird V LPC2148
+https://www.dropbox.com/s/it7rbv8ourohuxz/LPC2148%20Servo.mp4
+
+Interfacing Stepper Motor with Firebird V LPC2148
+https://www.dropbox.com/s/noizm7n0hg999ix/LPC2148%20Stepper.mp4

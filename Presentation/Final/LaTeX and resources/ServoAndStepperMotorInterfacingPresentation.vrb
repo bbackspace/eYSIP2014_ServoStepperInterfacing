@@ -1,0 +1,10 @@
+\frametitle{Citation}
+An example of the \verb|\cite| command to cite within the presentation:\\~
+
+This statement requires citation \cite{p1}.\\
+Part of this document was taken from \cite{p2} \\
+This document was created using
+\begin{itemize}
+\item MiKTeX -- Latex back-end for Windows \cite{p3}
+\item TeXnicCenter -- IDE for writing Latex code \cite{p4}
+\end{itemize}

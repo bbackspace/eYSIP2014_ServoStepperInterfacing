@@ -1,0 +1,15 @@
+\BOOKMARK [2][]{Outline0.1}{Introduction}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.4}{What is a stepper motor?}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.7}{Types of Stepper Motors}{Outline0.1}% 3
+\BOOKMARK [2][]{Outline0.2}{Controlling a Stepper Motor}{}% 4
+\BOOKMARK [3][]{Outline0.2.1.11}{Stepping sequences}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.2.15}{Wave Stepping}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.3.18}{Full Stepping}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.4.21}{Half Stepping}{Outline0.2}% 8
+\BOOKMARK [3][]{Outline0.2.5.24}{Comparison of stepping modes}{Outline0.2}% 9
+\BOOKMARK [2][]{Outline0.3}{Identifying the wires of a stepper motor}{}% 10
+\BOOKMARK [2][]{Outline0.4}{Stepper Motor Driver}{}% 11
+\BOOKMARK [2][]{Outline0.5}{Interfacing with ATmega2560}{}% 12
+\BOOKMARK [3][]{Outline0.5.1.28}{GPIO pins}{Outline0.5}% 13
+\BOOKMARK [3][]{Outline0.5.2.31}{Timer Configuration}{Outline0.5}% 14
+\BOOKMARK [3][]{Outline0.5.3.37}{Code}{Outline0.5}% 15

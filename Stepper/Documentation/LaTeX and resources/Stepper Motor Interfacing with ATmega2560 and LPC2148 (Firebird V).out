@@ -1,0 +1,16 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Internal Construction}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Variable Reluctance Stepper Motor}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Permanent Magnet Stepper Motors}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Hybrid Stepper Motors}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Operating Principle and Working}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Stepping Modes}{chapter.3}% 7
+\BOOKMARK [2][-]{subsection.3.1.1}{Wave Stepping}{section.3.1}% 8
+\BOOKMARK [2][-]{subsection.3.1.2}{Full Stepping}{section.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.1.3}{Half Stepping}{section.3.1}% 10
+\BOOKMARK [1][-]{section.3.2}{Torque vs. Angular Displacement Characteristics}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{Torque vs. Speed Characteristics}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.4}{Voltage and Current vs. Step rate Characteristics}{chapter.3}% 13
+\BOOKMARK [0][-]{chapter.4}{Interfacing with ATmega2560-based Firebird V}{}% 14
+\BOOKMARK [1][-]{subsection.4.0.1}{Driver Circuit}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Interfacing with LPC2148-based Firebird V}{}% 16

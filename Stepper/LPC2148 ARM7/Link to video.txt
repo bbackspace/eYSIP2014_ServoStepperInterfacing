@@ -1,0 +1,4 @@
+Video tutorial link:
+
+Stepper Motor Interfacing with Firebird V LPC2148
+http://youtu.be/8iwkmTE15i4

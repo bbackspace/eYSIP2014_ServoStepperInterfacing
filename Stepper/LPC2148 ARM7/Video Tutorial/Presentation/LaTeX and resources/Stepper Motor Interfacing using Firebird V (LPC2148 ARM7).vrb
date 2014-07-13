@@ -1,0 +1,21 @@
+\frametitle{Interfacing with LPC2148}
+\framesubtitle{Code (contd.)}
+
+%Now let's have a look at the port intialisation function, stepper(underscore)port(underscore)init. The function starts by setting the PINSEL2 register's bit 3 on and bits 2, 1 and 0 off. Bits 1 and 0 are reserved bits and bit 2 is set to zero to disable the JTAG functionality of the pins to allow us to use them as GPIO pins. The second line sets the four pins as output pins as specified in the #define constants COILAPIN, COILBPIN, COILCPIN and COILDPIN in the register represented by the constant STEPPERPORTDIR which equals IO1DIR, i.e., the port direction register for IO Port1.
+\begin{block}<1->{Port Initialisation}
+\begin{semiverbatim}
+\scriptsize{
+\#define STEPPERPORTDIR IO1DIR
+\#define COILAPIN 26
+\#define COILBPIN 27
+\#define COILCPIN 28
+\#define COILDPIN 29
+void stepper\_port\_init()
+\{
+    PINSEL2 = (PINSEL2 \& 0x8);
+    STEPPERPORTDIR |= (1<<COILAPIN) | (1<<COILBPIN) |
+        (1<<COILCPIN) | (1<<COILDPIN);
+\}
+}
+\end{semiverbatim}
+\end{block}
