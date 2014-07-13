@@ -7,7 +7,6 @@
  * 		 and to reduce current draw. Free servos when not using them
  */ 
 
-typedef enum { false, true } bool;
 #define F_CPU 14745600
 #include <avr/io.h>
 #include <avr/interrupt.h>
