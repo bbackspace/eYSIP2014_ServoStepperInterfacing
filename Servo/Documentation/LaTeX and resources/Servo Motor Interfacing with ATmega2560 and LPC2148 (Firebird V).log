@@ -1,0 +1,947 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.28)  21 JUL 2014 10:09
+entering extended mode
+**Servo*Motor*Interfacing*with*ATmega2560*and*LPC2148*(Firebird*V).tex
+
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ansinew.def"
+File: ansinew.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlepic\titlepic.sty"
+Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
+
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen106
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks18
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks19
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks27
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks28
+\verbatim@line=\toks29
+\verbatim@in@stream=\read1
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\moreverb\moreverb.sty"
+Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
+\tab@position=\count102
+\tab@size=\count103
+\listing@line=\count104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen115
+\extrarowheight=\dimen116
+\NC@list=\toks30
+\extratabsurround=\skip49
+\backup@length=\skip50
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\everycr=\toks31
+\minrowclearance=\skip51
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen117
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen118
+\lightrulewidth=\dimen119
+\cmidrulewidth=\dimen120
+\belowrulesep=\dimen121
+\belowbottomsep=\dimen122
+\aboverulesep=\dimen123
+\abovetopsep=\dimen124
+\cmidrulesep=\dimen125
+\cmidrulekern=\dimen126
+\defaultaddspace=\dimen127
+\@cmidla=\count105
+\@cmidlb=\count106
+\@aboverulesep=\dimen128
+\@belowrulesep=\dimen129
+\@thisruleclass=\count107
+\@lastruleclass=\count108
+\@thisrulewidth=\dimen130
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen131
+\Hy@linkcounter=\count109
+\Hy@pagecounter=\count110
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count111
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count112
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen132
+\Fld@menulength=\count113
+\Field@Width=\dimen133
+\Fld@charsize=\dimen134
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count114
+\c@Item=\count115
+\c@Hfootnote=\count116
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count117
+\c@bookmark@seq@number=\count118
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip52
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 39.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count119
+\scratchdimen=\dimen135
+\scratchbox=\box28
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen136
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks33
+)
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 39.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count125
+)
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
+
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).out")
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).out")
+\@outlinefile=\write3
+LaTeX Info: Redefining \celsius on input line 39.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 39.
+
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 39.
+Package gensymb Info: Using \Omega for \ohm on input line 39.
+
+Package gensymb Warning: Not defining \micro.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 59.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 59.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 59.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 59.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 59.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 59.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<iitblogo.pdf, id=95, 262.9825pt x 257.96375pt>
+File: iitblogo.pdf Graphic file (type pdf)
+ <use iitblogo.pdf>
+Package pdftex.def Info: iitblogo.pdf used on input line 59.
+(pdftex.def)             Requested size: 68.99895pt x 67.68303pt.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <E:/Desktop/E-Yantra SIP'1
+4/eYSIP2014_ServoStepperInterfacing/Servo/Documentation/LaTeX and resources/iit
+blogo.pdf>]
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).toc"
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write4
+ [2
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.86 \end{abstract}
+                    [1
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.101 \chapter
+              {Servo Motors} [2]
+Chapter 1.
+<"Closed loop cs".jpg, id=146, 425.33907pt x 208.52907pt>
+File: "Closed loop cs".jpg Graphic file (type jpg)
+
+<use "Closed loop cs".jpg>
+Package pdftex.def Info: "Closed loop cs".jpg used on input line 109.
+(pdftex.def)             Requested size: 345.0pt x 169.14943pt.
+ [3
+
+ <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documentat
+ion/LaTeX and resources/Closed loop cs.jpg>]
+<"inside servo2 labelled".jpg, id=152, 361.35pt x 265.74281pt>
+File: "inside servo2 labelled".jpg Graphic file (type jpg)
+
+<use "inside servo2 labelled".jpg>
+Package pdftex.def Info: "inside servo2 labelled".jpg used on input line 117.
+(pdftex.def)             Requested size: 345.0pt x 253.71936pt.
+ [4 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documen
+tation/LaTeX and resources/inside servo2 labelled.jpg>] <"pwm signal".jpg, id=1
+58, 383.93437pt x 255.95625pt>
+File: "pwm signal".jpg Graphic file (type jpg)
+
+<use "pwm signal".jpg>
+Package pdftex.def Info: "pwm signal".jpg used on input line 135.
+(pdftex.def)             Requested size: 345.0pt x 230.01479pt.
+ [5 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documen
+tation/LaTeX and resources/pwm signal.jpg>] [6] [7]
+Chapter 2.
+<"servo female connector".png, id=177, 621.07031pt x 732.48656pt>
+File: "servo female connector".png Graphic file (type png)
+
+<use "servo female connector".png>
+Package pdftex.def Info: "servo female connector".png used on input line 155.
+(pdftex.def)             Requested size: 345.0pt x 406.8925pt.
+
+<"servo connectors atmega 2560-1".jpg, id=178, 291.33844pt x 176.91093pt>
+File: "servo connectors atmega 2560-1".jpg Graphic file (type jpg)
+
+<use "servo connectors atmega 2560-1".jpg>
+Package pdftex.def Info: "servo connectors atmega 2560-1".jpg used on input lin
+e 163.
+(pdftex.def)             Requested size: 345.0pt x 209.51163pt.
+
+<"servo connectors atmega 2560-2".jpg, id=179, 303.38344pt x 182.18062pt>
+File: "servo connectors atmega 2560-2".jpg Graphic file (type jpg)
+
+<use "servo connectors atmega 2560-2".jpg>
+Package pdftex.def Info: "servo connectors atmega 2560-2".jpg used on input lin
+e 164.
+(pdftex.def)             Requested size: 345.0pt x 207.17377pt.
+ [8
+
+] [9 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/servo female connector.png>] [10 <E:/Desktop/E-Yant
+ra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documentation/LaTeX and resou
+rces/servo connectors atmega 2560-1.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_
+ServoStepperInterfacing/Servo/Documentation/LaTeX and resources/servo connector
+s atmega 2560-2.jpg>]
+Overfull \hbox (6.58304pt too wide) in paragraph at lines 185--187
+\T1/lmr/m/n/10 which is con-trolled by the Clock Se-lect (CS12:0) bits lo-cated
+ in the Timer/Counter
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+<"TCCR1A".jpg, id=202, 528.47438pt x 71.51718pt>
+File: "TCCR1A".jpg Graphic file (type jpg)
+ <use "TCCR1A".jpg>
+Package pdftex.def Info: "TCCR1A".jpg used on input line 197.
+(pdftex.def)             Requested size: 345.0pt x 46.68748pt.
+
+<"wgm".png, id=203, 818.30719pt x 487.8225pt>
+File: "wgm".png Graphic file (type png)
+ <use "wgm".png>
+Package pdftex.def Info: "wgm".png used on input line 209.
+(pdftex.def)             Requested size: 345.0pt x 205.66562pt.
+ [12 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/TCCR1A.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_S
+ervoStepperInterfacing/Servo/Documentation/LaTeX and resources/wgm.png>]
+Overfull \hbox (6.38805pt too wide) in paragraph at lines 213--214
+[]\T1/lmr/m/n/10 Based on the dif-fer-ent modes of op-er-a-tion of Timer, func-
+tion-al-ity of COM1x1:0
+ []
+
+<"com non pwm".jpg, id=212, 536.0025pt x 140.77594pt>
+File: "com non pwm".jpg Graphic file (type jpg)
+ <use "com non pwm".jpg>
+Package pdftex.def Info: "com non pwm".jpg used on input line 217.
+(pdftex.def)             Requested size: 345.0pt x 90.60966pt.
+
+<"com fast pwm".jpg, id=213, 536.75531pt x 196.48407pt>
+File: "com fast pwm".jpg Graphic file (type jpg)
+
+<use "com fast pwm".jpg>
+Package pdftex.def Info: "com fast pwm".jpg used on input line 223.
+(pdftex.def)             Requested size: 345.0pt x 126.28902pt.
+
+<"com phase pwm".jpg, id=214, 536.75531pt x 194.97844pt>
+File: "com phase pwm".jpg Graphic file (type jpg)
+
+<use "com phase pwm".jpg>
+Package pdftex.def Info: "com phase pwm".jpg used on input line 229.
+(pdftex.def)             Requested size: 345.0pt x 125.32129pt.
+ [13 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/com non pwm.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2
+014_ServoStepperInterfacing/Servo/Documentation/LaTeX and resources/com fast pw
+m.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docu
+mentation/LaTeX and resources/com phase pwm.jpg>]
+<"TCCR1B".jpg, id=222, 478.78876pt x 65.49469pt>
+File: "TCCR1B".jpg Graphic file (type jpg)
+ <use "TCCR1B".jpg>
+Package pdftex.def Info: "TCCR1B".jpg used on input line 237.
+(pdftex.def)             Requested size: 345.0pt x 47.1931pt.
+
+<"CS bits TCCR".jpg, id=223, 537.50812pt x 197.98969pt>
+File: "CS bits TCCR".jpg Graphic file (type jpg)
+
+<use "CS bits TCCR".jpg>
+Package pdftex.def Info: "CS bits TCCR".jpg used on input line 256.
+(pdftex.def)             Requested size: 345.0pt x 127.0785pt.
+ [14 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/TCCR1B.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_S
+ervoStepperInterfacing/Servo/Documentation/LaTeX and resources/CS bits TCCR.jpg
+>] <"TCNT1".jpg, id=230, 523.20468pt x 82.05656pt>
+File: "TCNT1".jpg Graphic file (type jpg)
+
+<use "TCNT1".jpg>
+Package pdftex.def Info: "TCNT1".jpg used on input line 264.
+(pdftex.def)             Requested size: 345.0pt x 54.10866pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--274
+
+ []
+
+<"OCR1A".jpg, id=231, 524.71031pt x 83.5622pt>
+File: "OCR1A".jpg Graphic file (type jpg)
+ <use "OCR1A".jpg>
+Package pdftex.def Info: "OCR1A".jpg used on input line 278.
+(pdftex.def)             Requested size: 345.0pt x 54.94464pt.
+
+<"OCR1B".jpg, id=232, 520.19344pt x 76.03406pt>
+File: "OCR1B".jpg Graphic file (type jpg)
+ <use "OCR1B".jpg>
+Package pdftex.def Info: "OCR1B".jpg used on input line 285.
+(pdftex.def)             Requested size: 345.0pt x 50.42625pt.
+
+<"OCR1C".jpg, id=233, 526.21594pt x 77.53969pt>
+File: "OCR1C".jpg Graphic file (type jpg)
+ <use "OCR1C".jpg>
+Package pdftex.def Info: "OCR1C".jpg used on input line 292.
+(pdftex.def)             Requested size: 345.0pt x 50.83913pt.
+ [15 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/TCNT1.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_Se
+rvoStepperInterfacing/Servo/Documentation/LaTeX and resources/OCR1A.jpg> <E:/De
+sktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documentation/LaT
+eX and resources/OCR1B.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperI
+nterfacing/Servo/Documentation/LaTeX and resources/OCR1C.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+<"ICR1".jpg, id=242, 517.18219pt x 74.52844pt>
+File: "ICR1".jpg Graphic file (type jpg)
+ <use "ICR1".jpg>
+Package pdftex.def Info: "ICR1".jpg used on input line 303.
+(pdftex.def)             Requested size: 345.0pt x 49.71771pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+
+ []
+
+<"TIMSK1".jpg, id=243, 515.67656pt x 57.96657pt>
+File: "TIMSK1".jpg Graphic file (type jpg)
+ <use "TIMSK1".jpg>
+Package pdftex.def Info: "TIMSK1".jpg used on input line 312.
+(pdftex.def)             Requested size: 345.0pt x 38.78166pt.
+ [16 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/ICR1.jpg> <E:/Desktop/E-Yantra SIP'14/eYSIP2014_Ser
+voStepperInterfacing/Servo/Documentation/LaTeX and resources/TIMSK1.jpg>]
+<"timers for pwm".png, id=250, 411.5375pt x 167.62625pt>
+File: "timers for pwm".png Graphic file (type png)
+
+<use "timers for pwm".png>
+Package pdftex.def Info: "timers for pwm".png used on input line 339.
+(pdftex.def)             Requested size: 345.0pt x 140.52371pt.
+ [17 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/timers for pwm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+<"compare-pwm".png, id=259, 324.46219pt x 435.87843pt>
+File: "compare-pwm".png Graphic file (type png)
+ <use "compare-pwm".png>
+Package pdftex.def Info: "compare-pwm".png used on input line 383.
+(pdftex.def)             Requested size: 345.0pt x 463.4988pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 390.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 390.
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--408
+
+ []
+
+[18]
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+ [19 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Docume
+ntation/LaTeX and resources/compare-pwm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+<"phasePWM".png, id=270, 288.07625pt x 602.25pt>
+File: "phasePWM".png Graphic file (type png)
+ <use "phasePWM".png>
+Package pdftex.def Info: "phasePWM".png used on input line 423.
+(pdftex.def)             Requested size: 201.65198pt x 421.57211pt.
+ [20]
+[21 <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documen
+tation/LaTeX and resources/phasePWM.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
+
+ []
+
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 480--484
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 484.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 501--501
+[]\T1/lmtt/m/n/10 TCNT1H = 0xFC; //Counter high value to which OCR1xH value is 
+to be compared with[] 
+ []
+
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 502--502
+[]\T1/lmtt/m/n/10 TCNT1L = 0x01; //Counter low value to which OCR1xH value is t
+o be compared with[] 
+ []
+
+
+Overfull \hbox (122.24864pt too wide) in paragraph at lines 506--506
+[]\T1/lmtt/m/n/10 //For Overriding normal port functionality to OCRnA outputs. 
+WGM11=1, WGM10=1. Along With[] 
+ []
+
+[24] [25] [26]
+Chapter 3.
+<"lpc2148 servo connectors location".png, id=303, 540.51938pt x 452.4403pt>
+File: "lpc2148 servo connectors location".png Graphic file (type png)
+
+<use "lpc2148 servo connectors location".png>
+Package pdftex.def Info: "lpc2148 servo connectors location".png used on input 
+line 572.
+(pdftex.def)             Requested size: 345.0pt x 288.7876pt.
+ [27
+
+ <E:/Desktop/E-Yantra SIP'14/eYSIP2014_ServoStepperInterfacing/Servo/Documentat
+ion/LaTeX and resources/lpc2148 servo connectors location.png>] [28]
+Overfull \hbox (3.80475pt too wide) in paragraph at lines 623--624
+\T1/lmr/m/n/10 Counter (TC) will in-cre-ment ev-ery PWMPR+1 Pe-riph-eral Clock 
+Cy-cles (PCLK). 
+ []
+
+[29] [30] [31] [32] [33]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+
+ []
+
+
+Overfull \hbox (7.10947pt too wide) in paragraph at lines 813--815
+\T1/lmr/m/n/10 http://www.atmel.com/images/atmel-2549-8-bit-avr-microcontroller
+-atmega640-
+ []
+
+
+Overfull \hbox (89.64745pt too wide) in paragraph at lines 821--824
+\T1/lmr/m/n/10 Servos; work-ing prin-ci-ple and home-made types : https://www.y
+outube.com/watch?v=v2jpnyKPH64
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 855.
+[34
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 855.
+
+("E:\Desktop\E-Yantra SIP'14\eYSIP2014_ServoStepperInterfacing\Servo\Documentat
+ion\LaTeX and resources\Servo Motor Interfacing with ATmega2560 and LPC2148 (Fi
+rebird V).aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 855.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 855.
+Package rerunfilecheck Info: File `Servo*Motor*Interfacing*with*ATmega2560*and*
+LPC2148*(Firebird*V).out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 855.
+ ) 
+Here is how much of TeX's memory you used:
+ 6980 strings out of 493921
+ 102319 string characters out of 3147258
+ 181342 words of memory out of 3000000
+ 10023 multiletter control sequences out of 15000+200000
+ 66296 words of font info for 59 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 34i,7n,28p,1436b,462s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit
+.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on "Servo Motor Interfacing with ATmega2560 and LPC2148 (Firebir
+d V).pdf" (36 pages, 3223088 bytes).
+PDF statistics:
+ 407 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+

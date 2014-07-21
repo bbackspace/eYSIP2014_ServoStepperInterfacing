@@ -1,0 +1,436 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Interfacing Servo Motor with AVR ATmega2560 (Firebird-V)
+% Standard LaTeX Template used for creating presentation of Firebird-V Robot and other tutorials. 
+% Author: Vishal H. Rajai (e-YSIP'14)
+% Reference: www.LaTeXTemplates.com Version 1.0 (10/11/12)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+		
+\documentclass[table,10pt,red]{beamer}	% First line -- Define document class as Beamer which is used for creating presentation using Latex
+\setbeamercolor{alerted text}{fg=blue} 	% Sets color of highlighted text during presentation.  
+ 
+\usetheme{Berlin}		%used theme in present documents.
+
+\usepackage{beamerthemeshadow} % theme shadow for visual 
+\usepackage{beamerthemesplit} % Creates minipage (for showing multiple images and text) on same page  
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{xcolor}
+\usepackage{booktabs,array}
+\usepackage{listings}
+\usepackage{hyperref}	% Required for including hyperlink in document
+\usepackage{verbatim,moreverb} % Required for including code snippet.
+\usepackage{colortbl}
+\usepackage{multirow}	% Required for creating multiple row tables
+\usepackage{tikz}		% Required for drawing shapes such as circles, arrowed line, etc. 
+\usetikzlibrary{arrows}
+
+% logo
+\logo{\includegraphics[height=1cm]{iitblogo.pdf}} % includes logo at bottom of all slides 
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+% sf family, bold font
+\sffamily \bfseries
+% content inside [] appears at bottom of all page. content inside {} appears on first page as title. double backslash means line change 
+\title
+[
+	Servo Interfacing with AVR	% bottom of all page
+	\hspace{0.5cm}
+	\insertframenumber/\inserttotalframenumber
+]
+{
+	Interfacing Servo Motor with AVR (Firebird V)
+}
+
+\author
+[
+	Vishal and Joel 	%Name at bottom of all page 
+]
+% author name on title slide
+{
+  Joel M. Pinto and Vishal H. Rajai\\
+  eYantra Summer Internship'14\\
+  Embedded Real-Time Systems Lab\\
+  Indian Institute of Technology, Bombay\\
+}
+\date
+{
+IIT Bombay \\ {\today}	%\today picks system date on title slide
+}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+%Hello everyone! Welcome to the video tutorial on Firebird V robotics research platform. This platform is based on the ATmega2560 microcontroller. In this tutorial we will learn about Servo motors, how to control them and how to interface a Servo motor with the Firebird V robot.
+
+\begin{frame}
+	\frametitle{Agenda of Discussion}
+
+% Let's see the agenda for discusion in this tutorial.
+% The presentation starts with how a servo motor works and how can we drive a servo motor. We will learn to which motor to select for use and how to interface servo motor with Firebird-V.
+% Then finally we will jump on to actually programming the for the same.
+
+	\tableofcontents
+\end{frame}
+
+%\section{Prerequisite knowledge}
+\begin{frame}
+	\frametitle{Prerequisite knowledge}
+	\begin{enumerate}
+		\item Basic IO Interfacing using ports
+		\item Working with Timers and basic knowledge of registers of ATmega2560.
+%		\item Basic knowledge about timers in AVR
+
+%		Before we proceed with the tutorial, make sure you understand input/output interfacing using ports in AVR and know about the timer features in AVR and how to use them.
+
+	\end{enumerate}
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+	\begin{itemize}
+	\item
+	Servo motors (or servos) are self-contained devices that rotate or push parts of a machine with great precision.\\
+	\item
+	Servos can put out about 42 oz/in of torque.
+	\item
+	Relatively inexpensive.
+	\item
+	Widely used for educational purpose in mechatronics as they can be controlled by a microcontroller.
+%	So, lets see what is a servo motor. It is basically a dc motor that can rotate with precise angle, speed and acceleration.
+%	Such motors are easily found in toys like model car, airplanes, etc. They are used to move levers back and forth to control steering or adjust wing surfaces.
+%	Electronic devices such as DVD and Blu-ray Disc players also use servos to extend or retract the disc trays.\\
+	
+%	In every applications we see, servos are interfaced with some controllers. So lets see how we can do it, how we can drive a motor.
+
+	\end{itemize}
+\end{frame}
+
+\section{Servo motor}
+\subsection{Principle and Working}
+\begin{frame}
+	\frametitle{Principle and Working}
+	\begin{itemize}
+		\item
+		A servo mainly contains:
+
+%	Now, a servo basically is a dc motor coupled with gears havin proper gear ratio to a sensor for position feedback. Generally, this work is done by coupling it with a potentiometer.
+
+		\begin{itemize}
+			\pause
+			\item
+			dc motor
+			\pause
+			\item
+			gear train
+			\pause
+			\item
+			potentiometer
+			\pause
+			\item
+			control circuitry.\\
+			\pause
+		\end{itemize}
+
+%	Hence, a closed loop feedback system is formed.		
+
+		\item
+		Forming closed loop control system.\\
+%		\pause
+%		\item
+%		Controller provides control signal to rotate servo to particular angle.\\
+	\end{itemize}
+\end{frame}
+	
+% Before getting into the control system of servo motor, we should know the what are the wires that are used to interface it with a controller and their colour coding.	
+
+%		The power wire marked as no. 2 in figure is typically red. The ground wire is typically black or brown marked as no.1 in fig. The signal pin is typically yellow or orange marked as no.3 in figure.
+
+\begin{frame}
+	\begin{figure}
+		
+% Looking into the control system, we find that the output port is connected with one of the input terminals of the error detector amplifier and electrical signal is given to rotate servo is given at another terminal of error detector amplifier.		
+		
+		\includegraphics[width=\linewidth]{"Closed loop cs"}
+	\end{figure} 
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		
+%The difference between the signals to the error detector are amplified and applied to dc motor to drive it.		
+		
+		\item
+		As shown in figure, control signal and output signal are fed to error detector.
+		\pause
+		\item
+		Resultant signal from error detector acts as input to the dc motor to rotate.
+		\pause
+		\item
+		Also rotating the potentiometer knob coupled with its shaft via gears.
+
+% This in turn rotates the potentiometer which is coupled to the shaft of dc motor using gears. As the angular position of the potentiometer knob progresses the output or feedback signal increases.
+
+		\pause
+		\item
+		Reaching desired angle, there would not be any difference in the signals fed to error detector.
+		
+% When the potentiometer reaches the desired position, the error in the signal from output and the applied control signal is nil. Hence, there would be no input signal to the dc motor to rotate it.
+		
+		\pause
+		\item
+		Resulting in motor to stop rotating and wait at that position
+
+% Continuously applying the same control signal makes the motor to stay at that position. This is how a simple conceptual servo motor works.
+
+	\end{itemize}
+\end{frame}
+
+\subsection{Operating Servo Motor}
+\begin{frame}{Operating servo motor}
+	\begin{itemize}
+		
+% Servo motor is operated using the wires provided in it. 
+		
+		\item
+		'on-time' of a PWM signal is used as control signal to rotate motor at particular angle.\\
+		
+		\begin{figure}
+			\includegraphics[width=0.8\linewidth]{"pwm signal"}
+		\end{figure}
+	\end{itemize}
+\end{frame}		
+% A servo motor is driven to a particluar angle by control signal sent to it via a controller. These signals are Pulse Width Modulated (PWM) waves and that angular position is determined by their ‘on-time’. This on-time depends on the servo model and the manufacturer while not on the frequency of PWM.
+
+\begin{frame}
+	\begin{itemize}
+		\item
+		This time period depends on the servo used and not on total time period or duty cycle of PWM signal.\\
+		
+% It is interesting to note that this angular position just depends on the on-time period of the signal no matter whatever is the frequency of the signal.	
+		
+		\pause
+		\item
+		Values of on-time for rotating servo to 0 and 180 degree are provided by the manufacturer in data sheet.\\ 
+		
+% Generally this time period is around 1ms for 0o and around 2ms for 180o but depends on model and the manufacturer. Graph of on-time period vs. various respective angles is linear. Therefore, the values of time period for angles other than these can be easily calculated by getting the eq of line from the 2 values given.
+
+		\pause
+		\item
+		Graph of on-time period vs. angle is linear.
+
+%	\begin{figure}
+%		\includegraphics{content...}
+%	\end{figure}
+
+		\pause
+		\item
+		Range of PWM frequency for operating servo is 40-60 Hz
+	\end{itemize}
+\end{frame}
+
+\subsection{Selection of Servo motor}
+\begin{frame}{Selection of Servo motor}
+	Servo is selected based on its:
+	\begin{itemize}
+
+% The typical specifications of servo motors are torque, speed, weight, dimensions, etc. 
+
+		\pause
+		\item
+		Torque
+		\pause
+		\item		
+		Speed
+		\pause
+		\item
+		Weight
+		\pause
+		\item
+		Dimensions
+
+% The servos are manufactured with different torque and speed ratings. A manufacturer may compromise torque over speed or speed over torque in different models. The weight and dimensions are directly proportional to the torque. The selection of a servo can be made according to the torque and speed requirements of the application which will also decide the weight and the dimensions of it.
+		
+	\end{itemize}
+\end{frame}
+
+\section{AVR ATmega2560}
+
+\begin{frame}{Servo connector}
+	\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+		
+		\column{.4\textwidth} % Left column and width
+		\begin{figure}			
+			\includegraphics[width=\linewidth]{"servo female connector"}
+		\end{figure}
+		\column{.55\textwidth} % Right column and width
+		\begin{itemize}
+			\item %<+-|alert@+>
+			1-- Ground
+			\item %<+-|alert@+> 
+			2-- Power
+			\item %<+-|alert@+> 
+			3-- Control signal
+			\item
+			4-- Connector to controller
+		\end{itemize}	
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Interfacing servo with Firebird V}
+	
+% This figure shows a servo mototr can be connected in either of the ports 5,6,7 of Firebird-V. The bottom most pin is ground and the top most pin is used to send control signnal to the servo, while the middle pin is used to supply power to motor.
+	
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{"servo connectors atmega 2560-1"}
+		\includegraphics[width=0.5\linewidth]{"servo connectors atmega 2560-2"}
+	\end{figure}
+\end{frame}
+
+% Here we shall use 16-bit timer, Timer1 of ATmega2650 for generating PWM signals. Lets choose the most commonly used mode i.e. Fast PWM in mode 14. The table shows the table no.5.3 "WGM bit description" of the software manual of Firebird V. We would use the internal crystal of the controller for delay purpose in timer or for counting
+
+\subsection{Generating PWM signals}
+\begin{frame}{Using Timer1 for PWM generation}
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{"timers for pwm"}
+	\end{figure}
+	\begin{itemize}
+	\item
+	Timer1 in Fast PWM mode is used here.
+	\item
+	Fast PWM in mode 14 is used to rotate servo motor.
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{"wgm cropped"}
+	\end{figure}
+	WGM bit description
+	
+\end{frame}
+
+% The prescaler is very helpful when the clock rate changes by a power of 2. i.e. changing the clock speed from 1Mhz to 8Mhz can easily be compensated by changing the prescaler from 'x' to '8x' without changing other code.
+
+\begin{frame}{Generating PWM signals contd.}
+	\begin{itemize}
+		\item
+		Counter counts from BOTTOM=0 to TOP
+		\pause
+		\item
+		And sets the output as high till compare value is greater than counter value
+		\pause
+		\item
+		Clears the output when the count value matches the value in compare register till the next cycle starts.
+		\pause
+		\item
+		Let the Prescaler, N=256
+		
+% Lets choose 256 as prescaler. Now frequency of the crystal used in ATmega2560 is 14745600 Hz.
+
+		\pause
+		\item
+	$	f_{cpu} = 14745600 Hz $
+
+	\end{itemize}
+\end{frame}
+% The value in OCR1 is responsible for setting the on time period.
+% Now the main logic here is till the counter counts from 0 to TOP value, the output at the OC port will be high. So, the time period for which we want high output i.e. t-on out of the total cycle is converted in terms of counts and stored in OCR1. When counter reaches the count in OCR1, it will clear the output and count till TOP which will decide the total time period of the PWM signal i.e. control signal. During coding, we would discuss how to get the counts for angles for which t-on period we don't know.
+		
+\begin{frame}{Generating PWM signals contd.}
+	\begin{itemize}		
+		
+		\item
+		TOP is calculated from desired PWM frequency as:
+		\pause
+		
+		$	f_{PWM} = \dfrac{f_{cpu}}{N*(1+TOP)} $ \\
+		So,	
+		$	TOP = \frac{f_{cpu}}{N*f_{PWM}} - 1 = 1023 $
+		
+		% Therefore, the value of the TOP and hence the ICR1 can be calculated using the formula given. The TOP defines the count upto which the counter will count starting from BOTTOM which is generally 0.
+		
+		\pause
+		\item
+		ICR1=TOP
+		\item
+		Value of channel A of OCR register will be:\\
+		\pause
+		$	OCR1A = T_{on}(\frac{f_{cpu}}{N}) = T_{on} * 57600    $ \\
+		\pause
+		\item
+		Values of registers like TCCR1A/B and TCNT1 can be found using ATmega2560 datasheet.
+
+% Values of the TCNT and TCCR register can be found out from the datasheet of the ATmega2560 for Fast PWM type 14 with prescaler equal to 256 as shown in the code.
+		
+	\end{itemize}
+\end{frame}
+
+\subsection{Code}
+
+\begin{frame}[shrink = 2,fragile]
+	\frametitle{Code}
+	\framesubtitle{Simple code}	
+	\begin{block}<1->{Header files}	\pause
+		\begin{semiverbatim}
+			\scriptsize{
+			#define F\_CPU 14745600
+			#include <avr/io.h>
+			#include <avr/interrupt.h>
+			#include <util/delay.h>
+			}
+
+
+		\end{semiverbatim}
+	\end{block} \pause
+	
+	\begin{block}<1->{Port Initialization}	\pause
+		\begin{semiverbatim}
+		void port_init()
+		\{
+		DDRB = DDRB | 0x20;
+		PORTB = PORTB | 0x20;
+		\}
+
+
+		\end{semiverbatim}
+	\end{block}
+\end{frame}
+
+% This shows the header files which are needed to be included for programming controller for driving servo.
+% These commands will make PORTB 5 pin as output port and set it to high.
+
+\begin{frame}[fragile]
+	Convert the degrees in terms of counts for Timer1\\
+	
+% Now lets see how to get counter value for the angles of which t-on time period is not given i.e. for angles other than 0 and 180o.
+% As we know the relation between the on time period and the corresponding degree is linear, and also on other hand, we find that for a given fixed prescaler, the relation between the counter value and the on time period is linear. Hence, knowing the count value for 0 and 180o from the eq of OCR1 discussed earlier, we can get the plot of count vs. degree and hence the general eq of counter value for given degree from the plot as shown in the block.
+	
+	As the relation between on-time period and corresponding degree is linear, so is the relation between the count value in OCR and degree.\\
+	\begin{block}<1->{}	\pause
+		\begin{semiverbatim}
+		float regval = ((float)degrees * 0.512) + 34.56;
+		OCR1A = (uint16\_t) regval;
+		\end{semiverbatim}
+	\end{block}
+\end{frame}
+
+% Know knowing how we can drive servo motor and the how to program a controller for that, you can try different things like velocity control, 1 degree precision, etc. You can also challenge the operating frequency range of PWM to servo by manually changing it beyond the range and observe  the results yourself only if you dont care of loosing servo!
+
+\begin{frame}
+	\hskip4cm
+	\textbf{\LARGE Thank You!} \\[20pt]
+	\hskip3cm
+	\scriptsize Post your queries on: 
+	\hyperref[helpdesk@e-yantra.org]{\color{blue} helpdesk@e-yantra.org \color{black}} 
+\end{frame}
+
+% With this we end this video tutorial here. Thank you for listening! For any doubts or suggestions feel free to mail them at helpdesk@e(hyphen)yantra(dot)org
+%This is Vishal H. Rajai signing off!
+
+\end{document}
