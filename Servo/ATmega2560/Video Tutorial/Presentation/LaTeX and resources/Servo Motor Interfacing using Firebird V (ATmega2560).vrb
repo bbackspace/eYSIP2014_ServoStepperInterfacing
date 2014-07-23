@@ -1,0 +1,12 @@
+Convert the degrees in terms of counts for Timer1\\
+
+% Now lets see how to get counter value for the angles of which t-on time period is not given i.e. for angles other than 0 and 180o.
+% As we know the relation between the on time period and the corresponding degree is linear, and also on other hand, we find that for a given fixed prescaler, the relation between the counter value and the on time period is linear. Hence, knowing the count value for 0 and 180o from the eq of OCR1 discussed earlier, we can get the plot of count vs. degree and hence the general eq of counter value for given degree from the plot as shown in the block.
+
+As the relation between on-time period and corresponding degree is linear, so is the relation between the count value in OCR and degree.\\
+\begin{block}<1->{} \pause
+\begin{semiverbatim}
+float regval = ((float)degrees * 0.512) + 34.56;
+OCR1A = (uint16\_t) regval;
+\end{semiverbatim}
+\end{block}

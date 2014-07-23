@@ -1,0 +1,19 @@
+\frametitle{Code} \pause
+\framesubtitle{Simple code}
+\begin{block}<1->{Header files} \pause
+\begin{semiverbatim}
+\scriptsize{
+#include  <lpc214x.h>
+}
+\end{semiverbatim}
+\end{block} \pause
+
+\begin{block}<1->{Main Logic} \pause
+\begin{semiverbatim}
+{
+float PositionPanServo = 0;
+PositionPanServo = ((float)degrees / 1.125) + 60.0;
+UpdateServoPos((unsigned int)PositionPanServo);
+}
+\end{semiverbatim}
+\end{block}

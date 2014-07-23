@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Introduction}{4}{0}{1}
+\beamer@sectionintoc {2}{Servo motor}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Principle and Working}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Operating Servo Motor}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{Selection of Servo motor}{22}{0}{2}
+\beamer@sectionintoc {3}{AVR ATmega2560}{27}{0}{3}
+\beamer@subsectionintoc {3}{1}{Generating PWM signals}{29}{0}{3}
+\beamer@subsectionintoc {3}{2}{Code}{40}{0}{3}
