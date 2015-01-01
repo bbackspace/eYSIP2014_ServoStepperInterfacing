@@ -1,0 +1,2033 @@
+
+StepperSpeedControl.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000a  00800200  00000dea  00000e7e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000dea  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000047  0080020a  0080020a  00000e88  2**0
+                  ALLOC
+  3 .stab         00001be4  00000000  00000000  00000e88  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000583  00000000  00000000  00002a6c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000080  00000000  00000000  00002ff0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000009a7  00000000  00000000  00003070  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000029c  00000000  00000000  00003a17  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000455  00000000  00000000  00003cb3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002b8  00000000  00000000  00004108  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000002a2  00000000  00000000  000043c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000ab5  00000000  00000000  00004662  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+   4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  10:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  14:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  18:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  1c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  20:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  24:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  28:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  2c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  30:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  34:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  38:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  3c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  40:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  44:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  48:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  4c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  50:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  54:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  58:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  5c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  60:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  64:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  68:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  6c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  70:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  74:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  78:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  7c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  80:	0c 94 2d 02 	jmp	0x45a	; 0x45a <__vector_32>
+  84:	0c 94 89 02 	jmp	0x512	; 0x512 <__vector_33>
+  88:	0c 94 e5 02 	jmp	0x5ca	; 0x5ca <__vector_34>
+  8c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  90:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  94:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  98:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  9c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  ac:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  bc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  cc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  dc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  e0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	ea ee       	ldi	r30, 0xEA	; 234
+  fc:	fd e0       	ldi	r31, 0x0D	; 13
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	aa 30       	cpi	r26, 0x0A	; 10
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+ 10e:	12 e0       	ldi	r17, 0x02	; 2
+ 110:	aa e0       	ldi	r26, 0x0A	; 10
+ 112:	b2 e0       	ldi	r27, 0x02	; 2
+ 114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+ 116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+ 118:	a1 35       	cpi	r26, 0x51	; 81
+ 11a:	b1 07       	cpc	r27, r17
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+ 11e:	0e 94 74 04 	call	0x8e8	; 0x8e8 <main>
+ 122:	0c 94 f3 06 	jmp	0xde6	; 0xde6 <_exit>
+
+00000126 <__bad_interrupt>:
+ 126:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000012a <_stepper_timer3_init>:
+	Parameters:
+	None
+*/
+void _stepper_timer3_init()
+{
+	cli(); //Stop global interrupts
+ 12a:	f8 94       	cli
+	TCCR3B = 0x00; //Stop timer
+ 12c:	e1 e9       	ldi	r30, 0x91	; 145
+ 12e:	f0 e0       	ldi	r31, 0x00	; 0
+ 130:	10 82       	st	Z, r1
+	TCCR3A = 0x00;
+ 132:	10 92 90 00 	sts	0x0090, r1
+	TCCR3C = 0x00;
+ 136:	10 92 92 00 	sts	0x0092, r1
+	TCCR3B = 0b00000011; //Start Timer at F_CPU/64
+ 13a:	83 e0       	ldi	r24, 0x03	; 3
+ 13c:	80 83       	st	Z, r24
+	TIMSK3 = 0b00001110; //Enable Compare Match Interrupts on timer channels A, B and C
+ 13e:	8e e0       	ldi	r24, 0x0E	; 14
+ 140:	80 93 71 00 	sts	0x0071, r24
+	sei(); //Start global interrupts
+ 144:	78 94       	sei
+}
+ 146:	08 95       	ret
+
+00000148 <step>:
+	channel - The channel of the stepper to be stepped
+	direction - The direction in which to move the stepper
+				Either CW or CCW for clockwise and anticlockwise respectively
+*/
+void step(uint8_t channel, uint8_t direction)
+{
+ 148:	1f 93       	push	r17
+ 14a:	cf 93       	push	r28
+ 14c:	df 93       	push	r29
+	//Calculate the next step sequence based on the stepping mode and direction
+	int delta = 1;
+	if(_steppers[channel].stepmode != HALF_STEP)
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+ 150:	fc 01       	movw	r30, r24
+ 152:	ee 0f       	add	r30, r30
+ 154:	ff 1f       	adc	r31, r31
+ 156:	e8 0f       	add	r30, r24
+ 158:	f9 1f       	adc	r31, r25
+ 15a:	ee 0f       	add	r30, r30
+ 15c:	ff 1f       	adc	r31, r31
+ 15e:	ee 0f       	add	r30, r30
+ 160:	ff 1f       	adc	r31, r31
+ 162:	ee 0f       	add	r30, r30
+ 164:	ff 1f       	adc	r31, r31
+ 166:	e8 1b       	sub	r30, r24
+ 168:	f9 0b       	sbc	r31, r25
+ 16a:	e4 5f       	subi	r30, 0xF4	; 244
+ 16c:	fd 4f       	sbci	r31, 0xFD	; 253
+ 16e:	26 85       	ldd	r18, Z+14	; 0x0e
+ 170:	22 30       	cpi	r18, 0x02	; 2
+ 172:	19 f4       	brne	.+6      	; 0x17a <step+0x32>
+				Either CW or CCW for clockwise and anticlockwise respectively
+*/
+void step(uint8_t channel, uint8_t direction)
+{
+	//Calculate the next step sequence based on the stepping mode and direction
+	int delta = 1;
+ 174:	21 e0       	ldi	r18, 0x01	; 1
+ 176:	30 e0       	ldi	r19, 0x00	; 0
+ 178:	02 c0       	rjmp	.+4      	; 0x17e <step+0x36>
+	if(_steppers[channel].stepmode != HALF_STEP)
+		delta = 2;
+ 17a:	22 e0       	ldi	r18, 0x02	; 2
+ 17c:	30 e0       	ldi	r19, 0x00	; 0
+	if(direction == CCW)
+ 17e:	66 23       	and	r22, r22
+ 180:	19 f4       	brne	.+6      	; 0x188 <step+0x40>
+		delta = -delta;
+ 182:	30 95       	com	r19
+ 184:	21 95       	neg	r18
+ 186:	3f 4f       	sbci	r19, 0xFF	; 255
+	_steppers[channel].stepindex = (_steppers[channel].stepindex + 8 + delta) & 0x07;
+ 188:	fc 01       	movw	r30, r24
+ 18a:	ee 0f       	add	r30, r30
+ 18c:	ff 1f       	adc	r31, r31
+ 18e:	e8 0f       	add	r30, r24
+ 190:	f9 1f       	adc	r31, r25
+ 192:	ee 0f       	add	r30, r30
+ 194:	ff 1f       	adc	r31, r31
+ 196:	ee 0f       	add	r30, r30
+ 198:	ff 1f       	adc	r31, r31
+ 19a:	ee 0f       	add	r30, r30
+ 19c:	ff 1f       	adc	r31, r31
+ 19e:	e8 1b       	sub	r30, r24
+ 1a0:	f9 0b       	sbc	r31, r25
+ 1a2:	df 01       	movw	r26, r30
+ 1a4:	a4 5f       	subi	r26, 0xF4	; 244
+ 1a6:	bd 4f       	sbci	r27, 0xFD	; 253
+ 1a8:	54 96       	adiw	r26, 0x14	; 20
+ 1aa:	8c 91       	ld	r24, X
+ 1ac:	54 97       	sbiw	r26, 0x14	; 20
+ 1ae:	28 0f       	add	r18, r24
+ 1b0:	27 70       	andi	r18, 0x07	; 7
+ 1b2:	54 96       	adiw	r26, 0x14	; 20
+ 1b4:	2c 93       	st	X, r18
+ 1b6:	54 97       	sbiw	r26, 0x14	; 20
+	
+	//Send the sequence to each of the stepper port pins
+	uint8_t temp = seq[_steppers[channel].stepindex];
+ 1b8:	54 96       	adiw	r26, 0x14	; 20
+ 1ba:	8c 91       	ld	r24, X
+ 1bc:	a2 e0       	ldi	r26, 0x02	; 2
+ 1be:	b2 e0       	ldi	r27, 0x02	; 2
+ 1c0:	a8 0f       	add	r26, r24
+ 1c2:	b1 1d       	adc	r27, r1
+ 1c4:	4c 91       	ld	r20, X
+	Parameters:
+	channel - The channel of the stepper to be stepped
+	direction - The direction in which to move the stepper
+				Either CW or CCW for clockwise and anticlockwise respectively
+*/
+void step(uint8_t channel, uint8_t direction)
+ 1c6:	df 01       	movw	r26, r30
+ 1c8:	a4 5f       	subi	r26, 0xF4	; 244
+ 1ca:	bd 4f       	sbci	r27, 0xFD	; 253
+ 1cc:	ec 5e       	subi	r30, 0xEC	; 236
+ 1ce:	fd 4f       	sbci	r31, 0xFD	; 253
+ 1d0:	23 e0       	ldi	r18, 0x03	; 3
+ 1d2:	30 e0       	ldi	r19, 0x00	; 0
+	//Send the sequence to each of the stepper port pins
+	uint8_t temp = seq[_steppers[channel].stepindex];
+	int8_t i;
+	for(i = 0; i < 4; i++)
+	{
+		if(temp & (1 << (3 - i)))
+ 1d4:	50 e0       	ldi	r21, 0x00	; 0
+			*(_steppers[channel].port[i]) |= (1 << _steppers[channel].pin[i]);
+		else
+			*(_steppers[channel].port[i]) &= ~(1 << _steppers[channel].pin[i]);
+ 1d6:	61 e0       	ldi	r22, 0x01	; 1
+ 1d8:	70 e0       	ldi	r23, 0x00	; 0
+	//Send the sequence to each of the stepper port pins
+	uint8_t temp = seq[_steppers[channel].stepindex];
+	int8_t i;
+	for(i = 0; i < 4; i++)
+	{
+		if(temp & (1 << (3 - i)))
+ 1da:	ca 01       	movw	r24, r20
+ 1dc:	02 2e       	mov	r0, r18
+ 1de:	02 c0       	rjmp	.+4      	; 0x1e4 <step+0x9c>
+ 1e0:	95 95       	asr	r25
+ 1e2:	87 95       	ror	r24
+ 1e4:	0a 94       	dec	r0
+ 1e6:	e2 f7       	brpl	.-8      	; 0x1e0 <step+0x98>
+ 1e8:	80 ff       	sbrs	r24, 0
+ 1ea:	0e c0       	rjmp	.+28     	; 0x208 <step+0xc0>
+			*(_steppers[channel].port[i]) |= (1 << _steppers[channel].pin[i]);
+ 1ec:	cd 91       	ld	r28, X+
+ 1ee:	dc 91       	ld	r29, X
+ 1f0:	11 97       	sbiw	r26, 0x01	; 1
+ 1f2:	18 81       	ld	r17, Y
+ 1f4:	cb 01       	movw	r24, r22
+ 1f6:	00 80       	ld	r0, Z
+ 1f8:	02 c0       	rjmp	.+4      	; 0x1fe <step+0xb6>
+ 1fa:	88 0f       	add	r24, r24
+ 1fc:	99 1f       	adc	r25, r25
+ 1fe:	0a 94       	dec	r0
+ 200:	e2 f7       	brpl	.-8      	; 0x1fa <step+0xb2>
+ 202:	81 2b       	or	r24, r17
+ 204:	88 83       	st	Y, r24
+ 206:	0e c0       	rjmp	.+28     	; 0x224 <step+0xdc>
+		else
+			*(_steppers[channel].port[i]) &= ~(1 << _steppers[channel].pin[i]);
+ 208:	cd 91       	ld	r28, X+
+ 20a:	dc 91       	ld	r29, X
+ 20c:	11 97       	sbiw	r26, 0x01	; 1
+ 20e:	18 81       	ld	r17, Y
+ 210:	cb 01       	movw	r24, r22
+ 212:	00 80       	ld	r0, Z
+ 214:	02 c0       	rjmp	.+4      	; 0x21a <step+0xd2>
+ 216:	88 0f       	add	r24, r24
+ 218:	99 1f       	adc	r25, r25
+ 21a:	0a 94       	dec	r0
+ 21c:	e2 f7       	brpl	.-8      	; 0x216 <step+0xce>
+ 21e:	80 95       	com	r24
+ 220:	81 23       	and	r24, r17
+ 222:	88 83       	st	Y, r24
+ 224:	21 50       	subi	r18, 0x01	; 1
+ 226:	30 40       	sbci	r19, 0x00	; 0
+ 228:	12 96       	adiw	r26, 0x02	; 2
+ 22a:	31 96       	adiw	r30, 0x01	; 1
+	_steppers[channel].stepindex = (_steppers[channel].stepindex + 8 + delta) & 0x07;
+	
+	//Send the sequence to each of the stepper port pins
+	uint8_t temp = seq[_steppers[channel].stepindex];
+	int8_t i;
+	for(i = 0; i < 4; i++)
+ 22c:	8f ef       	ldi	r24, 0xFF	; 255
+ 22e:	2f 3f       	cpi	r18, 0xFF	; 255
+ 230:	38 07       	cpc	r19, r24
+ 232:	99 f6       	brne	.-90     	; 0x1da <step+0x92>
+		if(temp & (1 << (3 - i)))
+			*(_steppers[channel].port[i]) |= (1 << _steppers[channel].pin[i]);
+		else
+			*(_steppers[channel].port[i]) &= ~(1 << _steppers[channel].pin[i]);
+	}
+}
+ 234:	df 91       	pop	r29
+ 236:	cf 91       	pop	r28
+ 238:	1f 91       	pop	r17
+ 23a:	08 95       	ret
+
+0000023c <stepperEnableMulti>:
+*/
+void stepperEnableMulti(volatile uint8_t *port1, volatile uint8_t *port2,
+						volatile uint8_t *port3, volatile uint8_t *port4,
+						uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4,
+						uint8_t channel, uint16_t stepsperrev, uint8_t stepmode)
+{
+ 23c:	8f 92       	push	r8
+ 23e:	9f 92       	push	r9
+ 240:	af 92       	push	r10
+ 242:	cf 92       	push	r12
+ 244:	df 92       	push	r13
+ 246:	ef 92       	push	r14
+ 248:	ff 92       	push	r15
+ 24a:	0f 93       	push	r16
+ 24c:	1f 93       	push	r17
+ 24e:	cf 93       	push	r28
+ 250:	df 93       	push	r29
+ 252:	cd b7       	in	r28, 0x3d	; 61
+ 254:	de b7       	in	r29, 0x3e	; 62
+ 256:	db 01       	movw	r26, r22
+ 258:	b9 01       	movw	r22, r18
+ 25a:	f9 88       	ldd	r15, Y+17	; 0x11
+	_steppers[channel].port[0] = port1;
+ 25c:	99 24       	eor	r9, r9
+ 25e:	94 01       	movw	r18, r8
+ 260:	22 0f       	add	r18, r18
+ 262:	33 1f       	adc	r19, r19
+ 264:	28 0d       	add	r18, r8
+ 266:	39 1d       	adc	r19, r9
+ 268:	22 0f       	add	r18, r18
+ 26a:	33 1f       	adc	r19, r19
+ 26c:	22 0f       	add	r18, r18
+ 26e:	33 1f       	adc	r19, r19
+ 270:	22 0f       	add	r18, r18
+ 272:	33 1f       	adc	r19, r19
+ 274:	28 19       	sub	r18, r8
+ 276:	39 09       	sbc	r19, r9
+ 278:	f9 01       	movw	r30, r18
+ 27a:	e4 5f       	subi	r30, 0xF4	; 244
+ 27c:	fd 4f       	sbci	r31, 0xFD	; 253
+ 27e:	91 83       	std	Z+1, r25	; 0x01
+ 280:	80 83       	st	Z, r24
+	_steppers[channel].port[1] = port2;
+ 282:	b3 83       	std	Z+3, r27	; 0x03
+ 284:	a2 83       	std	Z+2, r26	; 0x02
+	_steppers[channel].port[2] = port3;
+ 286:	55 83       	std	Z+5, r21	; 0x05
+ 288:	44 83       	std	Z+4, r20	; 0x04
+	_steppers[channel].port[3] = port4;
+ 28a:	77 83       	std	Z+7, r23	; 0x07
+ 28c:	66 83       	std	Z+6, r22	; 0x06
+	_steppers[channel].pin[0] = pin1;
+ 28e:	00 87       	std	Z+8, r16	; 0x08
+	_steppers[channel].pin[1] = pin2;
+ 290:	e1 86       	std	Z+9, r14	; 0x09
+	_steppers[channel].pin[2] = pin3;
+ 292:	c2 86       	std	Z+10, r12	; 0x0a
+	_steppers[channel].pin[3] = pin4;
+ 294:	a3 86       	std	Z+11, r10	; 0x0b
+		Wire4 - PD0
+	at channel 2 and which has a steps per revolution of 200 (1.8 degrees step
+	angle) in half stepping mode, call
+	stepperEnableMulti(&PORTB, &PORTL, &PORTJ, &PORTD, 1, 5, 6, 0, 2, 200, HALF_STEP);
+*/
+void stepperEnableMulti(volatile uint8_t *port1, volatile uint8_t *port2,
+ 296:	af 01       	movw	r20, r30
+ 298:	0f 2e       	mov	r0, r31
+ 29a:	f4 e1       	ldi	r31, 0x14	; 20
+ 29c:	cf 2e       	mov	r12, r31
+ 29e:	f2 e0       	ldi	r31, 0x02	; 2
+ 2a0:	df 2e       	mov	r13, r31
+ 2a2:	f0 2d       	mov	r31, r0
+ 2a4:	c2 0e       	add	r12, r18
+ 2a6:	d3 1e       	adc	r13, r19
+	_steppers[channel].pin[0] = pin1;
+	_steppers[channel].pin[1] = pin2;
+	_steppers[channel].pin[2] = pin3;
+	_steppers[channel].pin[3] = pin4;
+	uint8_t i;
+	for(i = 0; i < 4; i++)
+ 2a8:	20 e0       	ldi	r18, 0x00	; 0
+	{
+		*(_steppers[channel].port[i] - 1) |= (1<<_steppers[channel].pin[i]); //Set DDR pins to output
+ 2aa:	01 e0       	ldi	r16, 0x01	; 1
+ 2ac:	10 e0       	ldi	r17, 0x00	; 0
+ 2ae:	da 01       	movw	r26, r20
+ 2b0:	ed 91       	ld	r30, X+
+ 2b2:	fc 91       	ld	r31, X
+ 2b4:	32 91       	ld	r19, -Z
+		Wire4 - PD0
+	at channel 2 and which has a steps per revolution of 200 (1.8 degrees step
+	angle) in half stepping mode, call
+	stepperEnableMulti(&PORTB, &PORTL, &PORTJ, &PORTD, 1, 5, 6, 0, 2, 200, HALF_STEP);
+*/
+void stepperEnableMulti(volatile uint8_t *port1, volatile uint8_t *port2,
+ 2b6:	b6 01       	movw	r22, r12
+	_steppers[channel].pin[2] = pin3;
+	_steppers[channel].pin[3] = pin4;
+	uint8_t i;
+	for(i = 0; i < 4; i++)
+	{
+		*(_steppers[channel].port[i] - 1) |= (1<<_steppers[channel].pin[i]); //Set DDR pins to output
+ 2b8:	d6 01       	movw	r26, r12
+ 2ba:	c8 01       	movw	r24, r16
+ 2bc:	0d 90       	ld	r0, X+
+ 2be:	02 c0       	rjmp	.+4      	; 0x2c4 <stepperEnableMulti+0x88>
+ 2c0:	88 0f       	add	r24, r24
+ 2c2:	99 1f       	adc	r25, r25
+ 2c4:	0a 94       	dec	r0
+ 2c6:	e2 f7       	brpl	.-8      	; 0x2c0 <stepperEnableMulti+0x84>
+ 2c8:	6d 01       	movw	r12, r26
+ 2ca:	83 2b       	or	r24, r19
+ 2cc:	80 83       	st	Z, r24
+		*(_steppers[channel].port[i]) &= ~(1<<_steppers[channel].pin[i]); //Set PORT pins to 0
+ 2ce:	da 01       	movw	r26, r20
+ 2d0:	ed 91       	ld	r30, X+
+ 2d2:	fd 91       	ld	r31, X+
+ 2d4:	ad 01       	movw	r20, r26
+ 2d6:	30 81       	ld	r19, Z
+ 2d8:	c8 01       	movw	r24, r16
+ 2da:	db 01       	movw	r26, r22
+ 2dc:	0c 90       	ld	r0, X
+ 2de:	02 c0       	rjmp	.+4      	; 0x2e4 <stepperEnableMulti+0xa8>
+ 2e0:	88 0f       	add	r24, r24
+ 2e2:	99 1f       	adc	r25, r25
+ 2e4:	0a 94       	dec	r0
+ 2e6:	e2 f7       	brpl	.-8      	; 0x2e0 <stepperEnableMulti+0xa4>
+ 2e8:	80 95       	com	r24
+ 2ea:	38 23       	and	r19, r24
+ 2ec:	30 83       	st	Z, r19
+	_steppers[channel].pin[0] = pin1;
+	_steppers[channel].pin[1] = pin2;
+	_steppers[channel].pin[2] = pin3;
+	_steppers[channel].pin[3] = pin4;
+	uint8_t i;
+	for(i = 0; i < 4; i++)
+ 2ee:	2f 5f       	subi	r18, 0xFF	; 255
+ 2f0:	24 30       	cpi	r18, 0x04	; 4
+ 2f2:	e9 f6       	brne	.-70     	; 0x2ae <stepperEnableMulti+0x72>
+	{
+		*(_steppers[channel].port[i] - 1) |= (1<<_steppers[channel].pin[i]); //Set DDR pins to output
+		*(_steppers[channel].port[i]) &= ~(1<<_steppers[channel].pin[i]); //Set PORT pins to 0
+	}
+	_steppers[channel].stepsperrev = stepsperrev;
+ 2f4:	f4 01       	movw	r30, r8
+ 2f6:	ee 0f       	add	r30, r30
+ 2f8:	ff 1f       	adc	r31, r31
+ 2fa:	e8 0d       	add	r30, r8
+ 2fc:	f9 1d       	adc	r31, r9
+ 2fe:	ee 0f       	add	r30, r30
+ 300:	ff 1f       	adc	r31, r31
+ 302:	ee 0f       	add	r30, r30
+ 304:	ff 1f       	adc	r31, r31
+ 306:	ee 0f       	add	r30, r30
+ 308:	ff 1f       	adc	r31, r31
+ 30a:	e8 19       	sub	r30, r8
+ 30c:	f9 09       	sbc	r31, r9
+ 30e:	e4 5f       	subi	r30, 0xF4	; 244
+ 310:	fd 4f       	sbci	r31, 0xFD	; 253
+ 312:	8f 85       	ldd	r24, Y+15	; 0x0f
+ 314:	98 89       	ldd	r25, Y+16	; 0x10
+ 316:	95 87       	std	Z+13, r25	; 0x0d
+ 318:	84 87       	std	Z+12, r24	; 0x0c
+	_steppers[channel].stepmode = stepmode;
+ 31a:	f6 86       	std	Z+14, r15	; 0x0e
+	if(stepmode == FULL_STEP)
+ 31c:	b1 e0       	ldi	r27, 0x01	; 1
+ 31e:	fb 16       	cp	r15, r27
+ 320:	91 f4       	brne	.+36     	; 0x346 <stepperEnableMulti+0x10a>
+		_steppers[channel].stepindex = 1;
+ 322:	f4 01       	movw	r30, r8
+ 324:	ee 0f       	add	r30, r30
+ 326:	ff 1f       	adc	r31, r31
+ 328:	e8 0d       	add	r30, r8
+ 32a:	f9 1d       	adc	r31, r9
+ 32c:	ee 0f       	add	r30, r30
+ 32e:	ff 1f       	adc	r31, r31
+ 330:	ee 0f       	add	r30, r30
+ 332:	ff 1f       	adc	r31, r31
+ 334:	ee 0f       	add	r30, r30
+ 336:	ff 1f       	adc	r31, r31
+ 338:	e8 19       	sub	r30, r8
+ 33a:	f9 09       	sbc	r31, r9
+ 33c:	e4 5f       	subi	r30, 0xF4	; 244
+ 33e:	fd 4f       	sbci	r31, 0xFD	; 253
+ 340:	81 e0       	ldi	r24, 0x01	; 1
+ 342:	84 8b       	std	Z+20, r24	; 0x14
+ 344:	10 c0       	rjmp	.+32     	; 0x366 <stepperEnableMulti+0x12a>
+	else
+		_steppers[channel].stepindex = 0;
+ 346:	f4 01       	movw	r30, r8
+ 348:	ee 0f       	add	r30, r30
+ 34a:	ff 1f       	adc	r31, r31
+ 34c:	e8 0d       	add	r30, r8
+ 34e:	f9 1d       	adc	r31, r9
+ 350:	ee 0f       	add	r30, r30
+ 352:	ff 1f       	adc	r31, r31
+ 354:	ee 0f       	add	r30, r30
+ 356:	ff 1f       	adc	r31, r31
+ 358:	ee 0f       	add	r30, r30
+ 35a:	ff 1f       	adc	r31, r31
+ 35c:	e8 19       	sub	r30, r8
+ 35e:	f9 09       	sbc	r31, r9
+ 360:	e4 5f       	subi	r30, 0xF4	; 244
+ 362:	fd 4f       	sbci	r31, 0xFD	; 253
+ 364:	14 8a       	std	Z+20, r1	; 0x14
+		
+	//Enable timer3 on first call of stepperEnable()
+	if(!_timer3enabled)
+ 366:	80 91 0a 02 	lds	r24, 0x020A
+ 36a:	90 91 0b 02 	lds	r25, 0x020B
+ 36e:	00 97       	sbiw	r24, 0x00	; 0
+ 370:	c1 f5       	brne	.+112    	; 0x3e2 <stepperEnableMulti+0x1a6>
+	{
+		//Initialise the data members used by the interrupts before starting timer
+		int i;
+		for(i = 0; i < 3; i++)
+		{
+			_steppers[i].stepstomove = 0;
+ 372:	81 e2       	ldi	r24, 0x21	; 33
+ 374:	92 e0       	ldi	r25, 0x02	; 2
+ 376:	10 92 22 02 	sts	0x0222, r1
+ 37a:	10 92 21 02 	sts	0x0221, r1
+			_steppers[i].direction = CW;
+ 37e:	fc 01       	movw	r30, r24
+ 380:	32 97       	sbiw	r30, 0x02	; 2
+ 382:	21 e0       	ldi	r18, 0x01	; 1
+ 384:	20 83       	st	Z, r18
+			_steppers[i].freq = 10;
+ 386:	fc 01       	movw	r30, r24
+ 388:	36 97       	sbiw	r30, 0x06	; 6
+ 38a:	80 e0       	ldi	r24, 0x00	; 0
+ 38c:	90 e0       	ldi	r25, 0x00	; 0
+ 38e:	a0 e2       	ldi	r26, 0x20	; 32
+ 390:	b1 e4       	ldi	r27, 0x41	; 65
+ 392:	80 83       	st	Z, r24
+ 394:	91 83       	std	Z+1, r25	; 0x01
+ 396:	a2 83       	std	Z+2, r26	; 0x02
+ 398:	b3 83       	std	Z+3, r27	; 0x03
+	{
+		//Initialise the data members used by the interrupts before starting timer
+		int i;
+		for(i = 0; i < 3; i++)
+		{
+			_steppers[i].stepstomove = 0;
+ 39a:	10 92 39 02 	sts	0x0239, r1
+ 39e:	10 92 38 02 	sts	0x0238, r1
+			_steppers[i].direction = CW;
+ 3a2:	20 93 36 02 	sts	0x0236, r18
+			_steppers[i].freq = 10;
+ 3a6:	80 93 32 02 	sts	0x0232, r24
+ 3aa:	90 93 33 02 	sts	0x0233, r25
+ 3ae:	a0 93 34 02 	sts	0x0234, r26
+ 3b2:	b0 93 35 02 	sts	0x0235, r27
+	{
+		//Initialise the data members used by the interrupts before starting timer
+		int i;
+		for(i = 0; i < 3; i++)
+		{
+			_steppers[i].stepstomove = 0;
+ 3b6:	10 92 50 02 	sts	0x0250, r1
+ 3ba:	10 92 4f 02 	sts	0x024F, r1
+			_steppers[i].direction = CW;
+ 3be:	20 93 4d 02 	sts	0x024D, r18
+			_steppers[i].freq = 10;
+ 3c2:	80 93 49 02 	sts	0x0249, r24
+ 3c6:	90 93 4a 02 	sts	0x024A, r25
+ 3ca:	a0 93 4b 02 	sts	0x024B, r26
+ 3ce:	b0 93 4c 02 	sts	0x024C, r27
+		}
+		_stepper_timer3_init();
+ 3d2:	0e 94 95 00 	call	0x12a	; 0x12a <_stepper_timer3_init>
+		_timer3enabled = 1;
+ 3d6:	81 e0       	ldi	r24, 0x01	; 1
+ 3d8:	90 e0       	ldi	r25, 0x00	; 0
+ 3da:	90 93 0b 02 	sts	0x020B, r25
+ 3de:	80 93 0a 02 	sts	0x020A, r24
+	}	
+}
+ 3e2:	df 91       	pop	r29
+ 3e4:	cf 91       	pop	r28
+ 3e6:	1f 91       	pop	r17
+ 3e8:	0f 91       	pop	r16
+ 3ea:	ff 90       	pop	r15
+ 3ec:	ef 90       	pop	r14
+ 3ee:	df 90       	pop	r13
+ 3f0:	cf 90       	pop	r12
+ 3f2:	af 90       	pop	r10
+ 3f4:	9f 90       	pop	r9
+ 3f6:	8f 90       	pop	r8
+ 3f8:	08 95       	ret
+
+000003fa <stepperEnable>:
+	angle) in half stepping mode, call
+	stepperEnableMulti(&PORTB, 1, 5, 6, 0, 2, 200, HALF_STEP);
+*/
+void stepperEnable(volatile uint8_t *port, uint8_t pin1, uint8_t pin2, uint8_t pin3, uint8_t pin4,
+					uint8_t channel, uint16_t stepsperrev, uint8_t stepmode)
+{
+ 3fa:	8f 92       	push	r8
+ 3fc:	af 92       	push	r10
+ 3fe:	cf 92       	push	r12
+ 400:	df 92       	push	r13
+ 402:	ef 92       	push	r14
+ 404:	ff 92       	push	r15
+ 406:	0f 93       	push	r16
+ 408:	1f 93       	push	r17
+ 40a:	cf 93       	push	r28
+ 40c:	df 93       	push	r29
+ 40e:	fc 01       	movw	r30, r24
+ 410:	16 2f       	mov	r17, r22
+ 412:	f4 2e       	mov	r15, r20
+ 414:	c2 2f       	mov	r28, r18
+ 416:	d0 2f       	mov	r29, r16
+ 418:	8e 2c       	mov	r8, r14
+	stepperEnableMulti(port, port, port, port, pin1, pin2, pin3, pin4, channel, stepsperrev, stepmode);
+ 41a:	00 d0       	rcall	.+0      	; 0x41c <stepperEnable+0x22>
+ 41c:	ad b7       	in	r26, 0x3d	; 61
+ 41e:	be b7       	in	r27, 0x3e	; 62
+ 420:	12 96       	adiw	r26, 0x02	; 2
+ 422:	dc 92       	st	X, r13
+ 424:	ce 92       	st	-X, r12
+ 426:	11 97       	sbiw	r26, 0x01	; 1
+ 428:	13 96       	adiw	r26, 0x03	; 3
+ 42a:	ac 92       	st	X, r10
+ 42c:	bf 01       	movw	r22, r30
+ 42e:	af 01       	movw	r20, r30
+ 430:	9f 01       	movw	r18, r30
+ 432:	01 2f       	mov	r16, r17
+ 434:	ef 2c       	mov	r14, r15
+ 436:	cc 2e       	mov	r12, r28
+ 438:	ad 2e       	mov	r10, r29
+ 43a:	0e 94 1e 01 	call	0x23c	; 0x23c <stepperEnableMulti>
+ 43e:	0f 90       	pop	r0
+ 440:	0f 90       	pop	r0
+ 442:	0f 90       	pop	r0
+}
+ 444:	df 91       	pop	r29
+ 446:	cf 91       	pop	r28
+ 448:	1f 91       	pop	r17
+ 44a:	0f 91       	pop	r16
+ 44c:	ff 90       	pop	r15
+ 44e:	ef 90       	pop	r14
+ 450:	df 90       	pop	r13
+ 452:	cf 90       	pop	r12
+ 454:	af 90       	pop	r10
+ 456:	8f 90       	pop	r8
+ 458:	08 95       	ret
+
+0000045a <__vector_32>:
+
+/*
+	Interrupt Service Routine for compare match on the stepper channel 0
+*/
+ISR(TIMER3_COMPA_vect)
+{
+ 45a:	1f 92       	push	r1
+ 45c:	0f 92       	push	r0
+ 45e:	0f b6       	in	r0, 0x3f	; 63
+ 460:	0f 92       	push	r0
+ 462:	0b b6       	in	r0, 0x3b	; 59
+ 464:	0f 92       	push	r0
+ 466:	11 24       	eor	r1, r1
+ 468:	0f 93       	push	r16
+ 46a:	1f 93       	push	r17
+ 46c:	2f 93       	push	r18
+ 46e:	3f 93       	push	r19
+ 470:	4f 93       	push	r20
+ 472:	5f 93       	push	r21
+ 474:	6f 93       	push	r22
+ 476:	7f 93       	push	r23
+ 478:	8f 93       	push	r24
+ 47a:	9f 93       	push	r25
+ 47c:	af 93       	push	r26
+ 47e:	bf 93       	push	r27
+ 480:	cf 93       	push	r28
+ 482:	df 93       	push	r29
+ 484:	ef 93       	push	r30
+ 486:	ff 93       	push	r31
+	if(_steppers[0].stepstomove > 0)
+ 488:	80 91 21 02 	lds	r24, 0x0221
+ 48c:	90 91 22 02 	lds	r25, 0x0222
+ 490:	00 97       	sbiw	r24, 0x00	; 0
+ 492:	41 f1       	breq	.+80     	; 0x4e4 <__vector_32+0x8a>
+	{
+		step(0, _steppers[0].direction);
+ 494:	60 91 1f 02 	lds	r22, 0x021F
+ 498:	80 e0       	ldi	r24, 0x00	; 0
+ 49a:	90 e0       	ldi	r25, 0x00	; 0
+ 49c:	70 e0       	ldi	r23, 0x00	; 0
+ 49e:	0e 94 a4 00 	call	0x148	; 0x148 <step>
+		_steppers[0].stepstomove--;
+ 4a2:	80 91 21 02 	lds	r24, 0x0221
+ 4a6:	90 91 22 02 	lds	r25, 0x0222
+ 4aa:	01 97       	sbiw	r24, 0x01	; 1
+ 4ac:	90 93 22 02 	sts	0x0222, r25
+ 4b0:	80 93 21 02 	sts	0x0221, r24
+		
+		//Schedule the next step after (1/freq) seconds
+		OCR3A = OCR3A + (uint16_t)(230400.0 / _steppers[0].freq);
+ 4b4:	c8 e9       	ldi	r28, 0x98	; 152
+ 4b6:	d0 e0       	ldi	r29, 0x00	; 0
+ 4b8:	08 81       	ld	r16, Y
+ 4ba:	19 81       	ldd	r17, Y+1	; 0x01
+ 4bc:	20 91 1b 02 	lds	r18, 0x021B
+ 4c0:	30 91 1c 02 	lds	r19, 0x021C
+ 4c4:	40 91 1d 02 	lds	r20, 0x021D
+ 4c8:	50 91 1e 02 	lds	r21, 0x021E
+ 4cc:	60 e0       	ldi	r22, 0x00	; 0
+ 4ce:	70 e0       	ldi	r23, 0x00	; 0
+ 4d0:	81 e6       	ldi	r24, 0x61	; 97
+ 4d2:	98 e4       	ldi	r25, 0x48	; 72
+ 4d4:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 4d8:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 4dc:	06 0f       	add	r16, r22
+ 4de:	17 1f       	adc	r17, r23
+ 4e0:	19 83       	std	Y+1, r17	; 0x01
+ 4e2:	08 83       	st	Y, r16
+	}
+}
+ 4e4:	ff 91       	pop	r31
+ 4e6:	ef 91       	pop	r30
+ 4e8:	df 91       	pop	r29
+ 4ea:	cf 91       	pop	r28
+ 4ec:	bf 91       	pop	r27
+ 4ee:	af 91       	pop	r26
+ 4f0:	9f 91       	pop	r25
+ 4f2:	8f 91       	pop	r24
+ 4f4:	7f 91       	pop	r23
+ 4f6:	6f 91       	pop	r22
+ 4f8:	5f 91       	pop	r21
+ 4fa:	4f 91       	pop	r20
+ 4fc:	3f 91       	pop	r19
+ 4fe:	2f 91       	pop	r18
+ 500:	1f 91       	pop	r17
+ 502:	0f 91       	pop	r16
+ 504:	0f 90       	pop	r0
+ 506:	0b be       	out	0x3b, r0	; 59
+ 508:	0f 90       	pop	r0
+ 50a:	0f be       	out	0x3f, r0	; 63
+ 50c:	0f 90       	pop	r0
+ 50e:	1f 90       	pop	r1
+ 510:	18 95       	reti
+
+00000512 <__vector_33>:
+
+/*
+	Interrupt Service Routine for compare match on the stepper channel 1
+*/
+ISR(TIMER3_COMPB_vect)
+{
+ 512:	1f 92       	push	r1
+ 514:	0f 92       	push	r0
+ 516:	0f b6       	in	r0, 0x3f	; 63
+ 518:	0f 92       	push	r0
+ 51a:	0b b6       	in	r0, 0x3b	; 59
+ 51c:	0f 92       	push	r0
+ 51e:	11 24       	eor	r1, r1
+ 520:	0f 93       	push	r16
+ 522:	1f 93       	push	r17
+ 524:	2f 93       	push	r18
+ 526:	3f 93       	push	r19
+ 528:	4f 93       	push	r20
+ 52a:	5f 93       	push	r21
+ 52c:	6f 93       	push	r22
+ 52e:	7f 93       	push	r23
+ 530:	8f 93       	push	r24
+ 532:	9f 93       	push	r25
+ 534:	af 93       	push	r26
+ 536:	bf 93       	push	r27
+ 538:	cf 93       	push	r28
+ 53a:	df 93       	push	r29
+ 53c:	ef 93       	push	r30
+ 53e:	ff 93       	push	r31
+	if(_steppers[1].stepstomove > 0)
+ 540:	80 91 38 02 	lds	r24, 0x0238
+ 544:	90 91 39 02 	lds	r25, 0x0239
+ 548:	00 97       	sbiw	r24, 0x00	; 0
+ 54a:	41 f1       	breq	.+80     	; 0x59c <__vector_33+0x8a>
+	{
+		step(1, _steppers[1].direction);
+ 54c:	60 91 36 02 	lds	r22, 0x0236
+ 550:	81 e0       	ldi	r24, 0x01	; 1
+ 552:	90 e0       	ldi	r25, 0x00	; 0
+ 554:	70 e0       	ldi	r23, 0x00	; 0
+ 556:	0e 94 a4 00 	call	0x148	; 0x148 <step>
+		_steppers[1].stepstomove--;
+ 55a:	80 91 38 02 	lds	r24, 0x0238
+ 55e:	90 91 39 02 	lds	r25, 0x0239
+ 562:	01 97       	sbiw	r24, 0x01	; 1
+ 564:	90 93 39 02 	sts	0x0239, r25
+ 568:	80 93 38 02 	sts	0x0238, r24
+		
+		//Schedule the next step after (1/freq) seconds
+		OCR3B = OCR3B + (uint16_t)(230400.0 / _steppers[1].freq);
+ 56c:	ca e9       	ldi	r28, 0x9A	; 154
+ 56e:	d0 e0       	ldi	r29, 0x00	; 0
+ 570:	08 81       	ld	r16, Y
+ 572:	19 81       	ldd	r17, Y+1	; 0x01
+ 574:	20 91 32 02 	lds	r18, 0x0232
+ 578:	30 91 33 02 	lds	r19, 0x0233
+ 57c:	40 91 34 02 	lds	r20, 0x0234
+ 580:	50 91 35 02 	lds	r21, 0x0235
+ 584:	60 e0       	ldi	r22, 0x00	; 0
+ 586:	70 e0       	ldi	r23, 0x00	; 0
+ 588:	81 e6       	ldi	r24, 0x61	; 97
+ 58a:	98 e4       	ldi	r25, 0x48	; 72
+ 58c:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 590:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 594:	06 0f       	add	r16, r22
+ 596:	17 1f       	adc	r17, r23
+ 598:	19 83       	std	Y+1, r17	; 0x01
+ 59a:	08 83       	st	Y, r16
+	}
+}
+ 59c:	ff 91       	pop	r31
+ 59e:	ef 91       	pop	r30
+ 5a0:	df 91       	pop	r29
+ 5a2:	cf 91       	pop	r28
+ 5a4:	bf 91       	pop	r27
+ 5a6:	af 91       	pop	r26
+ 5a8:	9f 91       	pop	r25
+ 5aa:	8f 91       	pop	r24
+ 5ac:	7f 91       	pop	r23
+ 5ae:	6f 91       	pop	r22
+ 5b0:	5f 91       	pop	r21
+ 5b2:	4f 91       	pop	r20
+ 5b4:	3f 91       	pop	r19
+ 5b6:	2f 91       	pop	r18
+ 5b8:	1f 91       	pop	r17
+ 5ba:	0f 91       	pop	r16
+ 5bc:	0f 90       	pop	r0
+ 5be:	0b be       	out	0x3b, r0	; 59
+ 5c0:	0f 90       	pop	r0
+ 5c2:	0f be       	out	0x3f, r0	; 63
+ 5c4:	0f 90       	pop	r0
+ 5c6:	1f 90       	pop	r1
+ 5c8:	18 95       	reti
+
+000005ca <__vector_34>:
+
+/*
+	Interrupt Service Routine for compare match on the stepper channel 2
+*/
+ISR(TIMER3_COMPC_vect)
+{
+ 5ca:	1f 92       	push	r1
+ 5cc:	0f 92       	push	r0
+ 5ce:	0f b6       	in	r0, 0x3f	; 63
+ 5d0:	0f 92       	push	r0
+ 5d2:	0b b6       	in	r0, 0x3b	; 59
+ 5d4:	0f 92       	push	r0
+ 5d6:	11 24       	eor	r1, r1
+ 5d8:	0f 93       	push	r16
+ 5da:	1f 93       	push	r17
+ 5dc:	2f 93       	push	r18
+ 5de:	3f 93       	push	r19
+ 5e0:	4f 93       	push	r20
+ 5e2:	5f 93       	push	r21
+ 5e4:	6f 93       	push	r22
+ 5e6:	7f 93       	push	r23
+ 5e8:	8f 93       	push	r24
+ 5ea:	9f 93       	push	r25
+ 5ec:	af 93       	push	r26
+ 5ee:	bf 93       	push	r27
+ 5f0:	cf 93       	push	r28
+ 5f2:	df 93       	push	r29
+ 5f4:	ef 93       	push	r30
+ 5f6:	ff 93       	push	r31
+	if(_steppers[2].stepstomove > 0)
+ 5f8:	80 91 4f 02 	lds	r24, 0x024F
+ 5fc:	90 91 50 02 	lds	r25, 0x0250
+ 600:	00 97       	sbiw	r24, 0x00	; 0
+ 602:	41 f1       	breq	.+80     	; 0x654 <__vector_34+0x8a>
+	{
+		step(2, _steppers[2].direction);
+ 604:	60 91 4d 02 	lds	r22, 0x024D
+ 608:	82 e0       	ldi	r24, 0x02	; 2
+ 60a:	90 e0       	ldi	r25, 0x00	; 0
+ 60c:	70 e0       	ldi	r23, 0x00	; 0
+ 60e:	0e 94 a4 00 	call	0x148	; 0x148 <step>
+		_steppers[2].stepstomove--;
+ 612:	80 91 4f 02 	lds	r24, 0x024F
+ 616:	90 91 50 02 	lds	r25, 0x0250
+ 61a:	01 97       	sbiw	r24, 0x01	; 1
+ 61c:	90 93 50 02 	sts	0x0250, r25
+ 620:	80 93 4f 02 	sts	0x024F, r24
+		
+		//Schedule the next step after (1/freq) seconds
+		OCR3C = OCR3C + (uint16_t)(230400.0 / _steppers[2].freq);
+ 624:	cc e9       	ldi	r28, 0x9C	; 156
+ 626:	d0 e0       	ldi	r29, 0x00	; 0
+ 628:	08 81       	ld	r16, Y
+ 62a:	19 81       	ldd	r17, Y+1	; 0x01
+ 62c:	20 91 49 02 	lds	r18, 0x0249
+ 630:	30 91 4a 02 	lds	r19, 0x024A
+ 634:	40 91 4b 02 	lds	r20, 0x024B
+ 638:	50 91 4c 02 	lds	r21, 0x024C
+ 63c:	60 e0       	ldi	r22, 0x00	; 0
+ 63e:	70 e0       	ldi	r23, 0x00	; 0
+ 640:	81 e6       	ldi	r24, 0x61	; 97
+ 642:	98 e4       	ldi	r25, 0x48	; 72
+ 644:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 648:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 64c:	06 0f       	add	r16, r22
+ 64e:	17 1f       	adc	r17, r23
+ 650:	19 83       	std	Y+1, r17	; 0x01
+ 652:	08 83       	st	Y, r16
+	}
+}
+ 654:	ff 91       	pop	r31
+ 656:	ef 91       	pop	r30
+ 658:	df 91       	pop	r29
+ 65a:	cf 91       	pop	r28
+ 65c:	bf 91       	pop	r27
+ 65e:	af 91       	pop	r26
+ 660:	9f 91       	pop	r25
+ 662:	8f 91       	pop	r24
+ 664:	7f 91       	pop	r23
+ 666:	6f 91       	pop	r22
+ 668:	5f 91       	pop	r21
+ 66a:	4f 91       	pop	r20
+ 66c:	3f 91       	pop	r19
+ 66e:	2f 91       	pop	r18
+ 670:	1f 91       	pop	r17
+ 672:	0f 91       	pop	r16
+ 674:	0f 90       	pop	r0
+ 676:	0b be       	out	0x3b, r0	; 59
+ 678:	0f 90       	pop	r0
+ 67a:	0f be       	out	0x3f, r0	; 63
+ 67c:	0f 90       	pop	r0
+ 67e:	1f 90       	pop	r1
+ 680:	18 95       	reti
+
+00000682 <stepperSetSpeed>:
+				  Minimum speed = 3.52Hz
+				  Maximum speed = 230400Hz
+*/
+void stepperSetSpeed(uint8_t channel, float stepspersec)
+{
+	_steppers[channel].freq = stepspersec;
+ 682:	90 e0       	ldi	r25, 0x00	; 0
+ 684:	9c 01       	movw	r18, r24
+ 686:	22 0f       	add	r18, r18
+ 688:	33 1f       	adc	r19, r19
+ 68a:	28 0f       	add	r18, r24
+ 68c:	39 1f       	adc	r19, r25
+ 68e:	22 0f       	add	r18, r18
+ 690:	33 1f       	adc	r19, r19
+ 692:	22 0f       	add	r18, r18
+ 694:	33 1f       	adc	r19, r19
+ 696:	22 0f       	add	r18, r18
+ 698:	33 1f       	adc	r19, r19
+ 69a:	28 1b       	sub	r18, r24
+ 69c:	39 0b       	sbc	r19, r25
+ 69e:	f9 01       	movw	r30, r18
+ 6a0:	e4 5f       	subi	r30, 0xF4	; 244
+ 6a2:	fd 4f       	sbci	r31, 0xFD	; 253
+ 6a4:	47 87       	std	Z+15, r20	; 0x0f
+ 6a6:	50 8b       	std	Z+16, r21	; 0x10
+ 6a8:	61 8b       	std	Z+17, r22	; 0x11
+ 6aa:	72 8b       	std	Z+18, r23	; 0x12
+}
+ 6ac:	08 95       	ret
+
+000006ae <stepperMove>:
+	steps - The number of steps to move
+	direction - The direction in which to move the stepper
+				Either CW or CCW for clockwise and anticlockwise respectively
+*/
+void stepperMove(uint8_t channel, uint16_t steps, uint8_t direction)
+{
+ 6ae:	cf 93       	push	r28
+ 6b0:	df 93       	push	r29
+ 6b2:	fb 01       	movw	r30, r22
+	_steppers[channel].direction = direction;
+ 6b4:	28 2f       	mov	r18, r24
+ 6b6:	30 e0       	ldi	r19, 0x00	; 0
+ 6b8:	b9 01       	movw	r22, r18
+ 6ba:	66 0f       	add	r22, r22
+ 6bc:	77 1f       	adc	r23, r23
+ 6be:	62 0f       	add	r22, r18
+ 6c0:	73 1f       	adc	r23, r19
+ 6c2:	66 0f       	add	r22, r22
+ 6c4:	77 1f       	adc	r23, r23
+ 6c6:	66 0f       	add	r22, r22
+ 6c8:	77 1f       	adc	r23, r23
+ 6ca:	66 0f       	add	r22, r22
+ 6cc:	77 1f       	adc	r23, r23
+ 6ce:	62 1b       	sub	r22, r18
+ 6d0:	73 0b       	sbc	r23, r19
+ 6d2:	db 01       	movw	r26, r22
+ 6d4:	a4 5f       	subi	r26, 0xF4	; 244
+ 6d6:	bd 4f       	sbci	r27, 0xFD	; 253
+ 6d8:	53 96       	adiw	r26, 0x13	; 19
+ 6da:	4c 93       	st	X, r20
+ 6dc:	53 97       	sbiw	r26, 0x13	; 19
+	_steppers[channel].stepstomove = steps;
+ 6de:	56 96       	adiw	r26, 0x16	; 22
+ 6e0:	fc 93       	st	X, r31
+ 6e2:	ee 93       	st	-X, r30
+ 6e4:	55 97       	sbiw	r26, 0x15	; 21
+	
+	//Schedule the first step at (1/freq) seconds from current timer count
+	switch(channel)
+ 6e6:	81 30       	cpi	r24, 0x01	; 1
+ 6e8:	09 f1       	breq	.+66     	; 0x72c <stepperMove+0x7e>
+ 6ea:	81 30       	cpi	r24, 0x01	; 1
+ 6ec:	20 f0       	brcs	.+8      	; 0x6f6 <stepperMove+0x48>
+ 6ee:	82 30       	cpi	r24, 0x02	; 2
+ 6f0:	09 f0       	breq	.+2      	; 0x6f4 <stepperMove+0x46>
+ 6f2:	51 c0       	rjmp	.+162    	; 0x796 <stepperMove+0xe8>
+ 6f4:	36 c0       	rjmp	.+108    	; 0x762 <stepperMove+0xb4>
+	{
+		case 0:
+			OCR3A = TCNT3 + (uint16_t)(230400.0 / _steppers[0].freq);
+ 6f6:	c0 91 94 00 	lds	r28, 0x0094
+ 6fa:	d0 91 95 00 	lds	r29, 0x0095
+ 6fe:	20 91 1b 02 	lds	r18, 0x021B
+ 702:	30 91 1c 02 	lds	r19, 0x021C
+ 706:	40 91 1d 02 	lds	r20, 0x021D
+ 70a:	50 91 1e 02 	lds	r21, 0x021E
+ 70e:	60 e0       	ldi	r22, 0x00	; 0
+ 710:	70 e0       	ldi	r23, 0x00	; 0
+ 712:	81 e6       	ldi	r24, 0x61	; 97
+ 714:	98 e4       	ldi	r25, 0x48	; 72
+ 716:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 71a:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 71e:	c6 0f       	add	r28, r22
+ 720:	d7 1f       	adc	r29, r23
+ 722:	d0 93 99 00 	sts	0x0099, r29
+ 726:	c0 93 98 00 	sts	0x0098, r28
+			break;
+ 72a:	35 c0       	rjmp	.+106    	; 0x796 <stepperMove+0xe8>
+		case 1:
+			OCR3B = TCNT3 + (uint16_t)(230400.0 / _steppers[1].freq);
+ 72c:	c0 91 94 00 	lds	r28, 0x0094
+ 730:	d0 91 95 00 	lds	r29, 0x0095
+ 734:	20 91 32 02 	lds	r18, 0x0232
+ 738:	30 91 33 02 	lds	r19, 0x0233
+ 73c:	40 91 34 02 	lds	r20, 0x0234
+ 740:	50 91 35 02 	lds	r21, 0x0235
+ 744:	60 e0       	ldi	r22, 0x00	; 0
+ 746:	70 e0       	ldi	r23, 0x00	; 0
+ 748:	81 e6       	ldi	r24, 0x61	; 97
+ 74a:	98 e4       	ldi	r25, 0x48	; 72
+ 74c:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 750:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 754:	c6 0f       	add	r28, r22
+ 756:	d7 1f       	adc	r29, r23
+ 758:	d0 93 9b 00 	sts	0x009B, r29
+ 75c:	c0 93 9a 00 	sts	0x009A, r28
+			break;
+ 760:	1a c0       	rjmp	.+52     	; 0x796 <stepperMove+0xe8>
+		case 2:
+			OCR3B = TCNT3 + (uint16_t)(230400.0 / _steppers[2].freq);
+ 762:	c0 91 94 00 	lds	r28, 0x0094
+ 766:	d0 91 95 00 	lds	r29, 0x0095
+ 76a:	20 91 49 02 	lds	r18, 0x0249
+ 76e:	30 91 4a 02 	lds	r19, 0x024A
+ 772:	40 91 4b 02 	lds	r20, 0x024B
+ 776:	50 91 4c 02 	lds	r21, 0x024C
+ 77a:	60 e0       	ldi	r22, 0x00	; 0
+ 77c:	70 e0       	ldi	r23, 0x00	; 0
+ 77e:	81 e6       	ldi	r24, 0x61	; 97
+ 780:	98 e4       	ldi	r25, 0x48	; 72
+ 782:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 786:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 78a:	c6 0f       	add	r28, r22
+ 78c:	d7 1f       	adc	r29, r23
+ 78e:	d0 93 9b 00 	sts	0x009B, r29
+ 792:	c0 93 9a 00 	sts	0x009A, r28
+	}
+}
+ 796:	df 91       	pop	r29
+ 798:	cf 91       	pop	r28
+ 79a:	08 95       	ret
+
+0000079c <stepperMoveDegrees>:
+	degrees - The degrees to move
+	direction - The direction in which to move the stepper
+				Either CW or CCW for clockwise and anticlockwise respectively
+*/
+void stepperMoveDegrees(uint8_t channel, float degrees, uint8_t direction)
+{
+ 79c:	cf 92       	push	r12
+ 79e:	df 92       	push	r13
+ 7a0:	ef 92       	push	r14
+ 7a2:	ff 92       	push	r15
+ 7a4:	cf 93       	push	r28
+ 7a6:	df 93       	push	r29
+ 7a8:	c8 2f       	mov	r28, r24
+ 7aa:	6a 01       	movw	r12, r20
+ 7ac:	7b 01       	movw	r14, r22
+ 7ae:	d2 2f       	mov	r29, r18
+	if(_steppers[channel].stepmode == HALF_STEP) //Half stepping divides the step angle by half
+ 7b0:	90 e0       	ldi	r25, 0x00	; 0
+ 7b2:	fc 01       	movw	r30, r24
+ 7b4:	ee 0f       	add	r30, r30
+ 7b6:	ff 1f       	adc	r31, r31
+ 7b8:	e8 0f       	add	r30, r24
+ 7ba:	f9 1f       	adc	r31, r25
+ 7bc:	ee 0f       	add	r30, r30
+ 7be:	ff 1f       	adc	r31, r31
+ 7c0:	ee 0f       	add	r30, r30
+ 7c2:	ff 1f       	adc	r31, r31
+ 7c4:	ee 0f       	add	r30, r30
+ 7c6:	ff 1f       	adc	r31, r31
+ 7c8:	e8 1b       	sub	r30, r24
+ 7ca:	f9 0b       	sbc	r31, r25
+ 7cc:	e4 5f       	subi	r30, 0xF4	; 244
+ 7ce:	fd 4f       	sbci	r31, 0xFD	; 253
+ 7d0:	26 85       	ldd	r18, Z+14	; 0x0e
+ 7d2:	22 30       	cpi	r18, 0x02	; 2
+ 7d4:	51 f5       	brne	.+84     	; 0x82a <stepperMoveDegrees+0x8e>
+		stepperMove(channel, (uint16_t)(degrees * (float)_steppers[channel].stepsperrev / 180.0), direction);
+ 7d6:	9c 01       	movw	r18, r24
+ 7d8:	22 0f       	add	r18, r18
+ 7da:	33 1f       	adc	r19, r19
+ 7dc:	28 0f       	add	r18, r24
+ 7de:	39 1f       	adc	r19, r25
+ 7e0:	22 0f       	add	r18, r18
+ 7e2:	33 1f       	adc	r19, r19
+ 7e4:	22 0f       	add	r18, r18
+ 7e6:	33 1f       	adc	r19, r19
+ 7e8:	22 0f       	add	r18, r18
+ 7ea:	33 1f       	adc	r19, r19
+ 7ec:	28 1b       	sub	r18, r24
+ 7ee:	39 0b       	sbc	r19, r25
+ 7f0:	f9 01       	movw	r30, r18
+ 7f2:	e4 5f       	subi	r30, 0xF4	; 244
+ 7f4:	fd 4f       	sbci	r31, 0xFD	; 253
+ 7f6:	64 85       	ldd	r22, Z+12	; 0x0c
+ 7f8:	75 85       	ldd	r23, Z+13	; 0x0d
+ 7fa:	80 e0       	ldi	r24, 0x00	; 0
+ 7fc:	90 e0       	ldi	r25, 0x00	; 0
+ 7fe:	0e 94 02 06 	call	0xc04	; 0xc04 <__floatunsisf>
+ 802:	a7 01       	movw	r20, r14
+ 804:	96 01       	movw	r18, r12
+ 806:	0e 94 90 06 	call	0xd20	; 0xd20 <__mulsf3>
+ 80a:	20 e0       	ldi	r18, 0x00	; 0
+ 80c:	30 e0       	ldi	r19, 0x00	; 0
+ 80e:	44 e3       	ldi	r20, 0x34	; 52
+ 810:	53 e4       	ldi	r21, 0x43	; 67
+ 812:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 816:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 81a:	ab 01       	movw	r20, r22
+ 81c:	bc 01       	movw	r22, r24
+ 81e:	8c 2f       	mov	r24, r28
+ 820:	ba 01       	movw	r22, r20
+ 822:	4d 2f       	mov	r20, r29
+ 824:	0e 94 57 03 	call	0x6ae	; 0x6ae <stepperMove>
+ 828:	29 c0       	rjmp	.+82     	; 0x87c <stepperMoveDegrees+0xe0>
+	else
+		stepperMove(channel, (uint16_t)(degrees * (float)_steppers[channel].stepsperrev / 360.0), direction);
+ 82a:	9c 01       	movw	r18, r24
+ 82c:	22 0f       	add	r18, r18
+ 82e:	33 1f       	adc	r19, r19
+ 830:	28 0f       	add	r18, r24
+ 832:	39 1f       	adc	r19, r25
+ 834:	22 0f       	add	r18, r18
+ 836:	33 1f       	adc	r19, r19
+ 838:	22 0f       	add	r18, r18
+ 83a:	33 1f       	adc	r19, r19
+ 83c:	22 0f       	add	r18, r18
+ 83e:	33 1f       	adc	r19, r19
+ 840:	28 1b       	sub	r18, r24
+ 842:	39 0b       	sbc	r19, r25
+ 844:	f9 01       	movw	r30, r18
+ 846:	e4 5f       	subi	r30, 0xF4	; 244
+ 848:	fd 4f       	sbci	r31, 0xFD	; 253
+ 84a:	64 85       	ldd	r22, Z+12	; 0x0c
+ 84c:	75 85       	ldd	r23, Z+13	; 0x0d
+ 84e:	80 e0       	ldi	r24, 0x00	; 0
+ 850:	90 e0       	ldi	r25, 0x00	; 0
+ 852:	0e 94 02 06 	call	0xc04	; 0xc04 <__floatunsisf>
+ 856:	a7 01       	movw	r20, r14
+ 858:	96 01       	movw	r18, r12
+ 85a:	0e 94 90 06 	call	0xd20	; 0xd20 <__mulsf3>
+ 85e:	20 e0       	ldi	r18, 0x00	; 0
+ 860:	30 e0       	ldi	r19, 0x00	; 0
+ 862:	44 eb       	ldi	r20, 0xB4	; 180
+ 864:	53 e4       	ldi	r21, 0x43	; 67
+ 866:	0e 94 6e 05 	call	0xadc	; 0xadc <__divsf3>
+ 86a:	0e 94 d6 05 	call	0xbac	; 0xbac <__fixunssfsi>
+ 86e:	ab 01       	movw	r20, r22
+ 870:	bc 01       	movw	r22, r24
+ 872:	8c 2f       	mov	r24, r28
+ 874:	ba 01       	movw	r22, r20
+ 876:	4d 2f       	mov	r20, r29
+ 878:	0e 94 57 03 	call	0x6ae	; 0x6ae <stepperMove>
+}
+ 87c:	df 91       	pop	r29
+ 87e:	cf 91       	pop	r28
+ 880:	ff 90       	pop	r15
+ 882:	ef 90       	pop	r14
+ 884:	df 90       	pop	r13
+ 886:	cf 90       	pop	r12
+ 888:	08 95       	ret
+
+0000088a <stepperWaitTillComplete>:
+*/
+void stepperWaitTillComplete(uint8_t channel)
+{
+	//This while loop exits when the Compare Match interrupts decrease the
+	//stepstomove to zero.
+	while(_steppers[channel].stepstomove > 0);
+ 88a:	90 e0       	ldi	r25, 0x00	; 0
+ 88c:	fc 01       	movw	r30, r24
+ 88e:	ee 0f       	add	r30, r30
+ 890:	ff 1f       	adc	r31, r31
+ 892:	e8 0f       	add	r30, r24
+ 894:	f9 1f       	adc	r31, r25
+ 896:	ee 0f       	add	r30, r30
+ 898:	ff 1f       	adc	r31, r31
+ 89a:	ee 0f       	add	r30, r30
+ 89c:	ff 1f       	adc	r31, r31
+ 89e:	ee 0f       	add	r30, r30
+ 8a0:	ff 1f       	adc	r31, r31
+ 8a2:	e8 1b       	sub	r30, r24
+ 8a4:	f9 0b       	sbc	r31, r25
+ 8a6:	ef 5d       	subi	r30, 0xDF	; 223
+ 8a8:	fd 4f       	sbci	r31, 0xFD	; 253
+ 8aa:	80 81       	ld	r24, Z
+ 8ac:	91 81       	ldd	r25, Z+1	; 0x01
+ 8ae:	00 97       	sbiw	r24, 0x00	; 0
+ 8b0:	e1 f7       	brne	.-8      	; 0x8aa <stepperWaitTillComplete+0x20>
+}
+ 8b2:	08 95       	ret
+
+000008b4 <stepperMoveCompleted>:
+	Parameters:
+	channel - The stepper channel concerned.
+*/
+int stepperMoveCompleted(uint8_t channel)
+{
+	return (_steppers[channel].stepstomove > 0);
+ 8b4:	90 e0       	ldi	r25, 0x00	; 0
+ 8b6:	fc 01       	movw	r30, r24
+ 8b8:	ee 0f       	add	r30, r30
+ 8ba:	ff 1f       	adc	r31, r31
+ 8bc:	e8 0f       	add	r30, r24
+ 8be:	f9 1f       	adc	r31, r25
+ 8c0:	ee 0f       	add	r30, r30
+ 8c2:	ff 1f       	adc	r31, r31
+ 8c4:	ee 0f       	add	r30, r30
+ 8c6:	ff 1f       	adc	r31, r31
+ 8c8:	ee 0f       	add	r30, r30
+ 8ca:	ff 1f       	adc	r31, r31
+ 8cc:	e8 1b       	sub	r30, r24
+ 8ce:	f9 0b       	sbc	r31, r25
+ 8d0:	e4 5f       	subi	r30, 0xF4	; 244
+ 8d2:	fd 4f       	sbci	r31, 0xFD	; 253
+ 8d4:	25 89       	ldd	r18, Z+21	; 0x15
+ 8d6:	36 89       	ldd	r19, Z+22	; 0x16
+ 8d8:	81 e0       	ldi	r24, 0x01	; 1
+ 8da:	90 e0       	ldi	r25, 0x00	; 0
+ 8dc:	21 15       	cp	r18, r1
+ 8de:	31 05       	cpc	r19, r1
+ 8e0:	11 f4       	brne	.+4      	; 0x8e6 <stepperMoveCompleted+0x32>
+ 8e2:	80 e0       	ldi	r24, 0x00	; 0
+ 8e4:	90 e0       	ldi	r25, 0x00	; 0
+}
+ 8e6:	08 95       	ret
+
+000008e8 <main>:
+			= 160016
+		v = sqrt(160016) = 400.02 Hz
+*/
+int main(void)
+{
+	stepperEnableMulti(&PORTL, &PORTL, &PORTD,
+ 8e8:	00 d0       	rcall	.+0      	; 0x8ea <main+0x2>
+ 8ea:	88 ec       	ldi	r24, 0xC8	; 200
+ 8ec:	90 e0       	ldi	r25, 0x00	; 0
+ 8ee:	ed b7       	in	r30, 0x3d	; 61
+ 8f0:	fe b7       	in	r31, 0x3e	; 62
+ 8f2:	92 83       	std	Z+2, r25	; 0x02
+ 8f4:	81 83       	std	Z+1, r24	; 0x01
+ 8f6:	81 e0       	ldi	r24, 0x01	; 1
+ 8f8:	83 83       	std	Z+3, r24	; 0x03
+ 8fa:	8b e0       	ldi	r24, 0x0B	; 11
+ 8fc:	91 e0       	ldi	r25, 0x01	; 1
+ 8fe:	6b e0       	ldi	r22, 0x0B	; 11
+ 900:	71 e0       	ldi	r23, 0x01	; 1
+ 902:	4b e2       	ldi	r20, 0x2B	; 43
+ 904:	50 e0       	ldi	r21, 0x00	; 0
+ 906:	2b e2       	ldi	r18, 0x2B	; 43
+ 908:	30 e0       	ldi	r19, 0x00	; 0
+ 90a:	07 e0       	ldi	r16, 0x07	; 7
+ 90c:	0f 2e       	mov	r0, r31
+ 90e:	f6 e0       	ldi	r31, 0x06	; 6
+ 910:	ef 2e       	mov	r14, r31
+ 912:	f0 2d       	mov	r31, r0
+ 914:	cc 24       	eor	r12, r12
+ 916:	c3 94       	inc	r12
+ 918:	aa 24       	eor	r10, r10
+ 91a:	88 24       	eor	r8, r8
+ 91c:	0e 94 1e 01 	call	0x23c	; 0x23c <stepperEnableMulti>
+					   &PORTD, 7, 6, 1, 0, 0, 200, FULL_STEP);
+	
+	stepperSetSpeed(0, speed);
+ 920:	0f 90       	pop	r0
+ 922:	0f 90       	pop	r0
+ 924:	0f 90       	pop	r0
+ 926:	60 91 00 02 	lds	r22, 0x0200
+ 92a:	70 91 01 02 	lds	r23, 0x0201
+ 92e:	88 27       	eor	r24, r24
+ 930:	77 fd       	sbrc	r23, 7
+ 932:	80 95       	com	r24
+ 934:	98 2f       	mov	r25, r24
+ 936:	0e 94 04 06 	call	0xc08	; 0xc08 <__floatsisf>
+ 93a:	ab 01       	movw	r20, r22
+ 93c:	bc 01       	movw	r22, r24
+ 93e:	80 e0       	ldi	r24, 0x00	; 0
+ 940:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+	stepperMove(0, 2000, CW);
+ 944:	80 e0       	ldi	r24, 0x00	; 0
+ 946:	60 ed       	ldi	r22, 0xD0	; 208
+ 948:	77 e0       	ldi	r23, 0x07	; 7
+ 94a:	41 e0       	ldi	r20, 0x01	; 1
+ 94c:	0e 94 57 03 	call	0x6ae	; 0x6ae <stepperMove>
+    while(_steppers[0].stepstomove > 1600)
+ 950:	80 91 21 02 	lds	r24, 0x0221
+ 954:	90 91 22 02 	lds	r25, 0x0222
+ 958:	f6 e0       	ldi	r31, 0x06	; 6
+ 95a:	81 34       	cpi	r24, 0x41	; 65
+ 95c:	9f 07       	cpc	r25, r31
+ 95e:	18 f1       	brcs	.+70     	; 0x9a6 <main+0xbe>
+ 960:	c1 e2       	ldi	r28, 0x21	; 33
+ 962:	d2 e0       	ldi	r29, 0x02	; 2
+    {
+        speed++;
+ 964:	60 91 00 02 	lds	r22, 0x0200
+ 968:	70 91 01 02 	lds	r23, 0x0201
+ 96c:	6f 5f       	subi	r22, 0xFF	; 255
+ 96e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 970:	70 93 01 02 	sts	0x0201, r23
+ 974:	60 93 00 02 	sts	0x0200, r22
+		stepperSetSpeed(0, speed);
+ 978:	88 27       	eor	r24, r24
+ 97a:	77 fd       	sbrc	r23, 7
+ 97c:	80 95       	com	r24
+ 97e:	98 2f       	mov	r25, r24
+ 980:	0e 94 04 06 	call	0xc08	; 0xc08 <__floatsisf>
+ 984:	ab 01       	movw	r20, r22
+ 986:	bc 01       	movw	r22, r24
+ 988:	80 e0       	ldi	r24, 0x00	; 0
+ 98a:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 98e:	8f ef       	ldi	r24, 0xFF	; 255
+ 990:	97 e4       	ldi	r25, 0x47	; 71
+ 992:	01 97       	sbiw	r24, 0x01	; 1
+ 994:	f1 f7       	brne	.-4      	; 0x992 <main+0xaa>
+ 996:	00 c0       	rjmp	.+0      	; 0x998 <main+0xb0>
+ 998:	00 00       	nop
+	stepperEnableMulti(&PORTL, &PORTL, &PORTD,
+					   &PORTD, 7, 6, 1, 0, 0, 200, FULL_STEP);
+	
+	stepperSetSpeed(0, speed);
+	stepperMove(0, 2000, CW);
+    while(_steppers[0].stepstomove > 1600)
+ 99a:	88 81       	ld	r24, Y
+ 99c:	99 81       	ldd	r25, Y+1	; 0x01
+ 99e:	e6 e0       	ldi	r30, 0x06	; 6
+ 9a0:	81 34       	cpi	r24, 0x41	; 65
+ 9a2:	9e 07       	cpc	r25, r30
+ 9a4:	f8 f6       	brcc	.-66     	; 0x964 <main+0x7c>
+    {
+        speed++;
+		stepperSetSpeed(0, speed);
+		_delay_ms(5);
+    }
+	while(_steppers[0].stepstomove > 400)
+ 9a6:	e1 e2       	ldi	r30, 0x21	; 33
+ 9a8:	f2 e0       	ldi	r31, 0x02	; 2
+ 9aa:	80 81       	ld	r24, Z
+ 9ac:	91 81       	ldd	r25, Z+1	; 0x01
+ 9ae:	21 e0       	ldi	r18, 0x01	; 1
+ 9b0:	81 39       	cpi	r24, 0x91	; 145
+ 9b2:	92 07       	cpc	r25, r18
+ 9b4:	d0 f7       	brcc	.-12     	; 0x9aa <main+0xc2>
+	{
+		
+	}
+	while(speed > 4)
+ 9b6:	80 91 00 02 	lds	r24, 0x0200
+ 9ba:	90 91 01 02 	lds	r25, 0x0201
+ 9be:	85 30       	cpi	r24, 0x05	; 5
+ 9c0:	91 05       	cpc	r25, r1
+ 9c2:	fc f0       	brlt	.+62     	; 0xa02 <main+0x11a>
+	{
+		speed--;
+ 9c4:	01 97       	sbiw	r24, 0x01	; 1
+ 9c6:	90 93 01 02 	sts	0x0201, r25
+ 9ca:	80 93 00 02 	sts	0x0200, r24
+		stepperSetSpeed(0, speed);
+ 9ce:	fc 01       	movw	r30, r24
+ 9d0:	bf 01       	movw	r22, r30
+ 9d2:	88 27       	eor	r24, r24
+ 9d4:	77 fd       	sbrc	r23, 7
+ 9d6:	80 95       	com	r24
+ 9d8:	98 2f       	mov	r25, r24
+ 9da:	0e 94 04 06 	call	0xc08	; 0xc08 <__floatsisf>
+ 9de:	ab 01       	movw	r20, r22
+ 9e0:	bc 01       	movw	r22, r24
+ 9e2:	80 e0       	ldi	r24, 0x00	; 0
+ 9e4:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+ 9e8:	8f ef       	ldi	r24, 0xFF	; 255
+ 9ea:	97 e4       	ldi	r25, 0x47	; 71
+ 9ec:	01 97       	sbiw	r24, 0x01	; 1
+ 9ee:	f1 f7       	brne	.-4      	; 0x9ec <main+0x104>
+ 9f0:	00 c0       	rjmp	.+0      	; 0x9f2 <main+0x10a>
+ 9f2:	00 00       	nop
+    }
+	while(_steppers[0].stepstomove > 400)
+	{
+		
+	}
+	while(speed > 4)
+ 9f4:	80 91 00 02 	lds	r24, 0x0200
+ 9f8:	90 91 01 02 	lds	r25, 0x0201
+ 9fc:	85 30       	cpi	r24, 0x05	; 5
+ 9fe:	91 05       	cpc	r25, r1
+ a00:	0c f7       	brge	.-62     	; 0x9c4 <main+0xdc>
+		speed--;
+		stepperSetSpeed(0, speed);
+		_delay_ms(5);
+	}
+	
+	speed = 4;
+ a02:	84 e0       	ldi	r24, 0x04	; 4
+ a04:	90 e0       	ldi	r25, 0x00	; 0
+ a06:	90 93 01 02 	sts	0x0201, r25
+ a0a:	80 93 00 02 	sts	0x0200, r24
+	stepperSetSpeed(0, speed);
+ a0e:	80 e0       	ldi	r24, 0x00	; 0
+ a10:	40 e0       	ldi	r20, 0x00	; 0
+ a12:	50 e0       	ldi	r21, 0x00	; 0
+ a14:	60 e8       	ldi	r22, 0x80	; 128
+ a16:	70 e4       	ldi	r23, 0x40	; 64
+ a18:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+	stepperMove(0, 2000, CCW);
+ a1c:	80 e0       	ldi	r24, 0x00	; 0
+ a1e:	60 ed       	ldi	r22, 0xD0	; 208
+ a20:	77 e0       	ldi	r23, 0x07	; 7
+ a22:	40 e0       	ldi	r20, 0x00	; 0
+ a24:	0e 94 57 03 	call	0x6ae	; 0x6ae <stepperMove>
+	while(_steppers[0].stepstomove > 1600)
+ a28:	80 91 21 02 	lds	r24, 0x0221
+ a2c:	90 91 22 02 	lds	r25, 0x0222
+ a30:	e6 e0       	ldi	r30, 0x06	; 6
+ a32:	81 34       	cpi	r24, 0x41	; 65
+ a34:	9e 07       	cpc	r25, r30
+ a36:	18 f1       	brcs	.+70     	; 0xa7e <main+0x196>
+ a38:	c1 e2       	ldi	r28, 0x21	; 33
+ a3a:	d2 e0       	ldi	r29, 0x02	; 2
+	{
+		speed++;
+ a3c:	60 91 00 02 	lds	r22, 0x0200
+ a40:	70 91 01 02 	lds	r23, 0x0201
+ a44:	6f 5f       	subi	r22, 0xFF	; 255
+ a46:	7f 4f       	sbci	r23, 0xFF	; 255
+ a48:	70 93 01 02 	sts	0x0201, r23
+ a4c:	60 93 00 02 	sts	0x0200, r22
+		stepperSetSpeed(0, speed);
+ a50:	88 27       	eor	r24, r24
+ a52:	77 fd       	sbrc	r23, 7
+ a54:	80 95       	com	r24
+ a56:	98 2f       	mov	r25, r24
+ a58:	0e 94 04 06 	call	0xc08	; 0xc08 <__floatsisf>
+ a5c:	ab 01       	movw	r20, r22
+ a5e:	bc 01       	movw	r22, r24
+ a60:	80 e0       	ldi	r24, 0x00	; 0
+ a62:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+ a66:	8f ef       	ldi	r24, 0xFF	; 255
+ a68:	97 e4       	ldi	r25, 0x47	; 71
+ a6a:	01 97       	sbiw	r24, 0x01	; 1
+ a6c:	f1 f7       	brne	.-4      	; 0xa6a <main+0x182>
+ a6e:	00 c0       	rjmp	.+0      	; 0xa70 <main+0x188>
+ a70:	00 00       	nop
+	}
+	
+	speed = 4;
+	stepperSetSpeed(0, speed);
+	stepperMove(0, 2000, CCW);
+	while(_steppers[0].stepstomove > 1600)
+ a72:	88 81       	ld	r24, Y
+ a74:	99 81       	ldd	r25, Y+1	; 0x01
+ a76:	e6 e0       	ldi	r30, 0x06	; 6
+ a78:	81 34       	cpi	r24, 0x41	; 65
+ a7a:	9e 07       	cpc	r25, r30
+ a7c:	f8 f6       	brcc	.-66     	; 0xa3c <main+0x154>
+	{
+		speed++;
+		stepperSetSpeed(0, speed);
+		_delay_ms(5);
+	}
+	while(_steppers[0].stepstomove > 400)
+ a7e:	e1 e2       	ldi	r30, 0x21	; 33
+ a80:	f2 e0       	ldi	r31, 0x02	; 2
+ a82:	80 81       	ld	r24, Z
+ a84:	91 81       	ldd	r25, Z+1	; 0x01
+ a86:	21 e0       	ldi	r18, 0x01	; 1
+ a88:	81 39       	cpi	r24, 0x91	; 145
+ a8a:	92 07       	cpc	r25, r18
+ a8c:	d0 f7       	brcc	.-12     	; 0xa82 <main+0x19a>
+	{
+		
+	}
+	while(speed > 4)
+ a8e:	80 91 00 02 	lds	r24, 0x0200
+ a92:	90 91 01 02 	lds	r25, 0x0201
+ a96:	85 30       	cpi	r24, 0x05	; 5
+ a98:	91 05       	cpc	r25, r1
+ a9a:	fc f0       	brlt	.+62     	; 0xada <main+0x1f2>
+	{
+		speed--;
+ a9c:	01 97       	sbiw	r24, 0x01	; 1
+ a9e:	90 93 01 02 	sts	0x0201, r25
+ aa2:	80 93 00 02 	sts	0x0200, r24
+		stepperSetSpeed(0, speed);
+ aa6:	fc 01       	movw	r30, r24
+ aa8:	bf 01       	movw	r22, r30
+ aaa:	88 27       	eor	r24, r24
+ aac:	77 fd       	sbrc	r23, 7
+ aae:	80 95       	com	r24
+ ab0:	98 2f       	mov	r25, r24
+ ab2:	0e 94 04 06 	call	0xc08	; 0xc08 <__floatsisf>
+ ab6:	ab 01       	movw	r20, r22
+ ab8:	bc 01       	movw	r22, r24
+ aba:	80 e0       	ldi	r24, 0x00	; 0
+ abc:	0e 94 41 03 	call	0x682	; 0x682 <stepperSetSpeed>
+ ac0:	8f ef       	ldi	r24, 0xFF	; 255
+ ac2:	97 e4       	ldi	r25, 0x47	; 71
+ ac4:	01 97       	sbiw	r24, 0x01	; 1
+ ac6:	f1 f7       	brne	.-4      	; 0xac4 <main+0x1dc>
+ ac8:	00 c0       	rjmp	.+0      	; 0xaca <main+0x1e2>
+ aca:	00 00       	nop
+	}
+	while(_steppers[0].stepstomove > 400)
+	{
+		
+	}
+	while(speed > 4)
+ acc:	80 91 00 02 	lds	r24, 0x0200
+ ad0:	90 91 01 02 	lds	r25, 0x0201
+ ad4:	85 30       	cpi	r24, 0x05	; 5
+ ad6:	91 05       	cpc	r25, r1
+ ad8:	0c f7       	brge	.-62     	; 0xa9c <main+0x1b4>
+ ada:	ff cf       	rjmp	.-2      	; 0xada <main+0x1f2>
+
+00000adc <__divsf3>:
+ adc:	0c d0       	rcall	.+24     	; 0xaf6 <__divsf3x>
+ ade:	e6 c0       	rjmp	.+460    	; 0xcac <__fp_round>
+ ae0:	de d0       	rcall	.+444    	; 0xc9e <__fp_pscB>
+ ae2:	40 f0       	brcs	.+16     	; 0xaf4 <__divsf3+0x18>
+ ae4:	d5 d0       	rcall	.+426    	; 0xc90 <__fp_pscA>
+ ae6:	30 f0       	brcs	.+12     	; 0xaf4 <__divsf3+0x18>
+ ae8:	21 f4       	brne	.+8      	; 0xaf2 <__divsf3+0x16>
+ aea:	5f 3f       	cpi	r21, 0xFF	; 255
+ aec:	19 f0       	breq	.+6      	; 0xaf4 <__divsf3+0x18>
+ aee:	c7 c0       	rjmp	.+398    	; 0xc7e <__fp_inf>
+ af0:	51 11       	cpse	r21, r1
+ af2:	10 c1       	rjmp	.+544    	; 0xd14 <__fp_szero>
+ af4:	ca c0       	rjmp	.+404    	; 0xc8a <__fp_nan>
+
+00000af6 <__divsf3x>:
+ af6:	eb d0       	rcall	.+470    	; 0xcce <__fp_split3>
+ af8:	98 f3       	brcs	.-26     	; 0xae0 <__divsf3+0x4>
+
+00000afa <__divsf3_pse>:
+ afa:	99 23       	and	r25, r25
+ afc:	c9 f3       	breq	.-14     	; 0xaf0 <__divsf3+0x14>
+ afe:	55 23       	and	r21, r21
+ b00:	b1 f3       	breq	.-20     	; 0xaee <__divsf3+0x12>
+ b02:	95 1b       	sub	r25, r21
+ b04:	55 0b       	sbc	r21, r21
+ b06:	bb 27       	eor	r27, r27
+ b08:	aa 27       	eor	r26, r26
+ b0a:	62 17       	cp	r22, r18
+ b0c:	73 07       	cpc	r23, r19
+ b0e:	84 07       	cpc	r24, r20
+ b10:	38 f0       	brcs	.+14     	; 0xb20 <__divsf3_pse+0x26>
+ b12:	9f 5f       	subi	r25, 0xFF	; 255
+ b14:	5f 4f       	sbci	r21, 0xFF	; 255
+ b16:	22 0f       	add	r18, r18
+ b18:	33 1f       	adc	r19, r19
+ b1a:	44 1f       	adc	r20, r20
+ b1c:	aa 1f       	adc	r26, r26
+ b1e:	a9 f3       	breq	.-22     	; 0xb0a <__divsf3_pse+0x10>
+ b20:	33 d0       	rcall	.+102    	; 0xb88 <__divsf3_pse+0x8e>
+ b22:	0e 2e       	mov	r0, r30
+ b24:	3a f0       	brmi	.+14     	; 0xb34 <__divsf3_pse+0x3a>
+ b26:	e0 e8       	ldi	r30, 0x80	; 128
+ b28:	30 d0       	rcall	.+96     	; 0xb8a <__divsf3_pse+0x90>
+ b2a:	91 50       	subi	r25, 0x01	; 1
+ b2c:	50 40       	sbci	r21, 0x00	; 0
+ b2e:	e6 95       	lsr	r30
+ b30:	00 1c       	adc	r0, r0
+ b32:	ca f7       	brpl	.-14     	; 0xb26 <__divsf3_pse+0x2c>
+ b34:	29 d0       	rcall	.+82     	; 0xb88 <__divsf3_pse+0x8e>
+ b36:	fe 2f       	mov	r31, r30
+ b38:	27 d0       	rcall	.+78     	; 0xb88 <__divsf3_pse+0x8e>
+ b3a:	66 0f       	add	r22, r22
+ b3c:	77 1f       	adc	r23, r23
+ b3e:	88 1f       	adc	r24, r24
+ b40:	bb 1f       	adc	r27, r27
+ b42:	26 17       	cp	r18, r22
+ b44:	37 07       	cpc	r19, r23
+ b46:	48 07       	cpc	r20, r24
+ b48:	ab 07       	cpc	r26, r27
+ b4a:	b0 e8       	ldi	r27, 0x80	; 128
+ b4c:	09 f0       	breq	.+2      	; 0xb50 <__divsf3_pse+0x56>
+ b4e:	bb 0b       	sbc	r27, r27
+ b50:	80 2d       	mov	r24, r0
+ b52:	bf 01       	movw	r22, r30
+ b54:	ff 27       	eor	r31, r31
+ b56:	93 58       	subi	r25, 0x83	; 131
+ b58:	5f 4f       	sbci	r21, 0xFF	; 255
+ b5a:	2a f0       	brmi	.+10     	; 0xb66 <__divsf3_pse+0x6c>
+ b5c:	9e 3f       	cpi	r25, 0xFE	; 254
+ b5e:	51 05       	cpc	r21, r1
+ b60:	68 f0       	brcs	.+26     	; 0xb7c <__divsf3_pse+0x82>
+ b62:	8d c0       	rjmp	.+282    	; 0xc7e <__fp_inf>
+ b64:	d7 c0       	rjmp	.+430    	; 0xd14 <__fp_szero>
+ b66:	5f 3f       	cpi	r21, 0xFF	; 255
+ b68:	ec f3       	brlt	.-6      	; 0xb64 <__divsf3_pse+0x6a>
+ b6a:	98 3e       	cpi	r25, 0xE8	; 232
+ b6c:	dc f3       	brlt	.-10     	; 0xb64 <__divsf3_pse+0x6a>
+ b6e:	86 95       	lsr	r24
+ b70:	77 95       	ror	r23
+ b72:	67 95       	ror	r22
+ b74:	b7 95       	ror	r27
+ b76:	f7 95       	ror	r31
+ b78:	9f 5f       	subi	r25, 0xFF	; 255
+ b7a:	c9 f7       	brne	.-14     	; 0xb6e <__divsf3_pse+0x74>
+ b7c:	88 0f       	add	r24, r24
+ b7e:	91 1d       	adc	r25, r1
+ b80:	96 95       	lsr	r25
+ b82:	87 95       	ror	r24
+ b84:	97 f9       	bld	r25, 7
+ b86:	08 95       	ret
+ b88:	e1 e0       	ldi	r30, 0x01	; 1
+ b8a:	66 0f       	add	r22, r22
+ b8c:	77 1f       	adc	r23, r23
+ b8e:	88 1f       	adc	r24, r24
+ b90:	bb 1f       	adc	r27, r27
+ b92:	62 17       	cp	r22, r18
+ b94:	73 07       	cpc	r23, r19
+ b96:	84 07       	cpc	r24, r20
+ b98:	ba 07       	cpc	r27, r26
+ b9a:	20 f0       	brcs	.+8      	; 0xba4 <__divsf3_pse+0xaa>
+ b9c:	62 1b       	sub	r22, r18
+ b9e:	73 0b       	sbc	r23, r19
+ ba0:	84 0b       	sbc	r24, r20
+ ba2:	ba 0b       	sbc	r27, r26
+ ba4:	ee 1f       	adc	r30, r30
+ ba6:	88 f7       	brcc	.-30     	; 0xb8a <__divsf3_pse+0x90>
+ ba8:	e0 95       	com	r30
+ baa:	08 95       	ret
+
+00000bac <__fixunssfsi>:
+ bac:	98 d0       	rcall	.+304    	; 0xcde <__fp_splitA>
+ bae:	88 f0       	brcs	.+34     	; 0xbd2 <__fixunssfsi+0x26>
+ bb0:	9f 57       	subi	r25, 0x7F	; 127
+ bb2:	90 f0       	brcs	.+36     	; 0xbd8 <__fixunssfsi+0x2c>
+ bb4:	b9 2f       	mov	r27, r25
+ bb6:	99 27       	eor	r25, r25
+ bb8:	b7 51       	subi	r27, 0x17	; 23
+ bba:	a0 f0       	brcs	.+40     	; 0xbe4 <__fixunssfsi+0x38>
+ bbc:	d1 f0       	breq	.+52     	; 0xbf2 <__fixunssfsi+0x46>
+ bbe:	66 0f       	add	r22, r22
+ bc0:	77 1f       	adc	r23, r23
+ bc2:	88 1f       	adc	r24, r24
+ bc4:	99 1f       	adc	r25, r25
+ bc6:	1a f0       	brmi	.+6      	; 0xbce <__fixunssfsi+0x22>
+ bc8:	ba 95       	dec	r27
+ bca:	c9 f7       	brne	.-14     	; 0xbbe <__fixunssfsi+0x12>
+ bcc:	12 c0       	rjmp	.+36     	; 0xbf2 <__fixunssfsi+0x46>
+ bce:	b1 30       	cpi	r27, 0x01	; 1
+ bd0:	81 f0       	breq	.+32     	; 0xbf2 <__fixunssfsi+0x46>
+ bd2:	9f d0       	rcall	.+318    	; 0xd12 <__fp_zero>
+ bd4:	b1 e0       	ldi	r27, 0x01	; 1
+ bd6:	08 95       	ret
+ bd8:	9c c0       	rjmp	.+312    	; 0xd12 <__fp_zero>
+ bda:	67 2f       	mov	r22, r23
+ bdc:	78 2f       	mov	r23, r24
+ bde:	88 27       	eor	r24, r24
+ be0:	b8 5f       	subi	r27, 0xF8	; 248
+ be2:	39 f0       	breq	.+14     	; 0xbf2 <__fixunssfsi+0x46>
+ be4:	b9 3f       	cpi	r27, 0xF9	; 249
+ be6:	cc f3       	brlt	.-14     	; 0xbda <__fixunssfsi+0x2e>
+ be8:	86 95       	lsr	r24
+ bea:	77 95       	ror	r23
+ bec:	67 95       	ror	r22
+ bee:	b3 95       	inc	r27
+ bf0:	d9 f7       	brne	.-10     	; 0xbe8 <__fixunssfsi+0x3c>
+ bf2:	3e f4       	brtc	.+14     	; 0xc02 <__fixunssfsi+0x56>
+ bf4:	90 95       	com	r25
+ bf6:	80 95       	com	r24
+ bf8:	70 95       	com	r23
+ bfa:	61 95       	neg	r22
+ bfc:	7f 4f       	sbci	r23, 0xFF	; 255
+ bfe:	8f 4f       	sbci	r24, 0xFF	; 255
+ c00:	9f 4f       	sbci	r25, 0xFF	; 255
+ c02:	08 95       	ret
+
+00000c04 <__floatunsisf>:
+ c04:	e8 94       	clt
+ c06:	09 c0       	rjmp	.+18     	; 0xc1a <__floatsisf+0x12>
+
+00000c08 <__floatsisf>:
+ c08:	97 fb       	bst	r25, 7
+ c0a:	3e f4       	brtc	.+14     	; 0xc1a <__floatsisf+0x12>
+ c0c:	90 95       	com	r25
+ c0e:	80 95       	com	r24
+ c10:	70 95       	com	r23
+ c12:	61 95       	neg	r22
+ c14:	7f 4f       	sbci	r23, 0xFF	; 255
+ c16:	8f 4f       	sbci	r24, 0xFF	; 255
+ c18:	9f 4f       	sbci	r25, 0xFF	; 255
+ c1a:	99 23       	and	r25, r25
+ c1c:	a9 f0       	breq	.+42     	; 0xc48 <__floatsisf+0x40>
+ c1e:	f9 2f       	mov	r31, r25
+ c20:	96 e9       	ldi	r25, 0x96	; 150
+ c22:	bb 27       	eor	r27, r27
+ c24:	93 95       	inc	r25
+ c26:	f6 95       	lsr	r31
+ c28:	87 95       	ror	r24
+ c2a:	77 95       	ror	r23
+ c2c:	67 95       	ror	r22
+ c2e:	b7 95       	ror	r27
+ c30:	f1 11       	cpse	r31, r1
+ c32:	f8 cf       	rjmp	.-16     	; 0xc24 <__floatsisf+0x1c>
+ c34:	fa f4       	brpl	.+62     	; 0xc74 <__floatsisf+0x6c>
+ c36:	bb 0f       	add	r27, r27
+ c38:	11 f4       	brne	.+4      	; 0xc3e <__floatsisf+0x36>
+ c3a:	60 ff       	sbrs	r22, 0
+ c3c:	1b c0       	rjmp	.+54     	; 0xc74 <__floatsisf+0x6c>
+ c3e:	6f 5f       	subi	r22, 0xFF	; 255
+ c40:	7f 4f       	sbci	r23, 0xFF	; 255
+ c42:	8f 4f       	sbci	r24, 0xFF	; 255
+ c44:	9f 4f       	sbci	r25, 0xFF	; 255
+ c46:	16 c0       	rjmp	.+44     	; 0xc74 <__floatsisf+0x6c>
+ c48:	88 23       	and	r24, r24
+ c4a:	11 f0       	breq	.+4      	; 0xc50 <__floatsisf+0x48>
+ c4c:	96 e9       	ldi	r25, 0x96	; 150
+ c4e:	11 c0       	rjmp	.+34     	; 0xc72 <__floatsisf+0x6a>
+ c50:	77 23       	and	r23, r23
+ c52:	21 f0       	breq	.+8      	; 0xc5c <__floatsisf+0x54>
+ c54:	9e e8       	ldi	r25, 0x8E	; 142
+ c56:	87 2f       	mov	r24, r23
+ c58:	76 2f       	mov	r23, r22
+ c5a:	05 c0       	rjmp	.+10     	; 0xc66 <__floatsisf+0x5e>
+ c5c:	66 23       	and	r22, r22
+ c5e:	71 f0       	breq	.+28     	; 0xc7c <__floatsisf+0x74>
+ c60:	96 e8       	ldi	r25, 0x86	; 134
+ c62:	86 2f       	mov	r24, r22
+ c64:	70 e0       	ldi	r23, 0x00	; 0
+ c66:	60 e0       	ldi	r22, 0x00	; 0
+ c68:	2a f0       	brmi	.+10     	; 0xc74 <__floatsisf+0x6c>
+ c6a:	9a 95       	dec	r25
+ c6c:	66 0f       	add	r22, r22
+ c6e:	77 1f       	adc	r23, r23
+ c70:	88 1f       	adc	r24, r24
+ c72:	da f7       	brpl	.-10     	; 0xc6a <__floatsisf+0x62>
+ c74:	88 0f       	add	r24, r24
+ c76:	96 95       	lsr	r25
+ c78:	87 95       	ror	r24
+ c7a:	97 f9       	bld	r25, 7
+ c7c:	08 95       	ret
+
+00000c7e <__fp_inf>:
+ c7e:	97 f9       	bld	r25, 7
+ c80:	9f 67       	ori	r25, 0x7F	; 127
+ c82:	80 e8       	ldi	r24, 0x80	; 128
+ c84:	70 e0       	ldi	r23, 0x00	; 0
+ c86:	60 e0       	ldi	r22, 0x00	; 0
+ c88:	08 95       	ret
+
+00000c8a <__fp_nan>:
+ c8a:	9f ef       	ldi	r25, 0xFF	; 255
+ c8c:	80 ec       	ldi	r24, 0xC0	; 192
+ c8e:	08 95       	ret
+
+00000c90 <__fp_pscA>:
+ c90:	00 24       	eor	r0, r0
+ c92:	0a 94       	dec	r0
+ c94:	16 16       	cp	r1, r22
+ c96:	17 06       	cpc	r1, r23
+ c98:	18 06       	cpc	r1, r24
+ c9a:	09 06       	cpc	r0, r25
+ c9c:	08 95       	ret
+
+00000c9e <__fp_pscB>:
+ c9e:	00 24       	eor	r0, r0
+ ca0:	0a 94       	dec	r0
+ ca2:	12 16       	cp	r1, r18
+ ca4:	13 06       	cpc	r1, r19
+ ca6:	14 06       	cpc	r1, r20
+ ca8:	05 06       	cpc	r0, r21
+ caa:	08 95       	ret
+
+00000cac <__fp_round>:
+ cac:	09 2e       	mov	r0, r25
+ cae:	03 94       	inc	r0
+ cb0:	00 0c       	add	r0, r0
+ cb2:	11 f4       	brne	.+4      	; 0xcb8 <__fp_round+0xc>
+ cb4:	88 23       	and	r24, r24
+ cb6:	52 f0       	brmi	.+20     	; 0xccc <__fp_round+0x20>
+ cb8:	bb 0f       	add	r27, r27
+ cba:	40 f4       	brcc	.+16     	; 0xccc <__fp_round+0x20>
+ cbc:	bf 2b       	or	r27, r31
+ cbe:	11 f4       	brne	.+4      	; 0xcc4 <__fp_round+0x18>
+ cc0:	60 ff       	sbrs	r22, 0
+ cc2:	04 c0       	rjmp	.+8      	; 0xccc <__fp_round+0x20>
+ cc4:	6f 5f       	subi	r22, 0xFF	; 255
+ cc6:	7f 4f       	sbci	r23, 0xFF	; 255
+ cc8:	8f 4f       	sbci	r24, 0xFF	; 255
+ cca:	9f 4f       	sbci	r25, 0xFF	; 255
+ ccc:	08 95       	ret
+
+00000cce <__fp_split3>:
+ cce:	57 fd       	sbrc	r21, 7
+ cd0:	90 58       	subi	r25, 0x80	; 128
+ cd2:	44 0f       	add	r20, r20
+ cd4:	55 1f       	adc	r21, r21
+ cd6:	59 f0       	breq	.+22     	; 0xcee <__fp_splitA+0x10>
+ cd8:	5f 3f       	cpi	r21, 0xFF	; 255
+ cda:	71 f0       	breq	.+28     	; 0xcf8 <__fp_splitA+0x1a>
+ cdc:	47 95       	ror	r20
+
+00000cde <__fp_splitA>:
+ cde:	88 0f       	add	r24, r24
+ ce0:	97 fb       	bst	r25, 7
+ ce2:	99 1f       	adc	r25, r25
+ ce4:	61 f0       	breq	.+24     	; 0xcfe <__fp_splitA+0x20>
+ ce6:	9f 3f       	cpi	r25, 0xFF	; 255
+ ce8:	79 f0       	breq	.+30     	; 0xd08 <__fp_splitA+0x2a>
+ cea:	87 95       	ror	r24
+ cec:	08 95       	ret
+ cee:	12 16       	cp	r1, r18
+ cf0:	13 06       	cpc	r1, r19
+ cf2:	14 06       	cpc	r1, r20
+ cf4:	55 1f       	adc	r21, r21
+ cf6:	f2 cf       	rjmp	.-28     	; 0xcdc <__fp_split3+0xe>
+ cf8:	46 95       	lsr	r20
+ cfa:	f1 df       	rcall	.-30     	; 0xcde <__fp_splitA>
+ cfc:	08 c0       	rjmp	.+16     	; 0xd0e <__fp_splitA+0x30>
+ cfe:	16 16       	cp	r1, r22
+ d00:	17 06       	cpc	r1, r23
+ d02:	18 06       	cpc	r1, r24
+ d04:	99 1f       	adc	r25, r25
+ d06:	f1 cf       	rjmp	.-30     	; 0xcea <__fp_splitA+0xc>
+ d08:	86 95       	lsr	r24
+ d0a:	71 05       	cpc	r23, r1
+ d0c:	61 05       	cpc	r22, r1
+ d0e:	08 94       	sec
+ d10:	08 95       	ret
+
+00000d12 <__fp_zero>:
+ d12:	e8 94       	clt
+
+00000d14 <__fp_szero>:
+ d14:	bb 27       	eor	r27, r27
+ d16:	66 27       	eor	r22, r22
+ d18:	77 27       	eor	r23, r23
+ d1a:	cb 01       	movw	r24, r22
+ d1c:	97 f9       	bld	r25, 7
+ d1e:	08 95       	ret
+
+00000d20 <__mulsf3>:
+ d20:	0b d0       	rcall	.+22     	; 0xd38 <__mulsf3x>
+ d22:	c4 cf       	rjmp	.-120    	; 0xcac <__fp_round>
+ d24:	b5 df       	rcall	.-150    	; 0xc90 <__fp_pscA>
+ d26:	28 f0       	brcs	.+10     	; 0xd32 <__mulsf3+0x12>
+ d28:	ba df       	rcall	.-140    	; 0xc9e <__fp_pscB>
+ d2a:	18 f0       	brcs	.+6      	; 0xd32 <__mulsf3+0x12>
+ d2c:	95 23       	and	r25, r21
+ d2e:	09 f0       	breq	.+2      	; 0xd32 <__mulsf3+0x12>
+ d30:	a6 cf       	rjmp	.-180    	; 0xc7e <__fp_inf>
+ d32:	ab cf       	rjmp	.-170    	; 0xc8a <__fp_nan>
+ d34:	11 24       	eor	r1, r1
+ d36:	ee cf       	rjmp	.-36     	; 0xd14 <__fp_szero>
+
+00000d38 <__mulsf3x>:
+ d38:	ca df       	rcall	.-108    	; 0xcce <__fp_split3>
+ d3a:	a0 f3       	brcs	.-24     	; 0xd24 <__mulsf3+0x4>
+
+00000d3c <__mulsf3_pse>:
+ d3c:	95 9f       	mul	r25, r21
+ d3e:	d1 f3       	breq	.-12     	; 0xd34 <__mulsf3+0x14>
+ d40:	95 0f       	add	r25, r21
+ d42:	50 e0       	ldi	r21, 0x00	; 0
+ d44:	55 1f       	adc	r21, r21
+ d46:	62 9f       	mul	r22, r18
+ d48:	f0 01       	movw	r30, r0
+ d4a:	72 9f       	mul	r23, r18
+ d4c:	bb 27       	eor	r27, r27
+ d4e:	f0 0d       	add	r31, r0
+ d50:	b1 1d       	adc	r27, r1
+ d52:	63 9f       	mul	r22, r19
+ d54:	aa 27       	eor	r26, r26
+ d56:	f0 0d       	add	r31, r0
+ d58:	b1 1d       	adc	r27, r1
+ d5a:	aa 1f       	adc	r26, r26
+ d5c:	64 9f       	mul	r22, r20
+ d5e:	66 27       	eor	r22, r22
+ d60:	b0 0d       	add	r27, r0
+ d62:	a1 1d       	adc	r26, r1
+ d64:	66 1f       	adc	r22, r22
+ d66:	82 9f       	mul	r24, r18
+ d68:	22 27       	eor	r18, r18
+ d6a:	b0 0d       	add	r27, r0
+ d6c:	a1 1d       	adc	r26, r1
+ d6e:	62 1f       	adc	r22, r18
+ d70:	73 9f       	mul	r23, r19
+ d72:	b0 0d       	add	r27, r0
+ d74:	a1 1d       	adc	r26, r1
+ d76:	62 1f       	adc	r22, r18
+ d78:	83 9f       	mul	r24, r19
+ d7a:	a0 0d       	add	r26, r0
+ d7c:	61 1d       	adc	r22, r1
+ d7e:	22 1f       	adc	r18, r18
+ d80:	74 9f       	mul	r23, r20
+ d82:	33 27       	eor	r19, r19
+ d84:	a0 0d       	add	r26, r0
+ d86:	61 1d       	adc	r22, r1
+ d88:	23 1f       	adc	r18, r19
+ d8a:	84 9f       	mul	r24, r20
+ d8c:	60 0d       	add	r22, r0
+ d8e:	21 1d       	adc	r18, r1
+ d90:	82 2f       	mov	r24, r18
+ d92:	76 2f       	mov	r23, r22
+ d94:	6a 2f       	mov	r22, r26
+ d96:	11 24       	eor	r1, r1
+ d98:	9f 57       	subi	r25, 0x7F	; 127
+ d9a:	50 40       	sbci	r21, 0x00	; 0
+ d9c:	8a f0       	brmi	.+34     	; 0xdc0 <__mulsf3_pse+0x84>
+ d9e:	e1 f0       	breq	.+56     	; 0xdd8 <__mulsf3_pse+0x9c>
+ da0:	88 23       	and	r24, r24
+ da2:	4a f0       	brmi	.+18     	; 0xdb6 <__mulsf3_pse+0x7a>
+ da4:	ee 0f       	add	r30, r30
+ da6:	ff 1f       	adc	r31, r31
+ da8:	bb 1f       	adc	r27, r27
+ daa:	66 1f       	adc	r22, r22
+ dac:	77 1f       	adc	r23, r23
+ dae:	88 1f       	adc	r24, r24
+ db0:	91 50       	subi	r25, 0x01	; 1
+ db2:	50 40       	sbci	r21, 0x00	; 0
+ db4:	a9 f7       	brne	.-22     	; 0xda0 <__mulsf3_pse+0x64>
+ db6:	9e 3f       	cpi	r25, 0xFE	; 254
+ db8:	51 05       	cpc	r21, r1
+ dba:	70 f0       	brcs	.+28     	; 0xdd8 <__mulsf3_pse+0x9c>
+ dbc:	60 cf       	rjmp	.-320    	; 0xc7e <__fp_inf>
+ dbe:	aa cf       	rjmp	.-172    	; 0xd14 <__fp_szero>
+ dc0:	5f 3f       	cpi	r21, 0xFF	; 255
+ dc2:	ec f3       	brlt	.-6      	; 0xdbe <__mulsf3_pse+0x82>
+ dc4:	98 3e       	cpi	r25, 0xE8	; 232
+ dc6:	dc f3       	brlt	.-10     	; 0xdbe <__mulsf3_pse+0x82>
+ dc8:	86 95       	lsr	r24
+ dca:	77 95       	ror	r23
+ dcc:	67 95       	ror	r22
+ dce:	b7 95       	ror	r27
+ dd0:	f7 95       	ror	r31
+ dd2:	e7 95       	ror	r30
+ dd4:	9f 5f       	subi	r25, 0xFF	; 255
+ dd6:	c1 f7       	brne	.-16     	; 0xdc8 <__mulsf3_pse+0x8c>
+ dd8:	fe 2b       	or	r31, r30
+ dda:	88 0f       	add	r24, r24
+ ddc:	91 1d       	adc	r25, r1
+ dde:	96 95       	lsr	r25
+ de0:	87 95       	ror	r24
+ de2:	97 f9       	bld	r25, 7
+ de4:	08 95       	ret
+
+00000de6 <_exit>:
+ de6:	f8 94       	cli
+
+00000de8 <__stop_program>:
+ de8:	ff cf       	rjmp	.-2      	; 0xde8 <__stop_program>

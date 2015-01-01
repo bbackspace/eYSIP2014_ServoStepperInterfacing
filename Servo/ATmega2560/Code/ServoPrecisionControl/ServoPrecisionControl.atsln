@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ServoPrecisionControl", "ServoPrecisionControl\ServoPrecisionControl.cproj", "{11B07F9E-305C-4AFC-A82F-6D8A91D20384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11B07F9E-305C-4AFC-A82F-6D8A91D20384}.Debug|AVR.ActiveCfg = Debug|AVR
+		{11B07F9E-305C-4AFC-A82F-6D8A91D20384}.Debug|AVR.Build.0 = Debug|AVR
+		{11B07F9E-305C-4AFC-A82F-6D8A91D20384}.Release|AVR.ActiveCfg = Release|AVR
+		{11B07F9E-305C-4AFC-A82F-6D8A91D20384}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
