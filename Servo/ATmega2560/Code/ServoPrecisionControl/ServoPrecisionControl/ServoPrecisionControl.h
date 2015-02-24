@@ -114,7 +114,7 @@ void servoInit()
 	degrees - The angle in degrees to which the servo is to be initially set.
 	
 	Example: Call,
-	servo_enable(_SFR_IO_ADDR(PORTL), PL5, 4, 90);
+	servo_enable(&PORTL, PL5, 4, 90);
 	to start using a servo at PORTL at PL5 at channel 4 and to initialise it to
 	90 degrees.
 */

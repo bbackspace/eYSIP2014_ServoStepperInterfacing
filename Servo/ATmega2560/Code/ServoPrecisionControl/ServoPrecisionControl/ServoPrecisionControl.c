@@ -61,7 +61,7 @@ int main(void)
 {
 	init_devices();
  
-	servo_enable(_SFR_IO_ADDR(PORTB), 6, 0, 0);
+	servo_enable(&PORTB, 6, 0, 0);
 	_delay_ms(450);
  
 	while(1)
